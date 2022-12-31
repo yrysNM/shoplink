@@ -1,0 +1,108 @@
+.catalogCity {
+    margin-top: 32px;
+    position: relative;
+
+
+    &_wrapper {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+
+    }
+}
+
+.catalog,
+.city {
+    min-height: 292px;
+    background: #FFFFFF;
+    border-radius: 6px;
+
+}
+
+.catalog {
+    margin-right: 24px;
+    padding: 24px 0 24px 25px;
+
+}
+
+.catalogList {
+    display: flex;
+    margin-top: 24px;
+    gap: 16px;
+
+    &-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #F4F6FC;
+        border-radius: 5px;
+        width: 171px;
+        height: 196px;
+    }
+}
+
+.text-catalog {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #969CAF;
+}
+
+.text-add {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: #40BFFF;
+
+}
+
+
+.city {
+    padding: 24px 24px 34px 24px;
+
+    &-top {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.text-city {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #252728;
+}
+
+.text-cityName {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #969CAF;
+}
+
+.presentationInfo {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progressInfo {
+    width: 90%;
+    height: 6px;
+    background: #F4F6FC;
+    border-radius: 8px;
+}
+
+.procentInfo {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #969CAF;
+}

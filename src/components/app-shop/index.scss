@@ -1,0 +1,82 @@
+.shoppageTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shoppage-wrapper {
+    margin-top: 24px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 2fr 1fr;
+    gap: 24px;
+}
+
+//быр класс тоже
+.shoppage-blocks {
+    padding: 24px 72px 24px 24px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    min-height: 348px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 20px;
+        color: #0F0E1E;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        margin-top: -12px;
+        color: #969CAF;
+    }
+
+    &__subtitleCity {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 20px;
+        color: #0F0E1E;
+    }
+
+    &:nth-child(2) {
+        padding: 24px;
+    }
+}
+
+.banner-setup {
+    width: 300px;
+    height: 160px;
+    background: #E2E4EB;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.bannerSizeInfo {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.banner-warning {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 11px;
+    color: #969CAF;
+}
+
+.change-password {
+    min-height: 130px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}

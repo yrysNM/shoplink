@@ -1,0 +1,180 @@
+.form {
+
+    &-data {
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+        row-gap: 22px;
+        column-gap: 24px;
+    }
+
+    // grid жондеу керек чтобы ар кайсы бырдей болу ушын
+    .price-data {
+        grid-template: 20px repeat(2, 1fr) / repeat(2, 1fr);
+        row-gap: 16px;
+        column-gap: 32px;
+    }
+
+    .changePassword {
+        grid-template: 1fr / repeat(3, 2fr) 1fr;
+    }
+
+    &-descr {
+        margin-top: 24px;
+
+
+        &__textArea {
+            padding: 16px 0 0 16px;
+            border: 1px solid #DBDDE5;
+            border-radius: 5px;
+            width: 100%;
+            height: 232px;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #969CAF;
+            }
+        }
+    }
+
+    // быр класс кылу керек а не каждый раз 
+    &-input {
+        padding: 14px 0 14px 44px;
+        border: 1px solid #DBDDE5;
+        border-radius: 5px;
+        outline: none;
+        width: 100%;
+        height: 44px;
+
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #252728;
+        }
+    }
+
+    &-select {
+        position: relative;
+    }
+
+    &-inputCities {
+        flex-basis: 70%;
+        flex-grow: 2;
+        padding: 10px 0 10px 44px;
+        position: relative;
+    }
+
+    &-inputVolute {
+        padding-left: 10px;
+        margin-left: 8px;
+        flex-basis: 30%;
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    // жондеу керек тагы да быр рет 
+    &-input__block,
+    &-select__block {
+        position: relative;
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+.form-priceInput {
+    padding: 14px 0 14px 10px;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #969CAF;
+    }
+}
+
+.helperPlaceholder {
+    position: absolute;
+    left: 44px;
+    top: 13px;
+    line-height: 16px !important;
+
+    color: #969CAF !important;
+
+}
+
+.stylePl {
+    color: #252728;
+}
+
+.text-formTitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #969CAF;
+}
+
+.iconform {
+    position: absolute;
+    left: 15px;
+    bottom: 8px;
+}
+
+.priceIcon {
+    left: auto;
+    right: 17px;
+    top: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #B7BCCC;
+}
+
+.flagicon {
+    bottom: 3px;
+}
+
+.selectIcon {
+    top: 14px;
+    bottom: auto;
+}
+
+// тагы да быр класс кылу керек  а не 3еу 
+.cityName,
+.voluteText,
+.helperPlaceholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    color: #252728;
+}
+
+.selectName {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #252728;
+}
+
+.arrowDown {
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
+    cursor: pointer;
+
+    &-volute {
+        right: 20px;
+    }
+}
+
+.selectArrow {
+    left: auto;
+    right: 15px;
+}
