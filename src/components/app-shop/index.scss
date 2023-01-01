@@ -7,7 +7,7 @@
 .shoppage-wrapper {
     margin-top: 24px;
     display: grid;
-    grid-template: repeat(3, 1fr) / 2fr 1fr;
+    grid-template: 390px repeat(2, minmax(348px, auto)) / 2fr 1fr;
     gap: 24px;
 }
 
@@ -17,6 +17,7 @@
     background: #FFFFFF;
     border-radius: 5px;
     min-height: 348px;
+    position: relative;
 
     &__title {
         font-weight: 600;

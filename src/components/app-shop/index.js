@@ -180,7 +180,7 @@ const ShopComponent = () => {
                                 placeholder: "Другое (не обязательно)"
                             }} />
 
-                            <button type="submit" className="btn submit">Cохранить</button>
+                            <button type="submit" className="btn submit" style={{ marginTop: 50 }}>Cохранить</button>
                         </form>
                     </div>
 
