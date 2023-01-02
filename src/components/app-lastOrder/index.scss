@@ -1,5 +1,6 @@
 .last-order {
     margin-top: 24px;
+    margin-bottom: 24px;
 
     &__wrapper {
         min-height: 397px;
@@ -53,7 +54,7 @@
         border-radius: 15px;
         padding: 10px 13px 10px 10px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
 
     }

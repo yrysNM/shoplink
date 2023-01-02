@@ -32,29 +32,7 @@ const LastOrderComponent = () => {
                             </tr>
                         </thead>
                         <tbody className="tbody">
-                            {/* <LastOrderComponent data={{
-                                numberOrder: "#0011",
-                                dateOrder: "23/12/2021",
-                                cityName: "Алматы",
-                                phoneNumber: "+7 (708) 369 09 18",
-                                price: 19980,
-                                status: "Не обработан",
-                                statusColorText: "#969CAF",
-                                chooseStatusBgColor: "#F4F6FC"
-                            }} /> */}
-
-                            {/* <LastOrderTableComponent data={{
-                                numberOrder: "#0010",
-                                dateOrder: "23/12/2021",
-                                cityName: "Алматы",
-                                userName: "Аружан",
-                                phoneNumber: "+7 (702) 345 49 56",
-                                price: 25980,
-                                status: "Обработан",
-                                statusColorText: "#5C61F4",
-                                chooseStatusBgColor: "rgba(92, 97, 244, 0.07)"
-
-                            }} /> */}
+                            <LastOrderTableComponent />
                         </tbody>
                     </table>
                 </div>
