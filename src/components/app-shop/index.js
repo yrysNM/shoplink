@@ -180,7 +180,7 @@ const ShopComponent = () => {
                                 placeholder: "Другое (не обязательно)"
                             }} />
 
-                            <button type="submit" className="btn submit" style={{ marginTop: 50 }}>Cохранить</button>
+                            <button type="submit" className="btn submit">Cохранить</button>
                         </form>
                     </div>
 
@@ -228,7 +228,7 @@ const ShopComponent = () => {
                                     price: true,
                                 }} />
                             </div>
-                            <button type="submit" className="btn submit" style={{ marginTop: 40 }}>Cохранить</button>
+                            <button type="submit" className="btn submit">Cохранить</button>
                         </form>
                     </div>
 
@@ -281,7 +281,7 @@ const ShopComponent = () => {
                                 inputName: "repeat password"
                             }} />
 
-                            <button type="sbumit" style={{ marginTop: 0 }} className="btn submit">Cохранить</button>
+                            <button type="sbumit" style={{ left: "auto", right: "24px" }} className="btn submit">Cохранить</button>
                         </div>
                     </form>
                 </div>

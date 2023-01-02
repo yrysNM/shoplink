@@ -1,6 +1,7 @@
 import TopCityComponent from "./helpers/city";
 import ListCatalogComponent from "./helpers/catalog";
 import plusIcon from "../../resources/icon/plusIcon.svg";
+
 import "./index.scss";
 
 const CatalogCityComponent = () => {
@@ -8,13 +9,15 @@ const CatalogCityComponent = () => {
         <div className="catalogCity">
             <div className="container">
                 <div className="catalogCity_wrapper">
-                    <div className="catalog">
+                    <div className="catalogCity_block catalog">
                         <p className="text-catalog">У вас нет товаров в каталоге</p>
+
+
 
                         <ListCatalogComponent plusIcon={plusIcon} />
                     </div>
-                    <div className="city">
-                        <p className="text-city">Топ городов</p>
+                    <div className="catalogCity_block  city">
+                        <p className="text-catalogCityHead">Топ городов</p>
                         <TopCityComponent data={{
                             cityName: "Алматы",
                             progressInfo: 36.2,

@@ -9,8 +9,7 @@
     }
 }
 
-.catalog,
-.city {
+.catalogCity_block {
     background: #FFFFFF;
     border-radius: 6px;
 
@@ -19,13 +18,16 @@
 .catalog {
     margin-right: 24px;
     padding: 24px 0 24px 25px;
-
+    position: relative;
+    overflow: hidden;
 }
 
 .catalogList {
     display: flex;
     margin-top: 24px;
     gap: 16px;
+    width: 9999px;
+    transition: margin-left 250ms;
 
     &-block {
         display: flex;
@@ -33,7 +35,7 @@
         align-items: center;
         background: #F4F6FC;
         border-radius: 5px;
-        width: 100%;
+        width: 234px;
         height: 196px;
     }
 }
@@ -58,7 +60,7 @@
 
 
 .city {
-    padding: 24px 24px 34px 24px;
+    padding: 16px 24px 34px 24px;
 
     &-top {
         margin-top: 16px;
@@ -71,7 +73,7 @@
     }
 }
 
-.text-city {
+.text-catalogCityHead {
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -112,4 +114,21 @@
     line-height: 21px;
 
     color: #969CAF;
+}
+
+.arrow-item {
+    position: absolute;
+    top: 29px;
+    right: 32px;
+    display: flex;
+
+    &__left {
+        margin-right: 33px;
+    }
+
+    &__right,
+    &__left {
+        transition: opacity .3s ease-in-out;
+        cursor: pointer;
+    }
 }
