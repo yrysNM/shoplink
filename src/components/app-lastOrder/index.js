@@ -21,7 +21,7 @@ const LastOrderComponent = () => {
                         <thead className="thead">
 
                             <tr>
-                                <th className="th">Номер заказа</th>
+                                <th className="th" style={{ paddingLeft: 24, textAlign: "left" }}>Номер заказа</th>
                                 <th className="th">Дата</th>
                                 <th className="th">Город</th>
                                 <th className="th">Имя покупателя</th>
@@ -35,6 +35,10 @@ const LastOrderComponent = () => {
                             <LastOrderTableComponent />
                         </tbody>
                     </table>
+                    {/* grid ка озгерту керек болды */}
+                    {/* <div className="grid-temp">
+
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
+import CompositionComponent from "../../app-composition";
 import ChooseOrderComponent from "../../app-chooseOrder";
-import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIcons/arrowDown.svg";
+import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../../resources/icon/shopDataIcons/arrowUp.svg";
 
 
@@ -33,7 +34,7 @@ const LastOrderTableComponent = () => {
         {
             numberOrder: "#0009",
             dateOrder: "22/12/2021",
-            cityName: "22/12/2021",
+            cityName: "Астана",
             phoneNumber: "+7 (775) 456 45 64",
             userName: "Мадина",
             price: 29980,
@@ -55,8 +56,11 @@ const LastOrderTableComponent = () => {
 
     ]);
 
+    // const compositionArrow = useRef(null);
+
     //ref жасау керек сиякты 
     const [statusToggle, setStatusToggle] = useState(false);
+    const [compositionShow, setCompositionShow] = useState(false);
 
     const [numberOrderData, setNumberOrderData] = useState("");
 
@@ -70,23 +74,33 @@ const LastOrderTableComponent = () => {
         setNumberOrderData(status);
     }
 
+    const helperCompositionShow = (status) => {
+        setCompositionShow(true);
+        setNumberOrderData(status);
+    }
+
+    const helperCompositionHide = (status) => {
+        setNumberOrderData(status);
+        setCompositionShow(false);
+    }
+
     return (
         data[0].map(item => (
-            <tr key={item.numberOrder} data-key={item.numberOrder}>
-                <td className="td numberOrder">{item.numberOrder}</td>
-                <td className="td">{item.dateOrder}</td>
-                <td className="td">{item.cityName}d</td>
-                <td className="td">{item.userName}</td>
-                <td className="td">{item.phoneNumber}</td>
-                <td className="td">{item.price}  ₸</td>
-                <td className="td">
+            <tr key={item.numberOrder} className="tr">
+                <td className={`td numberOrder`}>{item.numberOrder}</td>
+                <td className={`td`}>{item.dateOrder}</td>
+                <td className={`td`}>{item.cityName}</td>
+                <td className={`td`}>{item.userName}</td>
+                <td className={`td`}>{item.phoneNumber}</td>
+                <td className={`td`}>{item.price}  ₸</td>
+                <td className={`td`}>
                     <div className="select select-table__status" style={{ borderRadius: `${!statusToggle ? "15px" : "15px 15px 0 0"}`, backgroundColor: item.chooseStatusBgColor }}>
                         <span className="select-table__textStatus" style={{ color: item.statusColorText }}>{item.status}</span>
 
                         {/* егер status true кайтарса онда стрелка устыге котерыледы */}
                         {statusToggle && item.numberOrder === numberOrderData
                             ? <ArrowUp onClick={() => handleClickHide(item.numberOrder)} />
-                            : <ArrowDown width="11px" height="11px" onClick={() => handleClickShow(item.numberOrder)} />
+                            : <ArrowDown onClick={() => handleClickShow(item.numberOrder)} />
 
                         }
                     </div>
@@ -96,12 +110,23 @@ const LastOrderTableComponent = () => {
                     }
                 </td>
 
-                <td className="td">
+                <td className={`td composition-table`}>
                     <div className="select select-table__composition">
                         <span className="select-table__textComposition">Состав</span>
 
-                        <ArrowDown />
+                        {
+                            compositionShow && item.numberOrder === numberOrderData
+                                ? <ArrowUp onClick={() => helperCompositionHide(item.numberOrder)} />
+                                : <ArrowDown onClick={() => helperCompositionShow(item.numberOrder)} />
+                        }
+
                     </div>
+                </td>
+                {/*  position absolute жасау керек  */}
+                <td>
+                    {compositionShow && item.numberOrder === numberOrderData ?
+                        <CompositionComponent active={"active"} />
+                        : <CompositionComponent />}
                 </td>
             </tr>
         ))

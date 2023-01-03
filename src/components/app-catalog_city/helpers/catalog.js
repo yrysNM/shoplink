@@ -39,47 +39,52 @@ const ListCatalogComponent = ({ plusIcon }) => {
     );
 
     //screen size озгергенде count озгерту керек 
-    const [countSlide, setCountSlide] = useState(data.length + 1);
+    const countSlide = useState(3);
     const [lastSlide, setLastSlide] = useState(1);
     const [position, setPosition] = useState(0);
 
     const slideCatalog = useRef(null);
 
     const LeftArrowClick = () => {
-        setCountSlide(3);
+        // setCountSlide(3);
 
         const ar = Object.entries(slideCatalog.current.children);
         const width = ar[0][1].clientWidth;
-        setPosition(position => Math.min(position + width * countSlide, 0));
+        setPosition(position => Math.min(position + width * countSlide[0], 0));
     }
     const RightArrowClick = () => {
-        setCountSlide(3);
+        // setCountSlide(3);
 
         const ar = Object.entries(slideCatalog.current.children);
         const width = ar[0][1].clientWidth;
-        setPosition(position => Math.max(position - width * countSlide, -width * (ar.length - countSlide)));
-        setLastSlide(-width * (ar.length - countSlide));
+        setPosition(position => Math.max(position - width * countSlide[0], -width * (ar.length - countSlide[0])));
+        setLastSlide(-width * (ar.length - countSlide[0]));
     }
 
     return (
         <>
             {
-                data[0]
+                data[0].length !== 0
                     ? <p className="text-catalogCityHead ">Топ товары</p>
                     : <p className="text-catalog">У вас нет товаров в каталоге</p>
             }
 
 
-            <div className="arrow-item">
-                <div className="arrow-item__left" onClick={LeftArrowClick} style={{ opacity: `${position === 0 ? "0.4" : "1"}` }}>
+            {data[0].length - 1 > 3 || data[0].length === 0
+                ?
+                <div className="arrow-item">
+                    <div className="arrow-item__left" onClick={LeftArrowClick} style={{ opacity: `${position === 0 ? "0.4" : "1"}` }}>
 
-                    <LeftArrow />
-                </div>
+                        <LeftArrow />
+                    </div>
 
-                <div className="arrow-item__right" onClick={RightArrowClick} style={{ opacity: `${position === lastSlide ? "0.4" : "1"}` }}>
-                    <RightArrow />
+                    <div className="arrow-item__right" onClick={RightArrowClick} style={{ opacity: `${position === lastSlide ? "0.4" : "1"}` }}>
+                        <RightArrow />
+                    </div>
                 </div>
-            </div>
+                : null
+            }
+
             <div className="catalogList" ref={slideCatalog} style={{ marginLeft: `${position}px` }}>
                 {/* осы жерде тексерыледы если данныйлар бар болса деп */}
                 {data[0].length !== 0 ? data[0].map((catalog, i) => (

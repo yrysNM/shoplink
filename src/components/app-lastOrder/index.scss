@@ -1,6 +1,6 @@
 .last-order {
     margin-top: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 64px;
 
     &__wrapper {
         min-height: 397px;
@@ -30,6 +30,10 @@
     border-top: 1px solid #F4F6FC;
 }
 
+.tbody .tr {
+    position: relative;
+}
+
 
 .tbody .td {
     border: none;
@@ -42,8 +46,25 @@
     position: relative;
 }
 
-.numberOrder {
+.tbody .numberOrder {
     color: #F25E7F !important;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.tbody .composition-table {
+    padding-right: 27.3px;
+    text-align: right;
+}
+
+.subComposition-active {
+    &__true {
+        padding-bottom: 106px !important;
+    }
+
+    &__false {
+        padding-bottom: 26px;
+    }
 }
 
 .select {
@@ -62,6 +83,7 @@
     &-table__composition {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     &-table__textComposition {
