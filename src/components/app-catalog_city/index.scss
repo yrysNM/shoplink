@@ -40,6 +40,32 @@
     }
 }
 
+.top-catalog {
+    &__subText {
+        margin-top: 12px;
+        font-weight: 400;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__price {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 4px;
+        color: #F25E7F;
+    }
+
+    &__img img {
+        width: 171px;
+        border-radius: 5px;
+        height: 144px;
+    }
+}
+
 .text-catalog {
     font-weight: 500;
     font-size: 18px;

@@ -4,15 +4,14 @@ import plusIcon from "../../resources/icon/plusIcon.svg";
 
 import "./index.scss";
 
+
+
 const CatalogCityComponent = () => {
     return (
         <div className="catalogCity">
             <div className="container">
                 <div className="catalogCity_wrapper">
                     <div className="catalogCity_block catalog">
-                        <p className="text-catalog">У вас нет товаров в каталоге</p>
-
-
 
                         <ListCatalogComponent plusIcon={plusIcon} />
                     </div>
