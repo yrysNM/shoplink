@@ -1,18 +1,13 @@
 .composition {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    // visibility: hidden;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.7s ease;
+    grid-column-start: 1;
+    grid-column-end: -1;
 
+
+    // animation loskym kelgen 
     &-active {
         opacity: 1;
         visibility: visible;
-        transition: opacity .7s ease;
+
     }
 
     &-wrapper {
@@ -26,7 +21,7 @@
         border-top: 0.3px solid #DBDDE5;
 
         &:first-child {
-            box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.04);
+            box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.04);
             border-top: none;
         }
 

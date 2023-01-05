@@ -58,9 +58,9 @@ const MenuBlockComponent = ({ data, activeStyle }) => {
     return (
         <>
             <Link to={data.link}>
-                <div className={`iconwrapper iconwrapper-${activeStyle}`}>
+                <span className={`iconwrapper iconwrapper-${activeStyle}`}>
                     {data.homeIcon}
-                </div>
+                </span>
             </Link>
             <span className="text text-menu">{data.text}</span>
         </>

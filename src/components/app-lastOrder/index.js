@@ -1,4 +1,5 @@
-import LastOrderTableComponent from "./helpers/lastOrderTable";
+// import LastOrderTableComponent from "./helpers/lastOrderTable";
+import LastOrderGridComponent from "./helpers/lastOrderGrid";
 import "./index.scss";
 
 const LastOrderComponent = () => {
@@ -17,7 +18,7 @@ const LastOrderComponent = () => {
                         </p>
                     </div>
 
-                    <table className="table">
+                    {/* <table className="table">
                         <thead className="thead">
 
                             <tr>
@@ -34,11 +35,20 @@ const LastOrderComponent = () => {
                         <tbody className="tbody">
                             <LastOrderTableComponent />
                         </tbody>
-                    </table>
+                    </table> */}
                     {/* grid ка озгерту керек болды */}
-                    {/* <div className="grid-temp">
+                    <div className="grid-temp">
+                        <div className="box th">Номер заказа</div>
+                        <div className="box th">Дата</div>
+                        <div className="box th">Город</div>
+                        <div className="box th">Имя покупателя</div>
+                        <div className="box th">Номер телефона</div>
+                        <div className="box th">Общая сумма</div>
+                        <div className="box th">Статус</div>
+                        <div className="box th"></div>
 
-                    </div> */}
+                        <LastOrderGridComponent />
+                    </div>
                 </div>
             </div>
         </div>
