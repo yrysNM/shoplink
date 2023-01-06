@@ -26,7 +26,7 @@ const AppHeaderComponent = () => {
     return (
         <header className="header">
             <div className="header-name text">
-                <p className="logo">Название</p>
+                <p className="logo">Shoplink</p>
             </div>
             <div className="header__wrapper">
                 <img src={globalInt} alt="global icon" />
