@@ -3,6 +3,7 @@ import DataContextProvider from "../../context/DataContext";
 import AppHeaderComponent from "../app-header";
 import SideBarComponent from "../app-sideBar";
 import { MainPageComponent, CatalogPageComponent, OrderPageComponent, ShopPageComponent } from "../page";
+import OrderLayoutComponent from "../app-orderLayout";
 
 const App = () => {
     return (
@@ -16,14 +17,18 @@ const App = () => {
                         <Routes>
                             <Route path="/" element={
                                 <MainPageComponent />
-                            } />
-                            <Route path="/catalog" element={
+                            }>
+                                <Route path=":numberOrder" element={<OrderLayoutComponent />} />
+                            </Route>
+                            <Route path="catalogs" element={
                                 <CatalogPageComponent />
                             } />
-                            <Route path="/order" element={
+                            <Route path="orders" element={
                                 <OrderPageComponent />
-                            } />
-                            <Route path="/shop" element={
+                            }>
+                                <Route path=":numberOrder" element={<OrderLayoutComponent />} />
+                            </Route>
+                            <Route path="shop" element={
                                 <ShopPageComponent />
                             } />
                         </Routes>

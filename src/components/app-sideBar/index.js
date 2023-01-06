@@ -17,12 +17,12 @@ const SideBarComponent = () => {
         {
             homeIcon: <CatalogIcon />,
             text: "Каталог",
-            link: "/catalog",
+            link: "/catalogs",
         },
         {
             homeIcon: <OrderIcon />,
             text: "Заказы",
-            link: "/order"
+            link: "/orders"
         },
         {
             homeIcon: <SettingIcon />,

@@ -14,7 +14,9 @@ import "../../app-lastOrder/index.scss";
 const DataOrderComponent = () => {
     const [statusFilter, setStatusFilter] = useState(false);
 
-    const toggleFilterStatus = () => {
+    const toggleFilterStatus = (e) => {
+        e.stopPropagation();
+
         setStatusFilter(statusFilter => !statusFilter);
     }
 
@@ -33,26 +35,30 @@ const DataOrderComponent = () => {
                     <input type="date" name="date from" />
                     <input type="date" name="date from" />
 
-                    <div
-                        className="statusBlockFilter"
-                        onClick={toggleFilterStatus}
-                        style={{
-                            borderBottom: statusFilter ? "none" : "border: 1px solid #DBDDE5",
-                            boxShadow: statusFilter ? "0px 0px 20px rgba(0, 0, 0, 0.06)" : "none"
-
-                        }}>
-                        Статус
-                        {statusFilter
-                            ? <ArrowUp className="icon" />
-                            : <ArrowDown className="icon" />
-                        }
+                    <div className="statusFilter">
+                        <div className="statusBlockFilter"
+                            onClick={toggleFilterStatus}
+                            style={{
+                                borderBottom: statusFilter ? "none" : "border: 1px solid #DBDDE5",
+                                boxShadow: statusFilter ? "0px 0px 20px rgba(0, 0, 0, 0.06)" : "none"
+                            }}>
+                            Статус
+                            {statusFilter
+                                ? <ArrowUp className="icon" />
+                                : <ArrowDown className="icon" />
+                            }
+                        </div>
 
                         {statusFilter && <FilterStatusComponent />}
                     </div>
 
-                    <div className="statusBlockFilter">
-                        Фильтры
-                        <FilterIcon className="icon" />
+                    <div className="statusFilter">
+                        <div className="statusBlockFilter modalFilter">
+
+                            Фильтры
+                            <FilterIcon className="icon" />
+                        </div>
+
                     </div>
                 </form>
             </div>

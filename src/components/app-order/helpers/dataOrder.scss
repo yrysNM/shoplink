@@ -32,6 +32,10 @@ input[name='date from'] {
     padding: 16px 20px 16px 16px;
 }
 
+.statusFilter {
+    position: relative;
+}
+
 .statusBlockFilter {
     padding: 16px 20px 16px 16px;
     height: 44px;
@@ -46,7 +50,6 @@ input[name='date from'] {
     line-height: 20px;
     color: #969CAF;
     cursor: pointer;
-    position: relative;
 
     &>.icon path {
         transition: stroke 0.4s ease-in-out;

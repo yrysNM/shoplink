@@ -36,6 +36,11 @@ textarea {
     resize: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @import "./blocks/text";
 @import "./blocks/btn";
 @import "./blocks/form";
