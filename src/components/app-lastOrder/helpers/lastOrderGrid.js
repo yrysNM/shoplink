@@ -111,7 +111,7 @@ const LastOrderGridComponent = ({ isLastOrder, colorComposition }) => {
     }
     // eger last order tek 4 shygar dese
     function showDataTable() {
-        if (isLastOrder === 1) {
+        if (isLastOrder) {
             return (
                 data[0].slice(0, 4).map((item, i) => (
                     <LayoutGridTable item={item} key={i} />

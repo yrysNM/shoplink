@@ -1,5 +1,5 @@
 .dataOrder {
-    margin-top: 40px;
+    margin-top: 24px;
     margin-bottom: 51px;
 
     &-filter {
@@ -45,4 +45,19 @@ input[name='date from'] {
     font-size: 16px;
     line-height: 20px;
     color: #969CAF;
+    cursor: pointer;
+    position: relative;
+
+    &>.icon path {
+        transition: stroke 0.4s ease-in-out;
+    }
+
+    &:hover {
+
+        &>.icon path {
+            transition: stroke 0.4s ease-in-out;
+            stroke: #F25E7F;
+
+        }
+    }
 }
