@@ -73,18 +73,19 @@
         //grid болса керек емес
         // margin: 0 auto;
         background: #F4F6FC;
-        border-radius: 15px;
+        border-radius: 4px;
         padding: 10px 13px 10px 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        cursor: pointer;
     }
 
     &-table__composition {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
 
     &-table__textComposition {
@@ -102,10 +103,6 @@
         line-height: 16px;
         color: #969CAF;
         margin-right: 8px;
-    }
-
-    &>svg {
-        cursor: pointer
     }
 }
 

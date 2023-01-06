@@ -1,12 +1,12 @@
 .choose-order {
     width: 131px;
     position: absolute;
-    bottom: -48px;
-    left: 31%;
-    transform: translateX(-50%);
+    bottom: -58px;
+    left: 0;
+    // transform: translateX(-50%);
     text-align: left;
     background-color: #F4F6FC;
-    border-radius: 0 0 15px 15px;
+    border-radius: 4px;
     z-index: 10;
 
     &__text {

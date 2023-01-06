@@ -47,7 +47,7 @@ const LastOrderComponent = () => {
                         <div className="box th">Статус</div>
                         <div className="box th"></div>
 
-                        <LastOrderGridComponent />
+                        <LastOrderGridComponent isLastOrder={+true} colorComposition={"#40BFFF"} />
                     </div>
                 </div>
             </div>

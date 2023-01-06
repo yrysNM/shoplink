@@ -1,10 +1,9 @@
 import { useState } from "react";
-import CompositionComponent from "../../app-composition";
-import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIcons/arrowDown2.svg";
-import { ReactComponent as ArrowUp } from "../../../resources/icon/shopDataIcons/arrowUp.svg";
-import ChooseOrderComponent from "../../app-chooseOrder";
+import CompositionOrderComponent from "./compositionOrder";
+import StatusOrderComponent from "./statusOrder";
 
-const LastOrderGridComponent = () => {
+
+const LastOrderGridComponent = ({ isLastOrder, colorComposition }) => {
     //test data
     const data = useState([
         {
@@ -16,7 +15,8 @@ const LastOrderGridComponent = () => {
             price: 19980,
             status: "Не обработан",
             statusColorText: "#969CAF",
-            chooseStatusBgColor: "rgba(244, 246, 252, 0.7)"
+            chooseStatusBgColor: "rgba(244, 246, 252, 0.7)",
+            bgColor: "#f7f8fd",
         },
         {
             numberOrder: "#0010",
@@ -27,7 +27,8 @@ const LastOrderGridComponent = () => {
             price: 25980,
             status: "Обработан",
             statusColorText: "#5C61F4",
-            chooseStatusBgColor: "rgba(92, 97, 244, 0.07)"
+            chooseStatusBgColor: "rgba(92, 97, 244, 0.07)",
+            bgColor: "#f3f2fe",
         },
         {
             numberOrder: "#0009",
@@ -38,7 +39,8 @@ const LastOrderGridComponent = () => {
             price: 29980,
             status: "Не обработан",
             statusColorText: "#F5A328",
-            chooseStatusBgColor: "rgba(255, 179, 64, 0.07)"
+            chooseStatusBgColor: "rgba(255, 179, 64, 0.07)",
+            bgColor: "#fef9f1",
         },
         {
             numberOrder: "#0008",
@@ -49,77 +51,84 @@ const LastOrderGridComponent = () => {
             price: 59540,
             status: "Завршен",
             statusColorText: "#53D160",
-            chooseStatusBgColor: "rgba(57, 194, 54, 0.07)"
+            chooseStatusBgColor: "rgba(57, 194, 54, 0.07)",
+            bgColor: "#F1FAF0",
+        },
+        {
+            numberOrder: "#0007",
+            dateOrder: "22/12/2021",
+            cityName: "Алматы",
+            phoneNumber: "+7 (702) 642 45 95",
+            userName: "Шынгыс",
+            price: 59540,
+            status: "Завршен",
+            statusColorText: "#53D160",
+            chooseStatusBgColor: "rgba(57, 194, 54, 0.07)",
+            bgColor: "#F1FAF0",
+        },
+        {
+            numberOrder: "#0006",
+            dateOrder: "22/12/2021",
+            cityName: "Алматы",
+            phoneNumber: "+7 (702) 642 45 95",
+            userName: "Шынгыс",
+            price: 59540,
+            status: "Завршен",
+            statusColorText: "#53D160",
+            chooseStatusBgColor: "rgba(57, 194, 54, 0.07)",
+            bgColor: "#F1FAF0",
+        },
+        {
+            numberOrder: "#0005",
+            dateOrder: "22/12/2021",
+            cityName: "Алматы",
+            phoneNumber: "+7 (702) 642 45 95",
+            userName: "Шынгыс",
+            price: 59540,
+            status: "Завршен",
+            statusColorText: "#53D160",
+            chooseStatusBgColor: "rgba(57, 194, 54, 0.07)",
+            bgColor: "#F1FAF0",
         }
     ]);
 
-    const [statusToggle, setStatusToggle] = useState(false);
-    const [compositionShow, setCompositionShow] = useState(false);
-    const [numberOrderData, setNumberOrderData] = useState("");
 
-    const handleClickHide = (status) => {
-        setStatusToggle(false);
-        setNumberOrderData(status);
-    }
-
-    const handleClickShow = (status) => {
-        setStatusToggle(true);
-        setNumberOrderData(status);
-    }
-
-    const helperCompositionShow = (status) => {
-        setCompositionShow(true);
-        setNumberOrderData(status);
-    }
-
-    const helperCompositionHide = (status) => {
-        setNumberOrderData(status);
-        setCompositionShow(false);
-    }
-
-    return (
-        data[0].map(item => (
-            <div className="row" key={item.numberOrder}>
+    const LayoutGridTable = ({ item }) => {
+        return (
+            <div className="row">
                 <div className="box numberOrder">{item.numberOrder}</div>
                 <div className="box">{item.dateOrder}</div>
                 <div className="box">{item.cityName}</div>
                 <div className="box">{item.userName}</div>
                 <div className="box">{item.phoneNumber}</div>
                 <div className="box">{item.price} ₸</div>
-                <div className="box">
-                    <div className="select select-table__status" style={{ borderRadius: `${!statusToggle ? "15px" : "15px 15px 0 0"}`, backgroundColor: item.chooseStatusBgColor }}>
-                        <span className="select-table__textStatus" style={{ color: item.statusColorText }}>{item.status}</span>
 
-                        {/* егер status true кайтарса онда стрелка устыге котерыледы */}
-                        {statusToggle && item.numberOrder === numberOrderData
-                            ? <ArrowUp onClick={() => handleClickHide(item.numberOrder)} />
-                            : <ArrowDown onClick={() => handleClickShow(item.numberOrder)} />
+                <StatusOrderComponent item={item} />
 
-                        }
-                    </div>
-                    {/* статус тексеремыз что тру и заказ баскан заказымызга тен екеннын тексеремыз */}
-                    {statusToggle && item.numberOrder === numberOrderData ? <ChooseOrderComponent bgColor={item.chooseStatusBgColor} status={item.status} />
-                        : null
-                    }
-                </div>
-                <div className="box">
-                    <div className="select select-table__composition">
-                        <span className="select-table__textComposition">Состав</span>
-
-                        {
-                            compositionShow && item.numberOrder === numberOrderData
-                                ? <ArrowUp onClick={() => helperCompositionHide(item.numberOrder)} />
-                                : <ArrowDown onClick={() => helperCompositionShow(item.numberOrder)} />
-                        }
-
-                    </div>
-                </div>
-
-                {compositionShow && item.numberOrder === numberOrderData ?
-                    <CompositionComponent />
-                    : null}
+                <CompositionOrderComponent item={item} colorComposition={colorComposition} />
             </div>
-        ))
+        );
+    }
+    // eger last order tek 4 shygar dese
+    function showDataTable() {
+        if (isLastOrder === 1) {
+            return (
+                data[0].slice(0, 4).map((item, i) => (
+                    <LayoutGridTable item={item} key={i} />
+                ))
+            )
+        } else {
+            return (
+
+                data[0].map((item, i) => (
+                    <LayoutGridTable item={item} key={i} />
+                ))
+            )
+        }
+    }
+
+    return (
+        showDataTable()
     );
 }
 

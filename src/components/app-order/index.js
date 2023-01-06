@@ -1,3 +1,4 @@
+import DataOrderComponent from "./helpers/dataOrder";
 import DefaultScreenComponent from "../app-defaultScreen";
 import "../app-catalog/index.scss";
 
@@ -10,10 +11,13 @@ const OrderComponent = () => {
                 </p>
 
                 {/* егер catalog ештенке жок болса defaultScreen component колданылады */}
-                <DefaultScreenComponent
+                {/* <DefaultScreenComponent
                     color={"#F25E7F"}
                     titleDefault={"У вас еще нет заказов."}
-                    descr={"К вам еще не поступало новых  заявок"} />
+                    descr={"К вам еще не поступало новых  заявок"} /> */}
+
+                {/* eger data lar bar bolsa */}
+                <DataOrderComponent />
             </div>
         </div>
     );

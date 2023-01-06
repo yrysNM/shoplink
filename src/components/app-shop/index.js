@@ -290,7 +290,7 @@ const ShopComponent = () => {
     );
 }
 
-const HelpFormInputComponent = ({ data }) => {
+export const HelpFormInputComponent = ({ data }) => {
     return (
         <div className="form-info">
             {data.title
@@ -320,7 +320,7 @@ const HelpFormInputComponent = ({ data }) => {
     );
 }
 
-const HelperSelectComponent = ({ data }) => {
+export const HelperSelectComponent = ({ data }) => {
     return (
         <div className="form-info">
             <p className="text-formTitle">
