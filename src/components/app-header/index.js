@@ -29,35 +29,13 @@ const AppHeaderComponent = () => {
                 <p className="logo">Shoplink</p>
             </div>
             <div className="header__wrapper">
-                <img src={globalInt} alt="global icon" />
+                <img src={globalInt} alt="global icon" style={{ marginBottom: 2 }} />
 
-                <p className="text" style={{ marginLeft: 15 }}>
+                <p className="text" >
                     <span className="linkSite">Перейти на сайт </span>
                 </p>
 
                 <div className="link-site">
-                    <div className="searchMessage">
-                        <div className="input-container">
-                            <img
-                                src={textWarning}
-                                alt="text icon"
-                                className={`iconWarning iconWarning-${trigerInput}`} />
-
-                            <input
-                                type="text"
-                                ref={inputRef}
-                                className="input-search"
-                                name="searchMessage"
-                                onChange={handleChange} />
-
-                            <label htmlFor="searchMessage" className={`tag tag-${trigerInput}`}>
-                                Введете текст для ответчека в whatsapp.
-                                <span onClick={handleClick}>Ввести</span>
-                            </label>
-                        </div>
-                    </div>
-
-
                     <div className="notification_exit">
                         <img src={bellNotificationIcon} alt="notification icon" />
                         <span className="circlered"></span>

@@ -22,6 +22,7 @@
 
     &__wrapper {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
         padding: 20px 46px 20px 45px;
@@ -29,9 +30,8 @@
 }
 
 .link-site {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    text-align: right;
     margin-left: 56px;
     width: calc(100% - 15%);
 }
@@ -97,6 +97,9 @@
 
 .notification_exit {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
     img[alt="notification icon"] {
         margin-right: 39px;
@@ -106,7 +109,7 @@
 
         position: absolute;
         top: 0;
-        left: 10px;
+        right: 58px;
         width: 7px;
         height: 7px;
         background: #FF3333;
