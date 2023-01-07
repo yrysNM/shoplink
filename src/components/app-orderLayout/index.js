@@ -33,6 +33,7 @@ const OrderLayoutComponent = () => {
                     </div>
                 </div>
 
+                {/* кандай заказ данныйлары */}
                 <div className="order-data">
                     <div className="order-data__grid">
                         <div className="grid-temp order-data__grid-temp">
@@ -60,15 +61,83 @@ const OrderLayoutComponent = () => {
                                 <div className="box">x1</div>
                                 <div className="box price">15 990 ₸</div>
                             </div>
+
                         </div>
                     </div>
 
+                    {/* Данные заказа  */}
                     <div className="order-data__block">
-                        <p className="title">Данные заказа</p>
+                        <p className="titleOrderData">Данные заказа</p>
+
+                        <div className="order-data__wrapper">
+                            <div className="userData">
+                                <div className="nameUserPhone">Город</div>
+                                <div className="nameNumber">Алматы</div>
+                            </div>
+                            <div className="userData">
+                                <div className="nameUserPhone">Адрес</div>
+                                <div className="nameNumber">Жарокова 206</div>
+                            </div>
+                        </div>
+
+                        <div className="order-data__wrapper cityAddress">
+
+                            <h4 className="titleDataAddress">Адрес заказа</h4>
+                            <div className="userData">
+                                <div className="nameUserPhone">Имя</div>
+                                <div className="nameNumber">Салтанат</div>
+                            </div>
+                            <div className="userData">
+                                <div className="nameUserPhone">Номер телефона</div>
+                                <div className="nameNumber">+7 (702) 369 09 18</div>
+                            </div>
+                        </div>
+
+                        <div className="order-data__wrapper cityAddress">
+
+                            <h4 className="titleDataAddress">Сумма заказа</h4>
+                            <div className="userData">
+                                <div className="nameUserPhone">Сумма за товары</div>
+                                <div className="nameNumber">28 480 ₸</div>
+                            </div>
+                            <div className="userData">
+                                <div className="nameUserPhone">Доставка</div>
+                                <div className="nameNumber">1000 ₸</div>
+                            </div>
+                            <div className="userData">
+                                <div className="nameUserPhone">Общая сумма</div>
+                                <div className="nameNumber price">29 480 ₸</div>
+                            </div>
+                        </div>
                     </div>
 
+                    {/* калай болганы */}
                     <div className="order-data__history">
                         <p className="title-history">История заказа</p>
+
+                        <div className="history-roadMap">
+                            <div className="roadMapStyle">
+                                <span className="circleRoadMap"></span>
+                                <span className="lineRoadMap"></span>
+                                <span className="circleRoadMap"></span>
+                                <span className="lineRoadMap"></span>
+                                <span className="circleRoadMap"></span>
+                            </div>
+                            <div className="roadMapText">
+                                <div className="roadMapData">
+                                    <p className="orderText">Заказ завершен</p>
+                                    <p className="orderDateText">16/12/2021</p>
+                                </div>
+                                <div className="roadMapData">
+                                    <p className="orderText">Заказ обработан</p>
+                                    <p className="orderDateText">17/12/2021</p>
+                                </div>
+                                <div className="roadMapData">
+                                    <p className="orderText">Заказ оформлен</p>
+                                    <p className="orderDateText">16/12/2021</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
