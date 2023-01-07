@@ -4,7 +4,6 @@ import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIco
 import { ReactComponent as ArrowUp } from "../../../resources/icon/shopDataIcons/arrowUp.svg";
 
 /**
- * 
  * @param {ArrowComponent icon arrow, item - data} StatusORderComponent
  *  setNumberOrderData - context kylu kerek
  * @returns JSX component 
@@ -20,10 +19,14 @@ const StatusOrderComponent = ({ item }) => {
 
     return (
         <div className="box status-box">
-            <div className="select select-table__status"
+            <div
+                className={`select select-table__status ${statusToggle && "select-table__status-active"}`}
                 style={{ backgroundColor: item.chooseStatusBgColor }}
                 onClick={() => handleClickToggle(item.numberOrder)}>
-                <span className="select-table__textStatus" style={{ color: item.statusColorText }}>{item.status}</span>
+
+                <span
+                    className="select-table__textStatus"
+                    style={{ color: item.statusColorText }}>{item.status}</span>
 
                 {/* егер status true кайтарса онда стрелка устыге котерыледы */}
                 {statusToggle ? <ArrowUp /> : <ArrowDown />}

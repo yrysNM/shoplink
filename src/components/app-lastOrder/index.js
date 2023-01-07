@@ -1,4 +1,5 @@
 // import LastOrderTableComponent from "./helpers/lastOrderTable";
+import { Link } from "react-router-dom";
 import LastOrderGridComponent from "./helpers/lastOrderGrid";
 import "./index.scss";
 
@@ -13,9 +14,11 @@ const LastOrderComponent = () => {
                         <p className="text-catalogCityHead" style={{ fontWeight: 600 }}>Последние заказы</p>
 
 
-                        <p className="text">
-                            <span className="linkSite" style={{ fontSize: 16 }}>Посмотреть все</span>
-                        </p>
+                        <Link to={"/orders"}>
+                            <p className="text">
+                                <span className="linkSite" style={{ fontSize: 16 }}>Посмотреть все</span>
+                            </p>
+                        </Link>
                     </div>
 
                     {/* <table className="table">

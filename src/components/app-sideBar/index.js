@@ -7,7 +7,8 @@ import "./index.scss";
 
 const SideBarComponent = () => {
     const location = useLocation();
-
+    const lastIndexOf = location.pathname.lastIndexOf("/");
+    const startIndexOf = location.pathname.indexOf("/");
     const dataBtn = [
         {
             homeIcon: <HomeIcon />,
@@ -36,7 +37,7 @@ const SideBarComponent = () => {
             <div className="menu">
                 <div className="menu-block">
                     {dataBtn.map((btn, i) => {
-                        if (location.pathname === btn.link) {
+                        if (location.pathname === btn.link || location.pathname.substring(startIndexOf, lastIndexOf) === btn.link) {
                             return (
                                 <MenuBlockComponent key={i} data={btn} activeStyle={"active"} />
                             );

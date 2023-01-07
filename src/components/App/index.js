@@ -17,17 +17,14 @@ const App = () => {
                         <Routes>
                             <Route path="/" element={
                                 <MainPageComponent />
-                            }>
-                                <Route path=":numberOrder" element={<OrderLayoutComponent />} />
-                            </Route>
+                            } />
                             <Route path="catalogs" element={
                                 <CatalogPageComponent />
                             } />
                             <Route path="orders" element={
                                 <OrderPageComponent />
-                            }>
-                                <Route path=":numberOrder" element={<OrderLayoutComponent />} />
-                            </Route>
+                            } />
+                            <Route path="orders/:numberOrder" element={<OrderLayoutComponent />} />
                             <Route path="shop" element={
                                 <ShopPageComponent />
                             } />

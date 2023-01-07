@@ -38,7 +38,7 @@ export const testData = [
         status: "Не обработан",
         statusColorText: "#F5A328",
         chooseStatusBgColor: "rgba(255, 179, 64, 0.07)",
-        bgColor: "#fef9f1",
+        bgColor: "#FFFAF2",
     },
     {
         numberOrder: "#0008",
@@ -99,7 +99,7 @@ const LastOrderGridComponent = ({ isLastOrder, colorComposition }) => {
         return (
             <div className="row">
                 <div className="box numberOrder">
-                    <Link to={`${item.numberOrder}`}>
+                    <Link to={`/orders/${item.numberOrder.substring(1, item.numberOrder.length)}`}>
                         {item.numberOrder}
                     </Link>
                 </div>
