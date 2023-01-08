@@ -29,14 +29,19 @@
         }
 
         &__box {
+            border: 1px solid #DBDDE5;
+            width: 13px;
+            height: 13px;
+            cursor: pointer;
+
             &.activeFilter {
-                width: 13px;
-                height: 13px;
+                border: none;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background: #F25E7F;
                 border-radius: 4px;
+
             }
         }
     }

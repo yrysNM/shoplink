@@ -1,24 +1,46 @@
 import { useState } from "react";
 import { HelpFormInputComponent } from "../../app-shop";
+import DatePicker, { registerLocale } from "react-datepicker";
+import ru from "date-fns/locale/ru";
 import LastOrderGridComponent from "../../app-lastOrder/helpers/lastOrderGrid";
 import FilterStatusComponent from "../../app-filterStatus";
 import { ReactComponent as SearchIcon } from "../../../resources/icon/orderIcons/searchIcon.svg";
 import { ReactComponent as FilterIcon } from "../../../resources/icon/orderIcons/filterIcon.svg";
 import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../../resources/icon/shopDataIcons/arrowUp.svg";
-// import { ReactComponent as DateIcon } from "../../../resources/icon/orderIcons/dateIcon.svg";
+import { ReactComponent as DateIcon } from "../../../resources/icon/orderIcons/dateIcon.svg";
 
+import "react-datepicker/dist/react-datepicker.css";
 import "./dataOrder.scss";
 import "../../app-lastOrder/index.scss";
 
+registerLocale("ru", ru);
 const DataOrderComponent = () => {
     const [statusFilter, setStatusFilter] = useState(false);
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
+    const [dateTextStart, setDateTextStart] = useState("Дата от");
+    const [dateTextEnd, setDateTextEnd] = useState("Дата до");
+    const listMonthNames = ["янв", "фев", "мар", "апр", "май", "июн",
+        "июл", "авг", "сен", "окт", "ноя", "дек"];
+
 
     const toggleFilterStatus = (e) => {
         e.stopPropagation();
 
         setStatusFilter(statusFilter => !statusFilter);
     }
+
+    const handleChangeStart = (date) => {
+        setStartDate(date)
+        setDateTextStart(`${date.getDate()} ${listMonthNames[date.getMonth()]}, ${date.getFullYear()}`);
+    }
+
+    const handleChangeEnd = (date) => {
+        setEndDate(date)
+        setDateTextEnd(`${date.getDate()} ${listMonthNames[date.getMonth()]}, ${date.getFullYear()}`);
+    }
+
 
     return (
         <div className="dataOrder">
@@ -32,8 +54,30 @@ const DataOrderComponent = () => {
 
                     }} />
 
-                    <input type="date" name="date from" />
-                    <input type="date" name="date from" />
+                    <div className="dateFilter">
+
+                        <DatePicker
+                            className="dateInput"
+                            onChange={handleChangeStart}
+                            selectsStart
+                            startDate={startDate}
+                            locale="ru"
+                            placeholderText={dateTextStart}
+                        />
+                        <DateIcon className="dateIcon" />
+                    </div>
+                    <div className="dateFilter">
+                        <DatePicker
+                            className="dateInput"
+                            onChange={handleChangeEnd}
+                            selectsEnd
+                            startDate={startDate}
+                            endDate={endDate}
+                            locale="ru"
+                            placeholderText={dateTextEnd}
+                        />
+                        <DateIcon className="dateIcon" />
+                    </div>
 
                     <div className="statusFilter">
                         <div className="statusBlockFilter"
@@ -44,7 +88,7 @@ const DataOrderComponent = () => {
                             }}>
                             Статус
                             {statusFilter
-                                ? <ArrowUp className="icon" />
+                                ? <ArrowUp className={`icon`} />
                                 : <ArrowDown className="icon" />
                             }
                         </div>

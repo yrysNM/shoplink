@@ -1,6 +1,6 @@
 import "./index.scss";
 
-const objText = [
+export const objTextStatus = [
     { text1: "Не обработан" },
     { text1: "Обработан" },
     { text1: "Завршен", }
@@ -9,7 +9,7 @@ const objText = [
 const ChooseOrderComponent = ({ bgColor = "#F4F6FC", status }) => {
     return (
         <div className="choose-order" style={{ backgroundColor: bgColor }}>
-            {objText.map(item => (
+            {objTextStatus.map(item => (
                 status !== item.text1 ?
                     <p key={item.text1} className="choose-order__text">
                         {item.text1}
