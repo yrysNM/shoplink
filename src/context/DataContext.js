@@ -3,16 +3,21 @@ import { createContext, useState } from "react";
 export const DataContext = createContext(null);
 
 const DataContextProvider = ({ children }) => {
-    const [statusOrder, setStatusOrder] = useState(null);
+    const [isActiveModal, setIsActiveModal] = useState(false);
 
-    function SetStatusOrder(statusValue) {
-        setStatusOrder(statusValue);
+    function OpenModal() {
+        setIsActiveModal(true);
+    }
+
+    function HideModal() {
+        setIsActiveModal(false);
     }
 
     return (
         <DataContext.Provider value={{
-            statusOrder,
-            SetStatusOrder
+            isActiveModal,
+            OpenModal,
+            HideModal
         }}>
             {children}
         </DataContext.Provider>

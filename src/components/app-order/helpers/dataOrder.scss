@@ -1,6 +1,7 @@
 .dataOrder {
     margin-top: 24px;
     margin-bottom: 51px;
+    position: relative;
 
     &-filter {
 
@@ -34,6 +35,24 @@ input[name='date from'] {
 
 .statusFilter {
     position: relative;
+}
+
+.modalFilter {
+
+    &.activeModal {
+        position: relative;
+        z-index: 102;
+        color: #40BFFF;
+
+        &>.icon path {
+            transition: stroke 0.3s ease-in-out;
+            stroke: #40BFFF;
+        }
+    }
+
+    &>.icon path {
+        stroke: #969CAF !important;
+    }
 }
 
 .statusBlockFilter {
@@ -75,9 +94,21 @@ input[name='date from'] {
         outline: none;
         padding: 16px 0 16px 16px;
         background: #FFFFFF;
-
+        transition: border 0.3s ease-in-out;
         border: 1px solid #DBDDE5;
         border-radius: 5px;
+
+        &:focus {
+            border: 1px solid #40BFFF;
+
+            transition: border 0.3s ease-in-out;
+        }
+
+        &-active {
+            &::placeholder {
+                color: #252728;
+            }
+        }
     }
 
     .dateIcon {
@@ -86,4 +117,8 @@ input[name='date from'] {
         transform: translateY(-50%);
         right: 16px;
     }
+}
+
+.react-datepicker__day {
+    cursor: url("../../../resources/img/cursor.svg") auto !important;
 }

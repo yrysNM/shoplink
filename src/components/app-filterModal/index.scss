@@ -1,0 +1,66 @@
+.filterBlock {
+    min-height: 424px;
+    width: 344px;
+
+    &-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+
+        color: #252728;
+    }
+
+    &-datesStatus {
+        flex-basis: 156px;
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+}
+
+
+.form-filterBlock {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.hamburger {
+    position: absolute;
+    right: 21px;
+    top: 21px;
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+
+    span {
+        display: block;
+        height: 2.3px;
+        border-radius: 5px;
+        width: 100%;
+        background-color: #969CAF;
+        margin-bottom: 5px;
+        transition: all 0.5s;
+
+
+    }
+
+    &_true {
+        span {
+            margin-bottom: -3px;
+
+            &:nth-child(1) {
+                transform: translateY(9px) rotate(-45deg);
+
+            }
+
+            &:nth-child(2) {
+                display: none;
+            }
+
+            &:nth-child(3) {
+                transform: translateY(10px) rotate(45deg);
+
+            }
+        }
+    }
+}
