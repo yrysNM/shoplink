@@ -99,7 +99,7 @@ const LastOrderGridComponent = ({ isLastOrder, colorComposition }) => {
         return (
             <div className="row">
                 <div className="box numberOrder">
-                    <Link to={`/orders/${item.numberOrder.substring(1, item.numberOrder.length)}`}>
+                    <Link to={`/order/${item.numberOrder.substring(1, item.numberOrder.length)}`}>
                         {item.numberOrder}
                     </Link>
                 </div>

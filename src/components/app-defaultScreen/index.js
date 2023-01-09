@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import defaultIcon from "../../resources/img/DefaultImg.svg";
 import "./index.scss";
 
@@ -10,8 +11,11 @@ const DefaultScreenComponent = ({ titleDefault, btn, descr, color = '#252728' })
                 <h3 className="defaultTitle" style={{ color: color }}>{titleDefault}</h3>
                 <p className="descr">{descr}</p>
 
-                <div className="btn">
-                    {btn ? <button className="addGds" style={{ marginTop: 40 }}>{btn}</button> : null}
+                <div className="btn" style={{ marginTop: 40 }}>
+                    {btn ? <Link to={"/catalog/add"}>
+                        <button className="addGds" >{btn}</button>
+                    </Link>
+                        : null}
                 </div>
             </div>
         </div>

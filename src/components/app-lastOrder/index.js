@@ -14,7 +14,7 @@ const LastOrderComponent = () => {
                         <p className="text-catalogCityHead" style={{ fontWeight: 600 }}>Последние заказы</p>
 
 
-                        <Link to={"/orders"}>
+                        <Link to={"/order"}>
                             <p className="text">
                                 <span className="linkSite" style={{ fontSize: 16 }}>Посмотреть все</span>
                             </p>

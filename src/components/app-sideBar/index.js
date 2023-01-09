@@ -18,12 +18,12 @@ const SideBarComponent = () => {
         {
             homeIcon: <CatalogIcon />,
             text: "Каталог",
-            link: "/catalogs",
+            link: "/catalog",
         },
         {
             homeIcon: <OrderIcon />,
             text: "Заказы",
-            link: "/orders"
+            link: "/order"
         },
         {
             homeIcon: <SettingIcon />,
@@ -58,12 +58,14 @@ const SideBarComponent = () => {
 const MenuBlockComponent = ({ data, activeStyle }) => {
     return (
         <>
-            <Link to={data.link}>
-                <span className={`iconwrapper iconwrapper-${activeStyle}`}>
-                    {data.homeIcon}
-                </span>
-            </Link>
-            <span className="text text-menu">{data.text}</span>
+            <div className="nav">
+                <Link to={data.link}>
+                    <span className={`iconwrapper iconwrapper-${activeStyle}`}>
+                        {data.homeIcon}
+                    </span>
+                </Link>
+                <span className="text text-menu">{data.text}</span>
+            </div>
         </>
     );
 }

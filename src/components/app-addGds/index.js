@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./index.scss";
 
 
@@ -13,7 +14,11 @@ const AddGdsCompoenent = () => {
                         <span className="text text-subText">Здесь вы можете пополнять и редактировать каталог, мониторить заказы и управлять данными магазина.</span>
                     </div>
                     <div className="btn">
-                        <button className="addGds">Добавить товар</button>
+                        <Link to={"/catalog/add"}>
+                            <button className="addGds">
+                                Добавить товар
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import AppHeaderComponent from "../app-header";
 import SideBarComponent from "../app-sideBar";
 import { MainPageComponent, CatalogPageComponent, OrderPageComponent, ShopPageComponent } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
+import AddProductComponent from "../app-addProduct";
 
 const App = () => {
     return (
@@ -18,13 +19,14 @@ const App = () => {
                             <Route path="/" element={
                                 <MainPageComponent />
                             } />
-                            <Route path="catalogs" element={
+                            <Route path="catalog" element={
                                 <CatalogPageComponent />
                             } />
-                            <Route path="orders" element={
+                            <Route path="order" element={
                                 <OrderPageComponent />
                             } />
-                            <Route path="orders/:numberOrder" element={<OrderLayoutComponent />} />
+                            <Route path="order/:numberOrder" element={<OrderLayoutComponent />} />
+                            <Route path="catalog/add" element={<AddProductComponent />} />
                             <Route path="shop" element={
                                 <ShopPageComponent />
                             } />
