@@ -1,7 +1,8 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import { DataContext } from "../../../context/DataContext";
 import { HelpFormInputComponent } from "../../app-shop";
+import { objTextStatus } from "../../app-chooseOrder";
 import LastOrderGridComponent from "../../app-lastOrder/helpers/lastOrderGrid";
 import FilterModalComponent from "../../app-filterModal";
 import StatusFilterComponent from "./statusFilter";
@@ -33,7 +34,7 @@ const DataOrderComponent = () => {
 
                         <DateThenToComponent />
 
-                        <StatusFilterComponent />
+                        <StatusFilterComponent textStatus={"Статус"} objText={objTextStatus} />
                         <div className="statusFilter">
                             <div className={`statusBlockFilter modalFilter ${isActiveModal && "activeModal"}`} onClick={OpenModal}>
 

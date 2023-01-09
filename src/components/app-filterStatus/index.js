@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { objTextStatus } from "../app-chooseOrder";
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
 import "./index.scss";
 
-const FilterStatusComponent = () => {
+const FilterStatusComponent = ({ objText }) => {
 
     return (
         <div className="filterStatus">
-            {objTextStatus.map((text, i) => (
+            {objText.map((text, i) => (
                 <div key={i} className="filterStatus-block">
                     <div className="filterStatus-block__text">
                         {text.text1}

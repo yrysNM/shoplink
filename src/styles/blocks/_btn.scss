@@ -18,6 +18,8 @@
 }
 
 .btn {
+    border: none;
+
     &>.shopCahngePhoneNumber {
         padding: 11.5px 19.3px 12.7px 19.3px;
     }
@@ -29,11 +31,36 @@
         background: #F4F5F7;
         border-radius: 6px;
         padding: 12px 15px;
-        border: none;
         font-weight: 500;
         font-size: 14px;
         line-height: 16px;
         cursor: pointer;
         color: #B7BCCC;
+    }
+
+    &.clear {
+        margin-top: 64px;
+        background: #FFFFFF;
+        padding: 11.5px 29.25px;
+        border: 1px solid #40BFFF;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        margin-right: 16px;
+        color: #40BFFF;
+    }
+
+    &.apply {
+        padding: 11.3px 16.53px 12.67px 16.53px;
+        margin-top: 64px;
+        background: #40BFFF;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #FFFFFF;
+
     }
 }

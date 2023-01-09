@@ -30,7 +30,7 @@ const DateThenToComponent = ({ filterDate = "" }) => {
 
     return (
         <>
-            <div className={`dateFilter ${filterDate.length > 0 && filterDate}`}>
+            <div className={`dateFilter${filterDate.length > 0 ? " " + filterDate : ""}`}>
 
                 <DatePicker
                     className={classNameDate}
@@ -42,7 +42,7 @@ const DateThenToComponent = ({ filterDate = "" }) => {
                 />
                 <DateIcon className="dateIcon" />
             </div>
-            <div className={`dateFilter ${filterDate.length > 0 && filterDate}`}>
+            <div className={`dateFilter${filterDate.length > 0 ? " " + filterDate : ""}`}>
                 <DatePicker
                     className={classNameDate}
                     onChange={handleChangeEnd}

@@ -3,13 +3,14 @@ import { DataContext } from "../../context/DataContext";
 import "./index.scss";
 
 const Modal = ({ children }) => {
-    const { isActiveModal } = useContext(DataContext);
+    const { isActiveModal, HideModal } = useContext(DataContext);
 
     return (
-        <div
+        <div onClick={HideModal}
             className={`overlay overlay__active-${isActiveModal}`}>
             <div className="modal">
                 <div
+                    onClick={(e) => e.stopPropagation()}
                     className="modal__content">
                     {children}
                 </div>
