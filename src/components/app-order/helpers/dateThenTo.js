@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
 
@@ -33,6 +33,8 @@ const DateThenToComponent = ({ filterDate = "" }) => {
             <div className={`dateFilter${filterDate.length > 0 ? " " + filterDate : ""}`}>
 
                 <DatePicker
+                    selected={startDate}
+                    value={dateTextStart}
                     className={classNameDate}
                     onChange={handleChangeStart}
                     selectsStart
@@ -44,6 +46,7 @@ const DateThenToComponent = ({ filterDate = "" }) => {
             </div>
             <div className={`dateFilter${filterDate.length > 0 ? " " + filterDate : ""}`}>
                 <DatePicker
+                    value={dateTextEnd}
                     className={classNameDate}
                     onChange={handleChangeEnd}
                     selectsEnd
