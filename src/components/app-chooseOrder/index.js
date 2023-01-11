@@ -7,6 +7,7 @@ export const objTextStatus = [
 ];
 
 const ChooseOrderComponent = ({ bgColor = "#F4F6FC", status }) => {
+
     return (
         <div className="choose-order" style={{ backgroundColor: bgColor }}>
             {objTextStatus.map(item => (

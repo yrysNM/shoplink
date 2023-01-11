@@ -1,0 +1,13 @@
+.selectChoose {
+    margin-top: 8px;
+
+    &-block {
+        width: 100%;
+        padding: 10px 15px 10px 14px;
+        border: 1px solid #DBDDE5;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
