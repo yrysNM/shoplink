@@ -1,12 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import SelecterCatalogComponent from "../app-selectCatalog";
+import { SubSelectorCatalogComponent } from "../app-selectCatalog";
+
 import { ReactComponent as LocationArrow } from "../../resources/icon/orderIcons/locationArrow.svg";
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
 import { ReactComponent as PlusIcon } from "../../resources/icon/plusIcon.svg";
+import { ReactComponent as CashIcon } from "../../resources/icon/infoIcons/cash.svg";
 
 import "./index.scss";
 
 const AddProductComponent = () => {
+    const [wordLength, setWordLength] = useState(0);
+
+    const funcWordLength = (e) => {
+        setWordLength(e.target.value.length);
+    }
+
     return (
         <div className="add-product">
             <div className="container">
@@ -68,12 +79,14 @@ const AddProductComponent = () => {
                                     className="form-block__textarea"
                                     maxLength="490"
                                     placeholder="Введите подробное описание товара"
+                                    onChange={funcWordLength}
                                 >
 
                                 </textarea>
                                 <span className="wordWarning">
-                                    0/490 символов
+                                    {wordLength}/490 символов
                                 </span>
+
                             </div>
 
                             <div className="form-block">
@@ -83,11 +96,74 @@ const AddProductComponent = () => {
 
                                 <SelecterCatalogComponent placeholderText={"Выберите категорию"} />
                             </div>
+
+                            <div className="form-block">
+                                <div className="form-block__title">
+                                    Подкатегория
+                                </div>
+
+                                <SubSelectorCatalogComponent placeholderText={"Выберите подкатегорию"} />
+                            </div>
                         </form>
                     </div>
 
                     <div className="add-product_main__price">
+                        <div className="price_headText">Цена</div>
 
+                        <div className="form-block_price">
+                            <div className="form-block_price__icon">
+                                <CashIcon />
+                            </div>
+                            <input type="number" name="price" placeholder="Укажите цену" className="input-price" />
+                            <div className="form-block_price__info">
+                                ₸
+                            </div>
+                        </div>
+
+                        <div className="selectTags-block">
+                            <div className="selectTags-block_headText">
+                                Выберите бирки <span className="subtext">(не обязательно)</span>
+                            </div>
+
+                            <div className="selectTags-block__grid">
+                                <div className="beginInfoProduct">
+                                    <span className="selectBox" />
+                                    <div className="textInfo">
+                                        Новинка
+                                        <p className="subtext">действует 7 дней</p>
+                                    </div>
+                                </div>
+
+                                <div className="beginInfoProduct">
+                                    <span className="selectBox" />
+                                    <div className="textInfo">
+                                        Эксклюзив
+                                        <p className="subtext">действует 6 недель</p>
+                                    </div>
+                                </div>
+
+                                <div className="beginInfoProduct">
+                                    <span className="selectBox" />
+                                    <div className="textInfo">
+                                        Скидка
+                                    </div>
+                                </div>
+
+                                <div className="beginInfoProduct">
+                                    <span className="selectBox" />
+                                    <div className="textInfo">
+                                        Рассрочка
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="add-product_main__installmentPlan">
+                        <h4 className="titleText">Параметры товара</h4>
+
+                        <div className="subtext">Параметры товара будут отображаться в зависимости от категории</div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 .add-product {
     margin-top: 32px;
+    margin-bottom: 32px;
 
     &_head {
         display: flex;
@@ -75,6 +76,7 @@
             padding: 24px;
             grid-column: 1 / -1;
             background: #fff;
+            border-radius: 5px;
 
             .photoProduct {
                 font-weight: 400;
@@ -102,14 +104,41 @@
             grid-column: 1 / 3;
             background: #fff;
             padding: 24px 24px 61px 24px;
+            border-radius: 5px;
         }
 
         &__price {
             grid-column: 3/ 4;
+            border-radius: 5px;
             background: #fff;
+            padding: 24px 32px 0 24px;
+
+            .price_headText {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                color: #252728;
+
+                opacity: 0.9;
+            }
         }
 
+        &__installmentPlan {
+            grid-column: 1 / -1;
+            background: #fff;
+            padding: 24px;
+            border-radius: 5px;
 
+            .titleText {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+
+                color: #252728;
+                margin-bottom: 24px;
+                opacity: 0.9;
+            }
+        }
     }
 }
 
@@ -121,6 +150,8 @@
     column-gap: 24px;
 }
 
+
+// form block auystyru kerek
 .form-block {
     &__title {
         font-weight: 400;
@@ -171,6 +202,95 @@
             color: #969CAF;
         }
     }
+
+    &_price {
+        margin-top: 8px;
+        position: relative;
+
+        .input-price {
+            outline: none;
+            width: 100%;
+            padding: 14px 44px;
+            border: 1px solid #DBDDE5;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+
+            color: #252728;
+        }
+
+        &__icon {
+            position: absolute;
+            top: 13px;
+            left: 13px;
+
+            path {
+                stroke: #969CAF;
+            }
+        }
+
+        &__info {
+            position: absolute;
+            top: 14px;
+            right: 17px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+
+            color: #969CAF;
+        }
+    }
+}
+
+.selectTags-block {
+    margin-top: 24px;
+
+    &_headText {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 16px;
+        color: #252728;
+    }
+
+    &__grid {
+        margin-top: 16px;
+        display: grid;
+        grid-template: repeat(2, minmax(32px, auto)) / repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 76px;
+    }
+
+}
+
+.beginInfoProduct {
+    display: flex;
+    align-items: center;
+
+}
+
+.textInfo {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #252728;
+
+    .subtext {
+        margin-top: 2px;
+        font-size: 12px;
+    }
+}
+
+.selectBox {
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    border: 2px solid #B7BCCC;
+    margin-right: 12px;
+}
+
+.subtext {
+    color: #969CAF;
 }
 
 .addText {
