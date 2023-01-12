@@ -153,7 +153,7 @@
     position: relative;
 
     img {
-        object-fit: cover;
+        object-fit: none;
         border-radius: 5px;
     }
 
@@ -171,13 +171,47 @@
 
     &.mainPhoto {
         transition: background .4s ease-in-out, transform 0.4s ease-in-out;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, .5);
-            transform: scale(0.7);
-            transition: background .4s ease-in-out, transform 0.4s ease-in-out;
-        }
+        background: #fff;
+        // &:hover {
+        //     background-color: rgba(0, 0, 0, .5);
+        //     transform: scale(0.7);
+        //     transition: background .4s ease-in-out, transform 0.4s ease-in-out;
+        // }
     }
+}
+
+.otherImg {
+    width: 110px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.trashIcon {
+    position: absolute;
+    top: 24px;
+    right: 39px;
+}
+
+.fullScreen {
+    position: absolute;
+    bottom: 12px;
+    right: 39px;
+}
+
+.mainPhoto {
+    &__icon {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+
+}
+
+.otherImg:hover+.mainPhoto__icon {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .form-addProduct {
@@ -186,99 +220,6 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 16px;
     column-gap: 24px;
-}
-
-
-// form block auystyru kerek
-.form-block {
-    &__title {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        opacity: 0.9;
-        color: #252728;
-    }
-
-    &__input {
-        width: 100%;
-        padding: 14px 10px;
-        border: 1px solid #DBDDE5;
-        border-radius: 5px;
-        outline: none;
-        margin-top: 8px;
-    }
-
-    &__textarea {
-        width: 100%;
-        height: 100%;
-        padding: 16px 16px 14px 16px;
-        border: 1px solid #DBDDE5;
-        border-radius: 5px;
-
-        &::placeholder {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
-            color: #969CAF;
-        }
-    }
-
-    &__textareaBlock {
-        grid-column-start: 2;
-        grid-row-start: 1;
-        grid-row-end: -1;
-        margin-top: 30px;
-        position: relative;
-
-        .wordWarning {
-            position: absolute;
-            bottom: 14px;
-            left: 16px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 16px;
-            color: #969CAF;
-        }
-    }
-
-    &_price {
-        margin-top: 8px;
-        position: relative;
-
-        .input-price {
-            outline: none;
-            width: 100%;
-            padding: 14px 44px;
-            border: 1px solid #DBDDE5;
-            border-radius: 5px;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
-
-            color: #252728;
-        }
-
-        &__icon {
-            position: absolute;
-            top: 13px;
-            left: 13px;
-
-            path {
-                stroke: #969CAF;
-            }
-        }
-
-        &__info {
-            position: absolute;
-            top: 14px;
-            right: 17px;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
-
-            color: #969CAF;
-        }
-    }
 }
 
 .selectTags-block {

@@ -9,6 +9,10 @@ import { ReactComponent as LocationArrow } from "../../resources/icon/orderIcons
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
 import { ReactComponent as PlusIcon } from "../../resources/icon/plusIcon.svg";
 import { ReactComponent as CashIcon } from "../../resources/icon/infoIcons/cash.svg";
+import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIcons/trash.svg";
+import { ReactComponent as FullScreen } from "../../resources/icon/addProductsIcons/fullScreen.svg";
+
+
 
 import "./index.scss";
 
@@ -78,12 +82,21 @@ const AddProductComponent = () => {
                         <h4 className="photoProduct">Фотографии товара</h4>
 
                         <div className="list">
+                            {/* main photo */}
                             {productMainPhoto[0] ?
                                 <MainPhotoComponent productImage={productMainPhoto[0]} /> : null}
                             {productMainPhoto.slice(1, productMainPhoto.length).map((item, i) => (
                                 <div key={i} className="addBlock mainPhoto">
+                                    <img width="100%" height="100%" className="otherImg" src={item.preview} alt="main product" />
+                                    <div className="mainPhoto__icon">
 
-                                    <img width="100%" height="100%" src={item.preview} alt="main product" />
+                                        <div className=" trashIcon">
+                                            <TrashIcon />
+                                        </div>
+                                        <div className=" fullScreen">
+                                            <FullScreen />
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
 
