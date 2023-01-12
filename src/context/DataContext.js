@@ -4,6 +4,8 @@ export const DataContext = createContext(null);
 
 const DataContextProvider = ({ children }) => {
     const [isActiveModal, setIsActiveModal] = useState(false);
+    const [productMainPhoto, setProductMainPhoto] = useState([]);
+
 
     function OpenModal() {
         setIsActiveModal(true);
@@ -13,11 +15,17 @@ const DataContextProvider = ({ children }) => {
         setIsActiveModal(false);
     }
 
+    function setMainPhoto(img) {
+        setProductMainPhoto(productMainPhoto => [...productMainPhoto, img]);
+    }
+
     return (
         <DataContext.Provider value={{
             isActiveModal,
+            productMainPhoto,
             OpenModal,
-            HideModal
+            HideModal,
+            setMainPhoto
         }}>
             {children}
         </DataContext.Provider>

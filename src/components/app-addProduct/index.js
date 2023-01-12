@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { DataContext } from "../../context/DataContext";
 import SelecterCatalogComponent from "../app-selectCatalog";
 import { SubSelectorCatalogComponent } from "../app-selectCatalog";
 
@@ -13,10 +14,37 @@ import "./index.scss";
 
 const AddProductComponent = () => {
     const [wordLength, setWordLength] = useState(0);
+    const { setMainPhoto, productMainPhoto } = useContext(DataContext);
+
+    const fileInputHidden = useRef(null);
 
     const funcWordLength = (e) => {
         setWordLength(e.target.value.length);
     }
+
+    const handleChange = (e) => {
+        const fileUploaded = e.target.files[0];
+
+        setMainPhoto({
+            preview: URL.createObjectURL(fileUploaded),
+            raw: fileUploaded
+        });
+    }
+
+    const handleClick = () => {
+        fileInputHidden.current.click();
+    }
+
+    const MainPhotoComponent = ({ productImage }) => {
+        return (
+            <div className="addBlock mainPhoto">
+
+                <img width="100%" height="100%" src={productImage.preview} alt="main product" />
+                <span className="subTextImg">Главное фото</span>
+            </div>
+        );
+    }
+
 
     return (
         <div className="add-product">
@@ -49,11 +77,33 @@ const AddProductComponent = () => {
                     <div className="add-product_main__photo">
                         <h4 className="photoProduct">Фотографии товара</h4>
 
+                        <div className="list">
+                            {productMainPhoto[0] ?
+                                <MainPhotoComponent productImage={productMainPhoto[0]} /> : null}
+                            {productMainPhoto.slice(1, productMainPhoto.length).map((item, i) => (
+                                <div key={i} className="addBlock mainPhoto">
 
-                        <div className="addBlock">
-                            <PlusIcon />
+                                    <img width="100%" height="100%" src={item.preview} alt="main product" />
+                                </div>
+                            ))}
 
-                            <span className='addText'>Главное фото</span>
+                            <div className="addBlock" onClick={handleClick}>
+
+                                {/* hide input */}
+                                <input
+                                    type="file"
+                                    accept="images/*"
+                                    name="file uplaod"
+                                    ref={fileInputHidden}
+                                    onChange={handleChange}
+                                    style={{ display: "none" }} />
+
+
+                                <PlusIcon />
+                                {productMainPhoto.length ? null
+                                    : <span className='addText'>Главное фото</span>
+                                }
+                            </div>
                         </div>
 
                         <div className="subText">Вы можете загрузить 7 фотографий товара</div>

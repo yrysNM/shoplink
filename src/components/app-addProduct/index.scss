@@ -88,6 +88,7 @@
             }
 
             .addBlock {
+                cursor: pointer;
                 height: 160px;
                 width: 160px;
                 display: flex;
@@ -138,6 +139,43 @@
                 margin-bottom: 24px;
                 opacity: 0.9;
             }
+        }
+    }
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.addBlock {
+    position: relative;
+
+    img {
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .subTextImg {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFFFFF;
+
+        opacity: 0.9;
+    }
+
+    &.mainPhoto {
+        transition: background .4s ease-in-out, transform 0.4s ease-in-out;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, .5);
+            transform: scale(0.7);
+            transition: background .4s ease-in-out, transform 0.4s ease-in-out;
         }
     }
 }
