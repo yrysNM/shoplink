@@ -151,6 +151,8 @@
 
 .addBlock {
     position: relative;
+    width: 110px;
+    height: 140px;
 
     img {
         object-fit: none;
@@ -181,25 +183,34 @@
 }
 
 .otherImg {
-    width: 110px;
-    height: 140px;
     object-fit: cover;
 }
 
-.trashIcon {
-    position: absolute;
-    top: 24px;
-    right: 39px;
-}
-
-.fullScreen {
+.trashFullIcon {
     position: absolute;
     bottom: 12px;
     right: 39px;
+    transition: stroke .5s ease-in-out;
+
+    path {
+        transition: stroke .5s ease-in-out;
+    }
+
+    &:hover {
+        path {
+            transition: stroke .5s ease-in-out;
+            stroke: #E45A7F;
+        }
+    }
+
+    &:first-child {
+        top: 24px;
+        bottom: auto;
+    }
 }
 
-.mainPhoto {
-    &__icon {
+.addBlock {
+    >.mainPhoto__icon {
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
@@ -207,11 +218,14 @@
 
 }
 
-.otherImg:hover+.mainPhoto__icon {
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+.addBlock:hover {
+    &>.mainPhoto__icon {
+
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
 }
 
 .form-addProduct {

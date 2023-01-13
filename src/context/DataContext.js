@@ -19,13 +19,19 @@ const DataContextProvider = ({ children }) => {
         setProductMainPhoto(productMainPhoto => [...productMainPhoto, img]);
     }
 
+    function filterMainPhoto(index) {
+        const obj = productMainPhoto.filter((_, i) => i !== index);
+        setProductMainPhoto(obj);
+    }
+
     return (
         <DataContext.Provider value={{
             isActiveModal,
             productMainPhoto,
             OpenModal,
             HideModal,
-            setMainPhoto
+            setMainPhoto,
+            filterMainPhoto
         }}>
             {children}
         </DataContext.Provider>

@@ -18,7 +18,7 @@ import "./index.scss";
 
 const AddProductComponent = () => {
     const [wordLength, setWordLength] = useState(0);
-    const { setMainPhoto, productMainPhoto } = useContext(DataContext);
+    const { setMainPhoto, productMainPhoto, filterMainPhoto } = useContext(DataContext);
 
     const fileInputHidden = useRef(null);
 
@@ -37,6 +37,10 @@ const AddProductComponent = () => {
 
     const handleClick = () => {
         fileInputHidden.current.click();
+    }
+
+    const filterPhotoes = (index) => {
+        filterMainPhoto(index);
     }
 
     const MainPhotoComponent = ({ productImage }) => {
@@ -86,14 +90,14 @@ const AddProductComponent = () => {
                             {productMainPhoto[0] ?
                                 <MainPhotoComponent productImage={productMainPhoto[0]} /> : null}
                             {productMainPhoto.slice(1, productMainPhoto.length).map((item, i) => (
-                                <div key={i} className="addBlock mainPhoto">
+                                <div key={i} className="addBlock" style={{ background: "#fff" }}>
                                     <img width="100%" height="100%" className="otherImg" src={item.preview} alt="main product" />
                                     <div className="mainPhoto__icon">
 
-                                        <div className=" trashIcon">
+                                        <div className="trashFullIcon" onClick={() => filterPhotoes(i + 1)}>
                                             <TrashIcon />
                                         </div>
-                                        <div className=" fullScreen">
+                                        <div className="trashFullIcon">
                                             <FullScreen />
                                         </div>
                                     </div>
