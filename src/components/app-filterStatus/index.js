@@ -19,7 +19,7 @@ const FilterStatusComponent = ({ objText }) => {
     );
 }
 
-const TickIconComponent = ({ iconIndex }) => {
+export const TickIconComponent = ({ iconIndex }) => {
 
     const [tickToggle, setTickToggle] = useState(true);
 

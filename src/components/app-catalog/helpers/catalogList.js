@@ -5,6 +5,7 @@ import { HelpFormInputComponent } from "../../app-shop";
 import { DataContext } from "../../../context/DataContext";
 import StatusFilterComponent from "../../app-order/helpers/statusFilter";
 import FilterModalComponent from "../../app-filterModal";
+import CatalogGridComponent from "../../app-catalogGrid";
 
 import { ReactComponent as SearchIcon } from "../../../resources/icon/orderIcons/searchIcon.svg";
 import { ReactComponent as FilterIcon } from "../../../resources/icon/orderIcons/filterIcon.svg";
@@ -82,6 +83,19 @@ const CatalogListComponent = () => {
                             </div>
                         </form>
                     </div>
+
+                </div>
+                <div className="grid-temp catalogList-row">
+                    <div className="box th">Номер</div>
+                    <div className="box th">Фото</div>
+                    <div className="box th moreBox">Название и категория</div>
+                    <div className="box th">Размеры</div>
+                    <div className="box th">Цвета</div>
+                    <div className="box th">Цена</div>
+                    <div className="box th">В наличии</div>
+                    <div className="box th"></div>
+
+                    <CatalogGridComponent />
                 </div>
             </div>
             {<FilterModalComponent />}
