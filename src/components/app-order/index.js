@@ -1,12 +1,12 @@
 import DataOrderComponent from "./helpers/dataOrder";
-import DefaultScreenComponent from "../app-defaultScreen";
+// import DefaultScreenComponent from "../app-defaultScreen";
 import "../app-catalog/index.scss";
 
 const OrderComponent = () => {
     return (
-        <div className="orderPage">
+        <div className="pagehead">
             <div className="container">
-                <p className="text-order__title">
+                <p className="text-page__title">
                     Заказы
                 </p>
 

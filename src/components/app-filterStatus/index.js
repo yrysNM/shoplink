@@ -5,7 +5,7 @@ import "./index.scss";
 const FilterStatusComponent = ({ objText }) => {
 
     return (
-        <div className="filterStatus">
+        <div className="filterStatus" style={{ bottom: `-${(objText.length * 53) - 4}px` }}>
             {objText.map((text, i) => (
                 <div key={i} className="filterStatus-block">
                     <div className="filterStatus-block__text">

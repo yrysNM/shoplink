@@ -1,15 +1,11 @@
 // default page-тагы title дары уксайды так что екы компоненте колданылады 
 
-.catalogPage,
-.orderPage,
-.shoppage {
+.pagehead {
     margin-top: 32px;
     position: relative;
 }
 
-.text-catalog__title,
-.text-order__title,
-.text-shoppage__title {
+.text-page__title {
     font-weight: 600;
     font-size: 28px;
     line-height: 32px;

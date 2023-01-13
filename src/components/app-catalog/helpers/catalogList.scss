@@ -1,0 +1,15 @@
+.btn-catalogList {
+    position: absolute;
+    top: 0;
+    right: 42px;
+}
+
+.catalogListPage {
+    margin-top: 24px;
+
+    &__grid {
+
+        grid-template: 1fr / 673px 172px 182px 131px !important;
+
+    }
+}

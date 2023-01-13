@@ -22,10 +22,10 @@ import "./index.scss";
 
 const ShopComponent = () => {
     return (
-        <div className="shoppage">
+        <div className="pagehead">
             <div className="container">
                 <div className="shoppageTop">
-                    <p className="text-shoppage__title">
+                    <p className="text-page__title">
                         Магазин
                     </p>
 
