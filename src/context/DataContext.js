@@ -3,16 +3,24 @@ import { createContext, useState } from "react";
 export const DataContext = createContext(null);
 
 const DataContextProvider = ({ children }) => {
-    const [isActiveModal, setIsActiveModal] = useState(false);
+    const [isActiveModal, setIsActiveModal] = useState({
+        classNameIsActive: "",
+        topPosition: 0,
+        rightPosition: 0,
+    });
     const [productMainPhoto, setProductMainPhoto] = useState([]);
 
 
-    function OpenModal() {
-        setIsActiveModal(true);
+    function OpenModal(objActive) {
+        setIsActiveModal(objActive);
     }
 
     function HideModal() {
-        setIsActiveModal(false);
+        setIsActiveModal(isActiveModal => ({
+            classNameIsActive: "",
+            topPosition: isActiveModal.topPosition,
+            rightPosition: isActiveModal.rightPosition
+        }));
     }
 
     function setMainPhoto(img) {

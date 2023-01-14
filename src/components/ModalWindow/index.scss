@@ -10,25 +10,25 @@
     backdrop-filter: blur(2.5px);
     transition: all 0.5s ease-in-out;
     z-index: 101;
+    opacity: 0;
+    visibility: hidden;
 
-    &__active {
-        &-true {
-            opacity: 1;
-            visibility: visible;
-        }
+    &__activeModalFilter {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        &-false {
-            opacity: 0;
-            visibility: hidden;
-        }
+    &__activeModalWarningRemove {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
 .modal {
     position: absolute;
-    top: 56%;
+    top: 0;
     transform: translateY(-50%);
-    right: 42px;
+    right: 0;
     max-width: 380px;
     padding: 24px;
     border-radius: 13px;

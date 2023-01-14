@@ -7,8 +7,8 @@ const Modal = ({ children }) => {
 
     return (
         <div onClick={HideModal}
-            className={`overlay overlay__active-${isActiveModal}`}>
-            <div className="modal">
+            className={`overlay overlay__${isActiveModal.classNameIsActive}`}>
+            <div className="modal" style={{ top: isActiveModal.topPosition, right: isActiveModal.rightPosition }}>
                 <div
                     onClick={(e) => e.stopPropagation()}
                     className="modal__content">

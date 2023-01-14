@@ -6,6 +6,7 @@ import { DataContext } from "../../../context/DataContext";
 import StatusFilterComponent from "../../app-order/helpers/statusFilter";
 import FilterModalComponent from "../../app-filterModal";
 import CatalogGridComponent from "../../app-catalogGrid";
+import WarningsRemoveComponent from "../../app-warningRemove";
 
 import { ReactComponent as SearchIcon } from "../../../resources/icon/orderIcons/searchIcon.svg";
 import { ReactComponent as FilterIcon } from "../../../resources/icon/orderIcons/filterIcon.svg";
@@ -74,7 +75,13 @@ const CatalogListComponent = () => {
                             <StatusFilterComponent textStatus={"Подкатегория"} objText={objTextSubCategory} />
 
                             <div className="statusFilter">
-                                <div className={`statusBlockFilter modalFilter ${isActiveModal && "activeModal"}`} onClick={OpenModal}>
+                                <div
+                                    className={`statusBlockFilter modalFilter ${isActiveModal.classNameIsActive && "activeModal"}`}
+                                    onClick={() => OpenModal({
+                                        classNameIsActive: "activeModalFilter",
+                                        topPosition: "56%",
+                                        rightPosition: "27.5%"
+                                    })}>
 
                                     Фильтры
                                     <FilterIcon className="icon" />
@@ -98,7 +105,9 @@ const CatalogListComponent = () => {
                     <CatalogGridComponent />
                 </div>
             </div>
-            {<FilterModalComponent />}
+            {isActiveModal.classNameIsActive === "activeModalWarningRemove"
+                ? <WarningsRemoveComponent />
+                : <FilterModalComponent />}
         </>
     );
 }

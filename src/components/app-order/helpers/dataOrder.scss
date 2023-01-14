@@ -38,19 +38,22 @@ input[name='date from'] {
 }
 
 .modalFilter {
+    transition: all 1s ease-in-out;
 
     &.activeModal {
         position: relative;
         z-index: 102;
         color: #40BFFF;
+        transition: all 1s ease-in-out;
 
         &>.icon path {
-            transition: stroke 0.3s ease-in-out;
+            transition: stroke 1s ease-in-out;
             stroke: #40BFFF !important;
         }
     }
 
     &>.icon path {
+        transition: stroke 1s ease-in-out;
         stroke: #969CAF !important;
     }
 }
