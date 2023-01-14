@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import { objTextStatus } from "../app-chooseOrder";
 import { objTextCity } from "../app-chooseCity";
-import Modal from "../ModalWindow";
 import MultiRangeSlideComponent from "../app-multiRange";
 import StatusFilterComponent from "../app-order/helpers/statusFilter";
 import DateThenToComponent from "../app-order/helpers/dateThenTo";
@@ -15,7 +14,8 @@ const FilterModalComponent = () => {
     const { HideModal } = useContext(DataContext);
 
     return (
-        <Modal>
+
+        <>
             <div className="filterBlock">
                 <h4 className="filterBlock-title">Фильтры</h4>
                 <form className="form">
@@ -35,8 +35,8 @@ const FilterModalComponent = () => {
                             onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)} />
 
                     </div>
-                    <button type="reset" className="btn clear">Очистить</button>
-                    <button type="submit" className="btn apply">Применить</button>
+                    <button className="btn clear">Очистить</button>
+                    <button className="btn apply">Применить</button>
                 </form>
             </div>
 
@@ -47,7 +47,7 @@ const FilterModalComponent = () => {
                     <span></span>
                 </div>
             </div>
-        </Modal>
+        </>
     );
 }
 

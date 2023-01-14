@@ -16,6 +16,7 @@
     &__activeModalFilter {
         opacity: 1;
         visibility: visible;
+
     }
 
     &__activeModalWarningRemove {
@@ -30,7 +31,8 @@
     transform: translateY(-50%);
     right: 0;
     max-width: 380px;
-    padding: 24px;
+    // padding: 24px;
     border-radius: 13px;
     background-color: #fff;
+
 }

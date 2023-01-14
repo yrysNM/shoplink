@@ -45,11 +45,12 @@ const CatalogGridComponent = () => {
                     <EditIcon className="icon" />
                     <TrashIcon
                         className="icon icon_trash"
-                        onClick={(e) => {
-                            e.stopPropagation(); OpenModal({
+                        onClick={() => {
+                            OpenModal({
                                 classNameIsActive: "activeModalWarningRemove",
                                 topPosition: "50%",
-                                rightPosition: "50%"
+                                rightPosition: "40%",
+                                catalogNumber: "#0560"
                             })
                         }} />
                 </div>

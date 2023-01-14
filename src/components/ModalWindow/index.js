@@ -1,14 +1,21 @@
 import { useContext } from "react";
+
 import { DataContext } from "../../context/DataContext";
 import "./index.scss";
 
 const Modal = ({ children }) => {
-    const { isActiveModal, HideModal } = useContext(DataContext);
+    const { HideModal, isActiveModal } = useContext(DataContext);
 
     return (
-        <div onClick={HideModal}
+        <div
+            onClick={HideModal}
             className={`overlay overlay__${isActiveModal.classNameIsActive}`}>
-            <div className="modal" style={{ top: isActiveModal.topPosition, right: isActiveModal.rightPosition }}>
+            <div
+                className="modal"
+                style={{
+                    top: isActiveModal.topPosition,
+                    right: isActiveModal.rightPosition
+                }}>
                 <div
                     onClick={(e) => e.stopPropagation()}
                     className="modal__content">
@@ -16,6 +23,7 @@ const Modal = ({ children }) => {
                 </div>
             </div>
         </div>
+
     );
 }
 

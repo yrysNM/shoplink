@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import { HelpFormInputComponent } from "../../app-shop";
 import { DataContext } from "../../../context/DataContext";
 import StatusFilterComponent from "../../app-order/helpers/statusFilter";
-import FilterModalComponent from "../../app-filterModal";
 import CatalogGridComponent from "../../app-catalogGrid";
-import WarningsRemoveComponent from "../../app-warningRemove";
 
 import { ReactComponent as SearchIcon } from "../../../resources/icon/orderIcons/searchIcon.svg";
 import { ReactComponent as FilterIcon } from "../../../resources/icon/orderIcons/filterIcon.svg";
@@ -76,7 +74,7 @@ const CatalogListComponent = () => {
 
                             <div className="statusFilter">
                                 <div
-                                    className={`statusBlockFilter modalFilter ${isActiveModal.classNameIsActive && "activeModal"}`}
+                                    className={`statusBlockFilter modalFilter ${isActiveModal.classNameIsActive && isActiveModal.classNameIsActive !== "activeModalWarningRemove" && "activeModal"}`}
                                     onClick={() => OpenModal({
                                         classNameIsActive: "activeModalFilter",
                                         topPosition: "56%",
@@ -105,9 +103,7 @@ const CatalogListComponent = () => {
                     <CatalogGridComponent />
                 </div>
             </div>
-            {isActiveModal.classNameIsActive === "activeModalWarningRemove"
-                ? <WarningsRemoveComponent />
-                : <FilterModalComponent />}
+
         </>
     );
 }

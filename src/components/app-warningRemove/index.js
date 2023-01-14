@@ -1,30 +1,33 @@
 import { useContext } from "react"
 
-import Modal from "../ModalWindow"
 import { DataContext } from "../../context/DataContext"
 
-const WarningsRemoveComponent = ({ catalogNumber }) => {
+import "./index.scss";
+
+const WarningsRemoveModalComponent = ({ catalogNumber }) => {
     const { HideModal } = useContext(DataContext);
 
     return (
-        <Modal>
+        <>
             <div className="warningsRemove">
                 <p className="warningsText">
                     Вы уверены, что хотите удалить товар {catalogNumber}? Данные не будут восстановлены.
                 </p>
 
-                <button className="cancelBtn">Отмена</button>
-                <button className="cancelBtn">Удалить</button>
+                <div className="btns">
+                    <button className="btns-block cancelBtn">Отмена</button>
+                    <button className="btns-block removeBtn">Удалить</button>
+                </div>
             </div>
-            <div className="closeModal">
+            <div className="closeModal closeModal__small">
                 <div className={`сlose close_true`} onClick={HideModal}>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-        </Modal>
+        </>
     );
 }
 
-export default WarningsRemoveComponent;
+export default WarningsRemoveModalComponent;

@@ -1,14 +1,21 @@
+import { useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import DataContextProvider from "../../context/DataContext";
+
+
 import AppHeaderComponent from "../app-header";
 import SideBarComponent from "../app-sideBar";
+import Modal from "../ModalWindow";
+import { DataContext } from "../../context/DataContext";
 import { MainPageComponent, CatalogPageComponent, OrderPageComponent, ShopPageComponent } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
+import FilterModalComponent from "../app-filterModal";
+import WarningsRemoveModalComponent from "../app-warningRemove";
 
 const App = () => {
+    const { isActiveModal } = useContext(DataContext);
     return (
-        <DataContextProvider>
+        <>
             <Router>
                 <div className="app">
                     <AppHeaderComponent />
@@ -34,7 +41,12 @@ const App = () => {
                     </main>
                 </div>
             </Router>
-        </DataContextProvider>
+
+            <Modal>
+                {isActiveModal.classNameIsActive === "activeModalFilter" && <FilterModalComponent />}
+                {isActiveModal.classNameIsActive === "activeModalWarningRemove" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
+            </Modal>
+        </>
     );
 }
 
