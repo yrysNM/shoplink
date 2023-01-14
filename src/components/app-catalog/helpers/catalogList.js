@@ -5,6 +5,7 @@ import { HelpFormInputComponent } from "../../app-shop";
 import { DataContext } from "../../../context/DataContext";
 import StatusFilterComponent from "../../app-order/helpers/statusFilter";
 import CatalogGridComponent from "../../app-catalogGrid";
+import PaginationComponent from "../../app-pagination";
 
 import { ReactComponent as SearchIcon } from "../../../resources/icon/orderIcons/searchIcon.svg";
 import { ReactComponent as FilterIcon } from "../../../resources/icon/orderIcons/filterIcon.svg";
@@ -103,7 +104,7 @@ const CatalogListComponent = () => {
                     <CatalogGridComponent />
                 </div>
             </div>
-
+            <PaginationComponent />
         </>
     );
 }

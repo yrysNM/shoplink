@@ -50,3 +50,22 @@
 .icon {
     cursor: pointer;
 }
+
+.box>.imgCatalog {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.catalogColors {
+    display: flex;
+    align-items: center;
+}
+
+.colorProduct {
+    margin-right: 4px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
