@@ -104,9 +104,13 @@
     left: 44px;
     top: 13px;
     line-height: 16px !important;
-
+    cursor: text;
     color: #969CAF !important;
 
+}
+
+.form-input:focus+.helperPlaceholder {
+    display: none;
 }
 
 .stylePl {

@@ -1,4 +1,6 @@
 
+import { useRef } from "react";
+
 import { ReactComponent as OrderIcon } from "../../resources/icon/orderIcon.svg";
 import { ReactComponent as FlagKz } from "../../resources/icon/shopDataIcons/ic_flag_kazakhstan.svg";
 import { ReactComponent as ArrowDown } from "../../resources/icon/shopDataIcons/arrowDown.svg";
@@ -291,6 +293,12 @@ const ShopComponent = () => {
 }
 
 export const HelpFormInputComponent = ({ data }) => {
+    const inputRef = useRef(null);
+
+    const handleClick = () => {
+        inputRef.current.focus();
+    }
+
     return (
         <div className="form-info">
             {data.title
@@ -307,12 +315,13 @@ export const HelpFormInputComponent = ({ data }) => {
                 </div>
                 <input
                     type={data.inputType}
+                    ref={inputRef}
                     className={`form-input ${data.price ? "form-priceInput" : null}`}
                     name={data.inputName}
                     placeholder={data.placeholder ?? null} />
 
                 {data.helperPl
-                    ? <div className="helperPlaceholder">{data.helperPl}<span className="stylePl">{data.span}</span></div>
+                    ? <div onClick={handleClick} className="helperPlaceholder">{data.helperPl}<span onClick={handleClick} className="stylePl">{data.span}</span></div>
                     : null
                 }
             </div>

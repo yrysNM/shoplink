@@ -4,7 +4,6 @@ import { DataContext } from "../../../context/DataContext";
 import { HelpFormInputComponent } from "../../app-shop";
 import { objTextStatus } from "../../app-chooseOrder";
 import LastOrderGridComponent from "../../app-lastOrder/helpers/lastOrderGrid";
-import FilterModalComponent from "../../app-filterModal";
 import StatusFilterComponent from "./statusFilter";
 import DateThenToComponent from "./dateThenTo";
 
@@ -64,7 +63,6 @@ const DataOrderComponent = () => {
 
                     <LastOrderGridComponent isLastOrder={false} colorComposition={"#969CAF"} />
                 </div>
-                {<FilterModalComponent />}
             </div>
 
         </>
