@@ -22,10 +22,15 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: #B7BCCC;
-                border: 1.5px solid #B7BCCC;
+                background: #F25E7F;
+                border: 1.5px solid #F25E7F;
                 margin-left: 13px;
                 border-radius: 5px;
+            }
+
+            &>.notAllowedIcon {
+                background: #B7BCCC;
+                border: 1.5px solid #B7BCCC;
             }
 
             .instockText {
@@ -45,22 +50,33 @@
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 16px;
-                border: 1px solid #B7BCCC;
+                border: 1px solid #40BFFF;
                 border-radius: 6px;
                 background: inherit;
-                color: #B7BCCC;
                 margin-right: 24px;
+                color: #40BFFF;
             }
 
             .save {
                 flex-grow: 2;
                 padding: 11px 50px 12px 50px;
-                background: #B7BCCC;
-                opacity: 0.3;
+                background: #40BFFF;
                 border-radius: 6px;
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 16px;
+                color: #fff;
+            }
+
+            &>.notAllowedBtn {
+                color: #B7BCCC;
+                border: 1px solid #B7BCCC;
+            }
+
+            &>.notAllowedBtn2 {
+                opacity: 0.3;
+                background: #B7BCCC;
+
             }
         }
 
@@ -124,7 +140,7 @@
             }
         }
 
-        &__installmentPlan {
+        &__productParameters {
             grid-column: 1 / -1;
             background: #fff;
             padding: 24px;
@@ -155,14 +171,13 @@
     height: 140px;
 
     img {
-        object-fit: none;
         border-radius: 5px;
     }
 
     .subTextImg {
         position: absolute;
         bottom: 12px;
-        left: 12px;
+        left: 24px;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
@@ -184,6 +199,8 @@
 
 .otherImg {
     object-fit: cover;
+    width: 110px;
+    height: 140px;
 }
 
 .trashFullIcon {
@@ -307,4 +324,56 @@
 
 .addProductText {
     margin-left: 12px;
+}
+
+.parameters-block {
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+
+    &__size {
+        margin-right: 56px;
+    }
+}
+
+.availableText {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #252728;
+
+    opacity: 0.9;
+}
+
+.sizeBlocks {
+    margin-top: 12px;
+    display: grid;
+    grid-template: 36px / repeat(6, 52px);
+    gap: 8px;
+
+    &>.boxSize {
+        background: #FFFFFF;
+
+        border: 1px solid #B7BCCC;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+
+        color: #B7BCCC;
+
+        opacity: 0.9;
+        padding: 8px 6px;
+
+        &-active {
+            border-color: #40BFFF;
+            color: #40BFFF;
+        }
+    }
+}
+
+.iconAdd {
+    margin-top: 17px;
+    cursor: pointer;
 }

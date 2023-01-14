@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import classnames from "classnames";
+
+import { DataContext } from "../../context/DataContext";
 
 import { ReactComponent as ArrowDown } from "../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../resources/icon/shopDataIcons/arrowUp.svg";
@@ -18,10 +20,12 @@ const objTextSubCatalog = [
 ];
 
 const SelecterCatalogComponent = ({ placeholderText }) => {
-    const [toggleArrow, setToggleArrow] = useState(false);
-    const [selectedValue, setSelectedValue] = useState(null);
+    const { selectedValue, SetValueSelected } = useContext(DataContext);
 
-    function handleClick() {
+    const [toggleArrow, setToggleArrow] = useState(false);
+
+    function handleClick(e) {
+        e.stopPropagation();
         setToggleArrow(toggleArrow => !toggleArrow);
     }
 
@@ -34,8 +38,18 @@ const SelecterCatalogComponent = ({ placeholderText }) => {
     }
 
     const onItemClick = (option) => {
-        setSelectedValue(option);
+        SetValueSelected(option);
     }
+
+    useEffect(() => {
+        const handler = () => setToggleArrow(false);
+
+        window.addEventListener("click", handler);
+
+        return () => {
+            window.removeEventListener("click", handler);
+        };
+    });
 
     return (
         <div className="selectChoose">
@@ -72,7 +86,8 @@ export const SubSelectorCatalogComponent = ({ placeholderText }) => {
     const [toggleArrow, setToggleArrow] = useState(false);
     const [selectedValue, setSelectedValue] = useState(null);
 
-    function handleClick() {
+    function handleClick(e) {
+        e.stopPropagation();
         setToggleArrow(toggleArrow => !toggleArrow);
     }
 
@@ -87,6 +102,16 @@ export const SubSelectorCatalogComponent = ({ placeholderText }) => {
     const onItemClick = (option) => {
         setSelectedValue(option);
     }
+
+    useEffect(() => {
+        const handler = () => setToggleArrow(false);
+
+        window.addEventListener("click", handler);
+
+        return () => {
+            window.removeEventListener("click", handler);
+        };
+    });
 
     return (
         <div className="selectChoose">

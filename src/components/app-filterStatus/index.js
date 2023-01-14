@@ -1,4 +1,6 @@
 import { useState } from "react";
+import classnames from "classnames";
+
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
 import "./index.scss";
 
@@ -19,9 +21,9 @@ const FilterStatusComponent = ({ objText }) => {
     );
 }
 
-export const TickIconComponent = ({ iconIndex }) => {
+export const TickIconComponent = ({ iconIndex, tickValue = true, styleBox }) => {
 
-    const [tickToggle, setTickToggle] = useState(true);
+    const [tickToggle, setTickToggle] = useState(tickValue);
 
     const handleClick = (index) => {
         if (iconIndex === index) {
@@ -29,7 +31,12 @@ export const TickIconComponent = ({ iconIndex }) => {
         }
     }
     return (
-        <div className={`filterStatus-block__box ${tickToggle && "activeFilter"}`} onClick={() => handleClick(iconIndex)}>
+        <div
+            className={
+                classnames(`filterStatus-block__box${styleBox}`, {
+                    "activeFilter": tickToggle
+                })}
+            onClick={() => handleClick(iconIndex)}>
             <TickIcon />
         </div>
     );

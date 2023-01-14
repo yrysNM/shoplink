@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataContext";
 import SelecterCatalogComponent from "../app-selectCatalog";
 import { SubSelectorCatalogComponent } from "../app-selectCatalog";
+import { TickIconComponent } from "../app-filterStatus";
 
 import { ReactComponent as LocationArrow } from "../../resources/icon/orderIcons/locationArrow.svg";
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
@@ -18,7 +19,7 @@ import "./index.scss";
 
 const AddProductComponent = () => {
     const [wordLength, setWordLength] = useState(0);
-    const { setMainPhoto, productMainPhoto, filterMainPhoto } = useContext(DataContext);
+    const { SetMainPhoto, productMainPhoto, FilterMainPhoto, selectedValue } = useContext(DataContext);
 
     const fileInputHidden = useRef(null);
 
@@ -29,7 +30,7 @@ const AddProductComponent = () => {
     const handleChange = (e) => {
         const fileUploaded = e.target.files[0];
 
-        setMainPhoto({
+        SetMainPhoto({
             preview: URL.createObjectURL(fileUploaded),
             raw: fileUploaded
         });
@@ -40,7 +41,7 @@ const AddProductComponent = () => {
     }
 
     const filterPhotoes = (index) => {
-        filterMainPhoto(index);
+        FilterMainPhoto(index);
     }
 
     const MainPhotoComponent = ({ productImage }) => {
@@ -49,9 +50,20 @@ const AddProductComponent = () => {
 
                 <img width="100%" height="100%" src={productImage.preview} alt="main product" />
                 <span className="subTextImg">Главное фото</span>
+
+                <div className="mainPhoto__icon">
+
+                    <div className="trashFullIcon" style={{ right: 12 }}>
+                        <TrashIcon />
+                    </div>
+                    <div className="trashFullIcon" style={{ right: 12 }}    >
+                        <FullScreen />
+                    </div>
+                </div>
             </div>
         );
     }
+
 
 
     return (
@@ -69,14 +81,14 @@ const AddProductComponent = () => {
                     <div className="add-product_head-firstBlock">
                         <div className="add-product_head-firstBlock add-product_head__inStock">
                             <div className="instockText">В наличии</div>
-                            <div className="inStockIcon">
+                            <div className="inStockIcon notAllowedIcon">
                                 <TickIcon width="15" height="12" />
                             </div>
                         </div>
 
                         <div className="add-product_head-firstBlock add-product_head__btns">
-                            <button className="preview">Предосмотр</button>
-                            <button className="btn save">Сохранить</button>
+                            <button className="preview notAllowedBtn">Предосмотр</button>
+                            <button className="btn save notAllowedBtn2">Сохранить</button>
                         </div>
                     </div>
                 </div>
@@ -194,7 +206,8 @@ const AddProductComponent = () => {
 
                             <div className="selectTags-block__grid">
                                 <div className="beginInfoProduct">
-                                    <span className="selectBox" />
+
+                                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
                                     <div className="textInfo">
                                         Новинка
                                         <p className="subtext">действует 7 дней</p>
@@ -202,7 +215,7 @@ const AddProductComponent = () => {
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <span className="selectBox" />
+                                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
                                     <div className="textInfo">
                                         Эксклюзив
                                         <p className="subtext">действует 6 недель</p>
@@ -210,14 +223,14 @@ const AddProductComponent = () => {
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <span className="selectBox" />
+                                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
                                     <div className="textInfo">
                                         Скидка
                                     </div>
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <span className="selectBox" />
+                                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
                                     <div className="textInfo">
                                         Рассрочка
                                     </div>
@@ -227,10 +240,46 @@ const AddProductComponent = () => {
                     </div>
 
 
-                    <div className="add-product_main__installmentPlan">
+                    <div className="add-product_main__productParameters">
                         <h4 className="titleText">Параметры товара</h4>
+                        {!selectedValue
+                            ? <>
+                                <div className="subtext">Параметры товара будут отображаться в зависимости от категории</div>
+                            </>
+                            : <div className="parameters-block">
+                                <div className="parameters-block__size">
+                                    <p className="availableText">Доступные размеры</p>
+                                    <div className="sizeBlocks">
+                                        <div className="boxSize">
+                                            32
+                                        </div>
+                                        <div className="boxSize boxSize-active">
+                                            34
+                                        </div>
+                                        <div className="boxSize boxSize-active">
+                                            36
+                                        </div>
+                                        <div className="boxSize boxSize-active">
+                                            38
+                                        </div>
+                                        <div className="boxSize boxSize-active">
+                                            40
+                                        </div>
+                                        <div className="boxSize">
+                                            42
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <div className="subtext">Параметры товара будут отображаться в зависимости от категории</div>
+                                <div className="prameters-bloxk__color">
+                                    <p className="availableText">Доступные цвета</p>
+
+                                    <div className="iconAdd">
+                                        <PlusIcon width="14" height="14" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

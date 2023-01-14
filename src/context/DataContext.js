@@ -9,7 +9,7 @@ const DataContextProvider = ({ children }) => {
         rightPosition: 0,
     });
     const [productMainPhoto, setProductMainPhoto] = useState([]);
-
+    const [selectedValue, setSelectedValue] = useState(null);
 
     function OpenModal(objActive) {
         setIsActiveModal(objActive);
@@ -23,23 +23,30 @@ const DataContextProvider = ({ children }) => {
         }));
     }
 
-    function setMainPhoto(img) {
+    function SetMainPhoto(img) {
         setProductMainPhoto(productMainPhoto => [...productMainPhoto, img]);
     }
 
-    function filterMainPhoto(index) {
+    function FilterMainPhoto(index) {
         const obj = productMainPhoto.filter((_, i) => i !== index);
         setProductMainPhoto(obj);
+    }
+
+    function SetValueSelected(option) {
+        setSelectedValue(option);
     }
 
     return (
         <DataContext.Provider value={{
             isActiveModal,
             productMainPhoto,
+            selectedValue,
             OpenModal,
             HideModal,
-            setMainPhoto,
-            filterMainPhoto
+            SetValueSelected,
+            SetMainPhoto,
+            FilterMainPhoto
+
         }}>
             {children}
         </DataContext.Provider>
