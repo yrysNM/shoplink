@@ -57,7 +57,7 @@ const SelecterCatalogComponent = ({ placeholderText }) => {
                 classnames("selectChoose-block", {
                     "selectChoose-block_active": toggleArrow
                 })}
-                style={{ color: getDispaly() === placeholderText ? "#969CAF" : "#252728" }}
+                style={{ color: getDispaly() === placeholderText && placeholderText !== "Женщинам" ? "#969CAF" : "#252728" }}
                 onClick={handleClick}>
 
                 {getDispaly()}
@@ -119,7 +119,7 @@ export const SubSelectorCatalogComponent = ({ placeholderText }) => {
                 classnames("selectChoose-block", {
                     "selectChoose-block_active": toggleArrow
                 })}
-                style={{ color: getDispaly() === placeholderText ? "#969CAF" : "#252728" }}
+                style={{ color: getDispaly() === placeholderText && placeholderText !== "Верхняя одежда" ? "#969CAF" : "#252728" }}
                 onClick={handleClick}>
 
                 {getDispaly()}

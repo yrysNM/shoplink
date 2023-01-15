@@ -1,5 +1,5 @@
 import { useState, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { DataContext } from "../../context/DataContext";
 import SelecterCatalogComponent from "../app-selectCatalog";
@@ -12,19 +12,19 @@ import { ReactComponent as PlusIcon } from "../../resources/icon/plusIcon.svg";
 import { ReactComponent as CashIcon } from "../../resources/icon/infoIcons/cash.svg";
 import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIcons/trash.svg";
 import { ReactComponent as FullScreen } from "../../resources/icon/addProductsIcons/fullScreen.svg";
-// import { ReactComponent as EditIcon } from "../../resources/icon/addProductsIcons/editCatalog.svg";
+import { ReactComponent as EditIcon } from "../../resources/icon/addProductsIcons/editCatalog.svg";
 
 
+const EditCatalogComponent = () => {
+    const [wordLength, setWordLength] = useState("Минималистичное пальто длины миди из приятного на ощупь плотного материала на основе шерсти с дополнительным утеплением. Оно имеет расслабленный свободный крой, спущенную линию плеча и подчеркнуто широкие лацканы на воротнике, а также боковые карманы с прямоугольными клапанами и застежку на две потайные кнопки.".length);
+    const { SetMainPhoto, productMainPhoto, FilterMainPhoto, OpenModal } = useContext(DataContext);
+    const { catalogNumber } = useParams();
 
-import "./index.scss";
-
-const AddProductComponent = () => {
-    const [wordLength, setWordLength] = useState(0);
-    const { SetMainPhoto, productMainPhoto, FilterMainPhoto, selectedValue, OpenModal } = useContext(DataContext);
 
     const fileInputHidden = useRef(null);
 
     const funcWordLength = (e) => {
+
         setWordLength(e.target.value.length);
     }
 
@@ -35,6 +35,10 @@ const AddProductComponent = () => {
             preview: URL.createObjectURL(fileUploaded),
             raw: fileUploaded
         });
+    }
+
+    const handleInputChange = (e) => {
+        console.log(`------------------input value ${e.target.value}--------------------- `);
     }
 
     const handleClick = () => {
@@ -72,24 +76,32 @@ const AddProductComponent = () => {
             <div className="container">
                 <div className="add-product_head">
                     <div className="add-product_head-firstBlock">
-                        <Link to=".." relative="path" className="locationArrow">
+                        <Link to=".." relative="path" className="locationArrow" style={{ marginRight: 12 }}>
                             <LocationArrow />
                         </Link>
 
-                        <h2 className="orderNumber-text addProductText">Добавить товар</h2>
+                        <h2 className="orderNumber-text addProductText">#{catalogNumber} Пальто двубортное на пуговицах</h2>
                     </div>
 
                     <div className="add-product_head-firstBlock">
                         <div className="add-product_head-firstBlock add-product_head__inStock">
                             <div className="instockText">В наличии</div>
-                            <div className="inStockIcon notAllowedIcon">
+                            <div className="inStockIcon">
                                 <TickIcon width="15" height="12" />
                             </div>
                         </div>
 
                         <div className="add-product_head-firstBlock add-product_head__btns">
-                            <button className="preview notAllowedBtn">Предосмотр</button>
-                            <button className="btn save notAllowedBtn2">Сохранить</button>
+                            <button className="preview">Предосмотр</button>
+                            <button className="btn save" onClick={() => {
+                                OpenModal({
+                                    id: "warningRemoveModal",
+                                    classNameIsActive: "activeModalFilter",
+                                    topPosition: "50%",
+                                    rightPosition: "40%",
+                                    catalogNumber: "#0560"
+                                })
+                            }}>Удалить товар</button>
                         </div>
                     </div>
                 </div>
@@ -150,7 +162,9 @@ const AddProductComponent = () => {
                                 <input type="text"
                                     name="name product"
                                     placeholder="Введите название"
-                                    className="form-block__input" />
+                                    className="form-block__input"
+                                    defaultValue="Пальто двубортное на пуговицах"
+                                    onChange={handleInputChange} />
                             </div>
 
                             <div className="form-block form-block__textareaBlock">
@@ -160,6 +174,7 @@ const AddProductComponent = () => {
                                     maxLength="490"
                                     placeholder="Введите подробное описание товара"
                                     onChange={funcWordLength}
+                                    defaultValue="Минималистичное пальто длины миди из приятного на ощупь плотного материала на основе шерсти с дополнительным утеплением. Оно имеет расслабленный свободный крой, спущенную линию плеча и подчеркнуто широкие лацканы на воротнике, а также боковые карманы с прямоугольными клапанами и застежку на две потайные кнопки."
                                 >
 
                                 </textarea>
@@ -174,7 +189,7 @@ const AddProductComponent = () => {
                                     Категория товара
                                 </div>
 
-                                <SelecterCatalogComponent placeholderText={"Выберите категорию"} />
+                                <SelecterCatalogComponent placeholderText={"Женщинам"} />
                             </div>
 
                             <div className="form-block">
@@ -182,7 +197,7 @@ const AddProductComponent = () => {
                                     Подкатегория
                                 </div>
 
-                                <SubSelectorCatalogComponent placeholderText={"Выберите подкатегорию"} />
+                                <SubSelectorCatalogComponent placeholderText={"Верхняя одежда"} />
                             </div>
                         </form>
                     </div>
@@ -194,7 +209,13 @@ const AddProductComponent = () => {
                             <div className="form-block_price__icon">
                                 <CashIcon />
                             </div>
-                            <input type="number" name="price" placeholder="Укажите цену" className="input-price" />
+                            <input
+                                type="number"
+                                name="price"
+                                placeholder="Укажите цену"
+                                className="input-price"
+                                value={12990}
+                                onChange={handleInputChange} />
                             <div className="form-block_price__info">
                                 ₸
                             </div>
@@ -224,17 +245,57 @@ const AddProductComponent = () => {
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
+                                    <TickIconComponent tickValue={true} styleBox={" selectBox"} />
                                     <div className="textInfo">
                                         Скидка
                                     </div>
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
+                                    <TickIconComponent tickValue={true} styleBox={" selectBox"} />
                                     <div className="textInfo">
                                         Рассрочка
                                     </div>
+                                </div>
+                                <div className="beginInfoProduct subbeginInfoProduct">
+                                    <div className="form-block_price" style={{ marginTop: 0 }}>
+
+                                        <input
+                                            type="number"
+                                            name="price"
+                                            placeholder="Цена со скидкой"
+                                            className="input-price"
+                                            // value={0}
+                                            onChange={handleInputChange}
+                                            style={{ paddingLeft: 12 }} />
+                                        <div className="form-block_price__info">
+                                            ₸
+                                        </div>
+                                    </div>
+                                    <div className="form-block_price">
+
+                                        <input
+                                            type="number"
+                                            name="price"
+                                            placeholder="0"
+                                            className="input-price"
+                                            // value={0}
+                                            onChange={handleInputChange}
+                                            style={{ paddingLeft: 12 }} />
+                                        <div className="form-block_price__info">
+                                            %
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="beginInfoProduct subInstallment">
+                                    <div className="installment">
+                                        <span className="boxIns boxIns__active">3</span>
+                                        <span className="boxIns">6</span>
+                                        <span className="boxIns">12</span>
+                                        <span className="boxIns">24</span>
+                                    </div>
+                                    <span className="monthText">мес</span>
                                 </div>
                             </div>
                         </div>
@@ -243,73 +304,57 @@ const AddProductComponent = () => {
 
                     <div className="add-product_main__productParameters">
                         <h4 className="titleText">Параметры товара</h4>
-                        {!selectedValue
-                            ? <>
-                                <div className="subtext">Параметры товара будут отображаться в зависимости от категории</div>
-                            </>
-                            : <div className="parameters-block">
-                                <div className="parameters-block__size">
-                                    <p className="availableText">Доступные размеры</p>
-                                    <div className="sizeBlocks">
-                                        <div className="boxSize">
-                                            32
-                                        </div>
-                                        <div className="boxSize boxSize-active">
-                                            34
-                                        </div>
-                                        <div className="boxSize boxSize-active">
-                                            36
-                                        </div>
-                                        <div className="boxSize boxSize-active">
-                                            38
-                                        </div>
-                                        <div className="boxSize boxSize-active">
-                                            40
-                                        </div>
-                                        <div className="boxSize">
-                                            42
-                                        </div>
+                        <div className="parameters-block">
+                            <div className="parameters-block__size">
+                                <p className="availableText">Доступные размеры</p>
+                                <div className="sizeBlocks">
+                                    <div className="boxSize">
+                                        32
                                     </div>
-                                </div>
-
-                                <div className="prameters-block__color">
-                                    <p className="availableText">Доступные цвета</p>
-
-                                    <div className="iconAdd">
-                                        <PlusIcon
-                                            width="14"
-                                            height="14"
-                                            onClick={() => OpenModal({
-                                                id: "colorModal",
-                                                classNameIsActive: "activeModalFilter",
-                                                topPosition: "50%",
-                                                rightPosition: "40%"
-                                            })} />
+                                    <div className="boxSize boxSize-active">
+                                        34
                                     </div>
-
-                                    {/* <div className="colorList">
-                                        <span className="colorProduct" style={{
-                                            width: "20",
-                                            height: "20",
-                                            backgroundColor: "#805B42"
-                                        }} />
-                                        <span className="colorProduct" style={{
-                                            width: "20",
-                                            height: "20",
-                                            backgroundColor: "#252728"
-                                        }} />
-
-                                        <EditIcon style={{ cursor: "pointer" }}
-                                            onClick={() => OpenModal({
-                                                id: "colorModal",
-                                                classNameIsActive: "activeModalFilter",
-                                                topPosition: "50%",
-                                                rightPosition: "40%"
-                                            })} />
-                                    </div> */}
+                                    <div className="boxSize boxSize-active">
+                                        36
+                                    </div>
+                                    <div className="boxSize boxSize-active">
+                                        38
+                                    </div>
+                                    <div className="boxSize boxSize-active">
+                                        40
+                                    </div>
+                                    <div className="boxSize">
+                                        42
+                                    </div>
                                 </div>
                             </div>
-                        }
+
+                            <div className="prameters-block__color">
+                                <p className="availableText">Доступные цвета</p>
+
+                                <div className="colorList">
+                                    <span className="colorProduct" style={{
+                                        width: "20",
+                                        height: "20",
+                                        backgroundColor: "#805B42"
+                                    }} />
+                                    <span className="colorProduct" style={{
+                                        width: "20",
+                                        height: "20",
+                                        backgroundColor: "#252728"
+                                    }} />
+
+                                    <EditIcon style={{ cursor: "pointer" }}
+                                        onClick={() => OpenModal({
+                                            id: "colorModal",
+                                            classNameIsActive: "activeModalFilter",
+                                            topPosition: "50%",
+                                            rightPosition: "40%"
+                                        })} />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -317,4 +362,5 @@ const AddProductComponent = () => {
     );
 }
 
-export default AddProductComponent;
+
+export default EditCatalogComponent;

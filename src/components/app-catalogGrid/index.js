@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { TickIconComponent } from "../app-filterStatus";
 import { DataContext } from "../../context/DataContext";
@@ -20,7 +21,11 @@ const CatalogGridComponent = () => {
     return (
         <>
             <div className="row catalogList-row">
-                <div className="box numberOrder">#0560</div>
+                <div className="box numberOrder">
+                    <Link to={"/catalog/0560"}>
+                        #0560
+                    </Link>
+                </div>
                 <div className="box">
                     <img src={testImg} alt="catalogList" className="imgCatalog" />
                 </div>

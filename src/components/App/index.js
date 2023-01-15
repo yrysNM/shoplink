@@ -12,6 +12,7 @@ import AddProductComponent from "../app-addProduct";
 import FilterModalComponent from "../app-filterModal";
 import WarningsRemoveModalComponent from "../app-warningRemove";
 import ChooseColordModalConponent from "../app-chooseColorsModal";
+import EditCatalogComponent from "../app-editCatalog";
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -35,6 +36,7 @@ const App = () => {
                             } />
                             <Route path="order/:numberOrder" element={<OrderLayoutComponent />} />
                             <Route path="catalog/add" element={<AddProductComponent />} />
+                            <Route path="catalog/:catalogNumber" element={<EditCatalogComponent />} />
                             <Route path="shop" element={
                                 <ShopPageComponent />
                             } />
