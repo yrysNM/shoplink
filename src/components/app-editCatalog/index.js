@@ -13,6 +13,9 @@ import { ReactComponent as CashIcon } from "../../resources/icon/infoIcons/cash.
 import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIcons/trash.svg";
 import { ReactComponent as FullScreen } from "../../resources/icon/addProductsIcons/fullScreen.svg";
 import { ReactComponent as EditIcon } from "../../resources/icon/addProductsIcons/editCatalog.svg";
+import testImg1 from "../../resources/img/mainPhoto.png";
+import testImg2 from "../../resources/img/test2.png";
+import testImg3 from "../../resources/img/test3.png";
 
 
 const EditCatalogComponent = () => {
@@ -53,7 +56,7 @@ const EditCatalogComponent = () => {
         return (
             <div className="addBlock mainPhoto">
 
-                <img width="100%" height="100%" src={productImage.preview} alt="main product" />
+                <img width="100%" height="100%" src={testImg1} alt="main product" style={{ objectFit: "none" }} />
                 <span className="subTextImg">Главное фото</span>
 
                 <div className="mainPhoto__icon">
@@ -112,22 +115,33 @@ const EditCatalogComponent = () => {
 
                         <div className="list">
                             {/* main photo */}
-                            {productMainPhoto[0] ?
-                                <MainPhotoComponent productImage={productMainPhoto[0]} /> : null}
-                            {productMainPhoto.slice(1, productMainPhoto.length).map((item, i) => (
-                                <div key={i} className="addBlock" style={{ background: "#fff" }}>
-                                    <img width="100%" height="100%" className="otherImg" src={item.preview} alt="main product" />
-                                    <div className="mainPhoto__icon">
+                            <MainPhotoComponent productImage={productMainPhoto[0]} />
 
-                                        <div className="trashFullIcon" onClick={() => filterPhotoes(i + 1)}>
-                                            <TrashIcon />
-                                        </div>
-                                        <div className="trashFullIcon">
-                                            <FullScreen />
-                                        </div>
+                            <div className="addBlock" style={{ background: "#fff" }}>
+                                <img width="100%" height="100%" className="otherImg" src={testImg2} alt="main product" />
+                                <div className="mainPhoto__icon">
+
+                                    <div className="trashFullIcon">
+                                        <TrashIcon />
+                                    </div>
+                                    <div className="trashFullIcon">
+                                        <FullScreen />
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+                            <div className="addBlock" style={{ background: "#fff" }}>
+                                <img width="100%" height="100%" className="otherImg" src={testImg3} alt="main product" />
+                                <div className="mainPhoto__icon">
+
+                                    <div className="trashFullIcon">
+                                        <TrashIcon />
+                                    </div>
+                                    <div className="trashFullIcon">
+                                        <FullScreen />
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div className="addBlock" onClick={handleClick}>
 
@@ -142,9 +156,9 @@ const EditCatalogComponent = () => {
 
 
                                 <PlusIcon />
-                                {productMainPhoto.length ? null
-                                    : <span className='addText'>Главное фото</span>
-                                }
+                                {/* {productMainPhoto.length ? null
+                                    : <span className='addText' style={{ left: 12 }}>Главное фото</span>
+                                } */}
                             </div>
                         </div>
 
