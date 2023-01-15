@@ -42,7 +42,7 @@ const CatalogGridComponent = () => {
                     15 990 ₸
                 </div>
                 <div className="box">
-                    <TickIconComponent />
+                    <TickIconComponent styleBox={" selectBox"} />
                 </div>
 
                 <div className="box">
@@ -85,7 +85,7 @@ const CatalogGridComponent = () => {
                     10 990 ₸
                 </div>
                 <div className="box">
-                    <TickIconComponent tickValue={false} />
+                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
                 </div>
 
                 <div className="box">
@@ -127,7 +127,7 @@ const CatalogGridComponent = () => {
                     20 490 ₸
                 </div>
                 <div className="box">
-                    <TickIconComponent />
+                    <TickIconComponent styleBox={" selectBox"} />
                 </div>
 
                 <div className="box">
@@ -171,7 +171,7 @@ const CatalogGridComponent = () => {
                     20 490 ₸
                 </div>
                 <div className="box">
-                    <TickIconComponent />
+                    <TickIconComponent styleBox={" selectBox"} />
                 </div>
 
                 <div className="box">
@@ -212,7 +212,7 @@ const CatalogGridComponent = () => {
                     15 990 ₸
                 </div>
                 <div className="box">
-                    <TickIconComponent tickValue={false} />
+                    <TickIconComponent tickValue={false} styleBox={" selectBox"} />
                 </div>
 
                 <div className="box">

@@ -12,6 +12,7 @@ import { ReactComponent as PlusIcon } from "../../resources/icon/plusIcon.svg";
 import { ReactComponent as CashIcon } from "../../resources/icon/infoIcons/cash.svg";
 import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIcons/trash.svg";
 import { ReactComponent as FullScreen } from "../../resources/icon/addProductsIcons/fullScreen.svg";
+import { ReactComponent as EditIcon } from "../../resources/icon/addProductsIcons/editCatalog.svg";
 
 
 
@@ -271,13 +272,34 @@ const AddProductComponent = () => {
                                     </div>
                                 </div>
 
-                                <div className="prameters-bloxk__color">
+                                <div className="prameters-block__color">
                                     <p className="availableText">Доступные цвета</p>
 
                                     <div className="iconAdd">
                                         <PlusIcon
                                             width="14"
                                             height="14"
+                                            onClick={() => OpenModal({
+                                                id: "colorModal",
+                                                classNameIsActive: "activeModalFilter",
+                                                topPosition: "50%",
+                                                rightPosition: "40%"
+                                            })} />
+                                    </div>
+
+                                    <div className="colorList">
+                                        <span className="colorProduct" style={{
+                                            width: "20",
+                                            height: "20",
+                                            backgroundColor: "#805B42"
+                                        }} />
+                                        <span className="colorProduct" style={{
+                                            width: "20",
+                                            height: "20",
+                                            backgroundColor: "#252728"
+                                        }} />
+
+                                        <EditIcon style={{ cursor: "pointer" }}
                                             onClick={() => OpenModal({
                                                 id: "colorModal",
                                                 classNameIsActive: "activeModalFilter",

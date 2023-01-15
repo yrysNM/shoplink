@@ -21,7 +21,7 @@ const FilterStatusComponent = ({ objText }) => {
     );
 }
 
-export const TickIconComponent = ({ iconIndex, tickValue = true, styleBox }) => {
+export const TickIconComponent = ({ iconIndex, tickValue = true, styleBox = "" }) => {
 
     const [tickToggle, setTickToggle] = useState(tickValue);
 
