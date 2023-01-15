@@ -38,6 +38,7 @@ const DataOrderComponent = () => {
                             <div
                                 className={`statusBlockFilter modalFilter ${isActiveModal.classNameIsActive && "activeModal"}`}
                                 onClick={() => OpenModal({
+                                    id: "filterModal",
                                     classNameIsActive: "activeModalFilter",
                                     topPosition: "56%",
                                     rightPosition: "43px"

@@ -19,7 +19,7 @@ import "./index.scss";
 
 const AddProductComponent = () => {
     const [wordLength, setWordLength] = useState(0);
-    const { SetMainPhoto, productMainPhoto, FilterMainPhoto, selectedValue } = useContext(DataContext);
+    const { SetMainPhoto, productMainPhoto, FilterMainPhoto, selectedValue, OpenModal } = useContext(DataContext);
 
     const fileInputHidden = useRef(null);
 
@@ -275,7 +275,15 @@ const AddProductComponent = () => {
                                     <p className="availableText">Доступные цвета</p>
 
                                     <div className="iconAdd">
-                                        <PlusIcon width="14" height="14" />
+                                        <PlusIcon
+                                            width="14"
+                                            height="14"
+                                            onClick={() => OpenModal({
+                                                id: "colorModal",
+                                                classNameIsActive: "activeModalFilter",
+                                                topPosition: "50%",
+                                                rightPosition: "40%"
+                                            })} />
                                     </div>
                                 </div>
                             </div>

@@ -75,8 +75,9 @@ const CatalogListComponent = () => {
 
                             <div className="statusFilter">
                                 <div
-                                    className={`statusBlockFilter modalFilter ${isActiveModal.classNameIsActive && isActiveModal.classNameIsActive !== "activeModalWarningRemove" && "activeModal"}`}
+                                    className={`statusBlockFilter modalFilter ${isActiveModal.classNameIsActive && isActiveModal.id === "filterModal" && "activeModal"}`}
                                     onClick={() => OpenModal({
+                                        id: "filterModal",
                                         classNameIsActive: "activeModalFilter",
                                         topPosition: "56%",
                                         rightPosition: "27.5%"

@@ -1,0 +1,46 @@
+.availableColors {
+    padding: 32px;
+    padding-top: 45px;
+
+    &__titleText {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #0F0E1E;
+    }
+
+    &__block {
+        display: grid;
+        grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+        row-gap: 17px;
+        column-gap: 36px;
+        margin-top: 18px;
+
+        &>.colorBlock {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+}
+
+.colorText {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #969CAF;
+}
+
+.colorBlock>.colorProduct {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.colorBlock.activeTickIconText {
+    >.colorProduct {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

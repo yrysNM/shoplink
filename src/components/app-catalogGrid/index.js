@@ -51,7 +51,8 @@ const CatalogGridComponent = () => {
                         className="icon icon_trash"
                         onClick={() => {
                             OpenModal({
-                                classNameIsActive: "activeModalWarningRemove",
+                                id: "warningRemoveModal",
+                                classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
                                 rightPosition: "40%",
                                 catalogNumber: "#0560"
@@ -93,7 +94,8 @@ const CatalogGridComponent = () => {
                         className="icon icon_trash"
                         onClick={() => {
                             OpenModal({
-                                classNameIsActive: "activeModalWarningRemove",
+                                id: "warningRemoveModal",
+                                classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
                                 rightPosition: "40%",
                                 catalogNumber: "#0560"
@@ -134,7 +136,8 @@ const CatalogGridComponent = () => {
                         className="icon icon_trash"
                         onClick={() => {
                             OpenModal({
-                                classNameIsActive: "activeModalWarningRemove",
+                                id: "warningRemoveModal",
+                                classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
                                 rightPosition: "40%",
                                 catalogNumber: "#0560"
@@ -177,7 +180,8 @@ const CatalogGridComponent = () => {
                         className="icon icon_trash"
                         onClick={() => {
                             OpenModal({
-                                classNameIsActive: "activeModalWarningRemove",
+                                id: "warningRemoveModal",
+                                classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
                                 rightPosition: "40%",
                                 catalogNumber: "#0560"
@@ -217,7 +221,8 @@ const CatalogGridComponent = () => {
                         className="icon icon_trash"
                         onClick={() => {
                             OpenModal({
-                                classNameIsActive: "activeModalWarningRemove",
+                                id: "warningRemoveModal",
+                                classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
                                 rightPosition: "40%",
                                 catalogNumber: "#0560"

@@ -11,6 +11,7 @@ import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
 import FilterModalComponent from "../app-filterModal";
 import WarningsRemoveModalComponent from "../app-warningRemove";
+import ChooseColordModalConponent from "../app-chooseColorsModal";
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -43,8 +44,9 @@ const App = () => {
             </Router>
 
             <Modal>
-                {isActiveModal.classNameIsActive === "activeModalFilter" && <FilterModalComponent />}
-                {isActiveModal.classNameIsActive === "activeModalWarningRemove" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
+                {isActiveModal.id === "filterModal" && <FilterModalComponent />}
+                {isActiveModal.id === "warningRemoveModal" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
+                {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
             </Modal>
         </>
     );
