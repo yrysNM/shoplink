@@ -20,7 +20,7 @@ import testImg3 from "../../resources/img/test3.png";
 
 const EditCatalogComponent = () => {
     const [wordLength, setWordLength] = useState("Минималистичное пальто длины миди из приятного на ощупь плотного материала на основе шерсти с дополнительным утеплением. Оно имеет расслабленный свободный крой, спущенную линию плеча и подчеркнуто широкие лацканы на воротнике, а также боковые карманы с прямоугольными клапанами и застежку на две потайные кнопки.".length);
-    const { SetMainPhoto, productMainPhoto, FilterMainPhoto, OpenModal } = useContext(DataContext);
+    const { SetMainPhoto, productMainPhoto, OpenModal } = useContext(DataContext);
     const { catalogNumber } = useParams();
 
 
@@ -48,9 +48,9 @@ const EditCatalogComponent = () => {
         fileInputHidden.current.click();
     }
 
-    const filterPhotoes = (index) => {
-        FilterMainPhoto(index);
-    }
+    // const filterPhotoes = (index) => {
+    //     FilterMainPhoto(index);
+    // }
 
     const MainPhotoComponent = ({ productImage }) => {
         return (
@@ -64,7 +64,18 @@ const EditCatalogComponent = () => {
                     <div className="trashFullIcon" style={{ right: 12 }}>
                         <TrashIcon />
                     </div>
-                    <div className="trashFullIcon" style={{ right: 12 }}    >
+                    <div
+                        className="trashFullIcon"
+                        style={{ right: 12 }}
+                        onClick={() => {
+                            OpenModal({
+                                id: "fullScreenModal",
+                                classNameIsActive: "activeModalFilter",
+                                topPosition: "50%",
+                                rightPosition: "40%",
+                                imgUrl: testImg1
+                            })
+                        }}>
                         <FullScreen />
                     </div>
                 </div>
@@ -121,11 +132,19 @@ const EditCatalogComponent = () => {
                                 <img width="100%" height="100%" className="otherImg" src={testImg2} alt="main product" />
                                 <div className="mainPhoto__icon">
 
-                                    <div className="trashFullIcon">
+                                    <div className="trashFullIcon" style={{ right: 12 }}>
                                         <TrashIcon />
                                     </div>
-                                    <div className="trashFullIcon">
-                                        <FullScreen />
+                                    <div className="trashFullIcon" style={{ right: 12 }}>
+                                        <FullScreen onClick={() => {
+                                            OpenModal({
+                                                id: "fullScreenModal",
+                                                classNameIsActive: "activeModalFilter",
+                                                topPosition: "50%",
+                                                rightPosition: "40%",
+                                                imgUrl: testImg2
+                                            })
+                                        }} />
                                     </div>
                                 </div>
                             </div>
@@ -133,11 +152,19 @@ const EditCatalogComponent = () => {
                                 <img width="100%" height="100%" className="otherImg" src={testImg3} alt="main product" />
                                 <div className="mainPhoto__icon">
 
-                                    <div className="trashFullIcon">
+                                    <div className="trashFullIcon" style={{ right: 12 }}>
                                         <TrashIcon />
                                     </div>
-                                    <div className="trashFullIcon">
-                                        <FullScreen />
+                                    <div className="trashFullIcon" style={{ right: 12 }}>
+                                        <FullScreen onClick={() => {
+                                            OpenModal({
+                                                id: "fullScreenModal",
+                                                classNameIsActive: "activeModalFilter",
+                                                topPosition: "50%",
+                                                rightPosition: "40%",
+                                                imgUrl: testImg3
+                                            })
+                                        }} />
                                     </div>
                                 </div>
                             </div>

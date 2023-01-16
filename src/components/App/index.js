@@ -13,6 +13,7 @@ import FilterModalComponent from "../app-filterModal";
 import WarningsRemoveModalComponent from "../app-warningRemove";
 import ChooseColordModalConponent from "../app-chooseColorsModal";
 import EditCatalogComponent from "../app-editCatalog";
+import FullScreenImgComponent from "../app-fullScreenImg";
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -49,6 +50,7 @@ const App = () => {
                 {isActiveModal.id === "filterModal" && <FilterModalComponent />}
                 {isActiveModal.id === "warningRemoveModal" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
                 {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
+                {isActiveModal.id === "fullScreenModal" && <FullScreenImgComponent imgUrl={isActiveModal.imgUrl} />}
             </Modal>
         </>
     );

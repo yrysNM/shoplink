@@ -22,9 +22,7 @@ const CatalogGridComponent = () => {
         <>
             <div className="row catalogList-row">
                 <div className="box numberOrder">
-                    <Link to={"/catalog/0560"}>
-                        #0560
-                    </Link>
+                    #0560
                 </div>
                 <div className="box">
                     <img src={testImg} alt="catalogList" className="imgCatalog" />
@@ -51,7 +49,9 @@ const CatalogGridComponent = () => {
                 </div>
 
                 <div className="box">
-                    <EditIcon className="icon" />
+                    <Link to={"/catalog/0560"}>
+                        <EditIcon className="icon" />
+                    </Link>
                     <TrashIcon
                         className="icon icon_trash"
                         onClick={() => {

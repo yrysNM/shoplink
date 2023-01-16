@@ -117,7 +117,7 @@ const AddProductComponent = () => {
                                 </div>
                             ))}
 
-                            <div className="addBlock" onClick={handleClick}>
+                            <div className="addBlock addBlock__input" onClick={handleClick}>
 
                                 {/* hide input */}
                                 <input

@@ -55,6 +55,7 @@
                 background: inherit;
                 margin-right: 24px;
                 color: #40BFFF;
+                cursor: pointer;
             }
 
             .save {
@@ -66,6 +67,7 @@
                 font-size: 16px;
                 line-height: 16px;
                 color: #fff;
+                cursor: pointer;
             }
 
             &>.notAllowedBtn {
@@ -113,6 +115,11 @@
                 background: rgba(183, 188, 204, .5);
                 border-radius: 5px;
                 margin-bottom: 12px;
+
+                &__input {
+                    height: 160px;
+                    width: 160px;
+                }
             }
         }
 
@@ -171,6 +178,7 @@
 
     img {
         border-radius: 5px;
+        left: 12px;
     }
 
     .subTextImg {
@@ -195,6 +203,7 @@
         //     transform: scale(0.7);
         //     transition: background .4s ease-in-out, transform 0.4s ease-in-out;
         // }
+
     }
 }
 
