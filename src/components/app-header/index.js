@@ -13,7 +13,7 @@ const AppHeaderComponent = () => {
     return (
         <header className="header">
             <div className="header-name text">
-                <p className="logo">Shoplink</p>
+                <p className="logo">ShopLink</p>
             </div>
             <div className="header__wrapper">
                 <img src={globalInt} alt="global icon" style={{ marginBottom: 2 }} />

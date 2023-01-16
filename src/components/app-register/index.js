@@ -19,67 +19,63 @@ const RegisterComponent = () => {
     }
 
     return (
-        <div className="loginRegister">
-            <div className="loginRegister__wrapper">
-                <div className="loginRegister__wrapper-block">
-                    <div className="loginRegister__logo">
-                        ShopLink
-                    </div>
+        <>
+            <div className="loginRegister__descr">Регистрация</div>
+            <div className="subtext loginRegister__subText">Заполните все поля для регистрации</div>
 
+            <form className="loginRegister__form" onSubmit={(e) => e.preventDefault()}>
+                <input
+                    onChange={handleChange}
+                    value={changeInput["user name"]}
+                    type="text"
+                    name="user name"
+                    placeholder="Имя"
+                    className="loginRegister__form-input" />
 
-                    <div className="loginRegister__descr">Регистрация</div>
-                    <div className="subtext loginRegister__subText">Заполните все поля для регистрации</div>
+                <input
+                    onChange={handleChange}
+                    value={changeInput["user surname"]}
+                    type="text"
+                    name="user surname"
+                    placeholder="Фамилия"
+                    className="loginRegister__form-input" />
 
-                    <form className="loginRegister__form" onSubmit={(e) => e.preventDefault()}>
-                        <input
-                            onChange={handleChange}
-                            value={changeInput["user name"]}
-                            type="text"
-                            name="user name"
-                            placeholder="Имя"
-                            className="loginRegister__form-input" />
+                <HelpFormInputComponent data={{
+                    inputType: "number",
+                    iconComponent: <PhoneIcon />,
+                    inputName: "phone login",
+                    placeholder: "+7 (xxx) xxx xx xx",
+                }} />
 
-                        <input
-                            onChange={handleChange}
-                            value={changeInput["user surname"]}
-                            type="text"
-                            name="user surname"
-                            placeholder="Фамилия"
-                            className="loginRegister__form-input" />
-
-                        <HelpFormInputComponent data={{
-                            inputType: "number",
-                            iconComponent: <PhoneIcon />,
-                            inputName: "phone login",
-                            placeholder: "+7 (xxx) xxx xx xx",
-                        }} />
-
-                        <button
-                            className={classnames("btn next", {
-                                "next-active": changeInput["user name"].length >= 1 || changeInput["user surname"].length >= 1
-                            })}>
+                <button
+                    className={classnames("btn next", {
+                        "next-active": changeInput["user name"].length >= 1 || changeInput["user surname"].length >= 1
+                    })}>
+                    <Link to={"/registr/step2"}>
+                        <p className="btnText">
                             Продолжить
-                        </button>
-                    </form>
+                        </p>
+                    </Link>
+                </button>
+            </form>
 
-                    <p className="registerText">
-                        Есть аккаунт?&nbsp;&nbsp;
-                        <span className="registerText__span">
-                            <Link to={"/login"}>
-                                Войти
-                            </Link>
-                        </span>
-                    </p>
+            <p className="registerText">
+                Есть аккаунт?&nbsp;
+                <span className="registerText__span">
+                    <Link to={"/login"}>
+                        Войти
+                    </Link>
+                </span>
+            </p>
 
-                    <div className="register__steps">
-                        <span className="step step__active" />
-                        <span className="step" />
-                        <span className="step" />
-                        <span className="step" />
-                    </div>
-                </div>
+            <div className="register__steps">
+                <span className="step step__active" />
+                <span className="step" />
+                <span className="step" />
+                <span className="step" />
             </div>
-        </div>
+
+        </>
     );
 }
 

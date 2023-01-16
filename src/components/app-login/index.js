@@ -37,13 +37,19 @@ const LoginComponent = () => {
                         }} />
 
                         <p className="forgotPassWordText">Забыли пароль?</p>
-                        <button className="btn next">Продолжить</button>
+                        <button className="btn next">
+                            <Link to={"/"}>
+                                <p className="btnText">
+                                    Продолжить
+                                </p>
+                            </Link>
+                        </button>
                     </form>
 
                     <p className="registerText">
-                        Вы еще не наш клиент?&nbsp;&nbsp;
+                        Вы еще не наш клиент?&nbsp;
                         <span className="registerText__span">
-                            <Link to={"/register"}>
+                            <Link to={"/registr/step1"}>
                                 Зарегистрируйтесь
                             </Link>
                         </span>

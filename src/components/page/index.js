@@ -4,5 +4,14 @@ import OrderPageComponent from "./order-page";
 import ShopPageComponent from "./shop-page";
 import LoginPageComponent from "./login-page";
 import RegisterPageComponent from "./register-page";
+import RegisterNumberConfirmationPage from "./registerNumberConfirmation-page";
 
-export { MainPageComponent, CatalogPageComponent, OrderPageComponent, ShopPageComponent, LoginPageComponent, RegisterPageComponent }
+export {
+    MainPageComponent,
+    CatalogPageComponent,
+    OrderPageComponent,
+    ShopPageComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    RegisterNumberConfirmationPage
+}

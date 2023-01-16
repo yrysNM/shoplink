@@ -6,7 +6,15 @@ import AppHeaderComponent from "../app-header";
 import SideBarComponent from "../app-sideBar";
 import Modal from "../ModalWindow";
 import { DataContext } from "../../context/DataContext";
-import { MainPageComponent, CatalogPageComponent, OrderPageComponent, ShopPageComponent, LoginPageComponent, RegisterPageComponent } from "../page";
+import {
+    MainPageComponent,
+    CatalogPageComponent,
+    OrderPageComponent,
+    ShopPageComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    RegisterNumberConfirmationPage
+} from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
 import FilterModalComponent from "../app-filterModal";
@@ -46,8 +54,24 @@ const App = () => {
                             </Route>
                         </Route>
                     </React.Fragment>
+
                     <Route path="login" element={<LoginPageComponent />} />
-                    <Route path="register" element={<RegisterPageComponent />} />
+                    <Route path="registr" element={
+                        <div className="loginRegister">
+                            <div className="loginRegister__wrapper">
+                                <div className="loginRegister__wrapper-block">
+                                    <div className="loginRegister__logo">
+                                        ShopLink
+                                    </div>
+
+                                    <Outlet />
+                                </div>
+                            </div>
+                        </div>
+                    }>
+                        <Route path="step1" element={<RegisterPageComponent />} />
+                        <Route path="step2" element={<RegisterNumberConfirmationPage />} />
+                    </Route>
                 </Routes>
             </Router>
 
