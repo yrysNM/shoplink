@@ -1,0 +1,93 @@
+.login {
+    width: 50%;
+    background: #FFFFFF;
+    padding-top: 184px;
+    height: 100vh;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    &__logo {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 32px;
+        color: #40BFFF;
+    }
+
+    &__descr {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 64px;
+        margin-bottom: 8px;
+        color: #0F0E1E;
+
+    }
+
+    &__form {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input {
+            &::placeholder {
+                color: #969CAF;
+            }
+        }
+    }
+}
+
+.login__form:hover {
+    .next {
+
+        background: #40BFFF;
+        color: #FFFFFF;
+        transition: background 0.5s ease-in-out, color .5s ease-in-out;
+    }
+}
+
+.forgotPassWordText {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+
+    color: #40BFFF;
+}
+
+.next {
+    padding: 16px 32px;
+
+    background: #F4F5F7;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #B7BCCC;
+    margin-top: 24px;
+    transition: background 0.5s ease-in-out, color .5s ease-in-out;
+
+    &-active {
+        background: #40BFFF;
+        color: #FFFFFF;
+        transition: background 0.5s ease-in-out, color .5s ease-in-out;
+    }
+}
+
+.registerText {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #969CAF;
+    margin-top: 32px;
+
+    &__span {
+        color: #E45A7F;
+    }
+}
