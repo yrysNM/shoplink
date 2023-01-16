@@ -7,8 +7,11 @@
     &__wrapper {
         display: flex;
         flex-direction: column;
-
         align-items: center;
+
+        &-block {
+            min-width: 365px;
+        }
     }
 
     &__logo {
@@ -48,6 +51,8 @@
         background: #40BFFF;
         color: #FFFFFF;
         transition: background 0.5s ease-in-out, color .5s ease-in-out;
+
+
     }
 }
 

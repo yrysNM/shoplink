@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 import { HelpFormInputComponent } from "../app-shop";
@@ -8,6 +9,8 @@ import { ReactComponent as LockIcon } from "../../resources/icon/shopDataIcons/L
 import "./index.scss";
 
 const LoginComponent = () => {
+
+
     return (
         <div className="loginRegister">
             <div className="loginRegister__wrapper">
@@ -38,7 +41,7 @@ const LoginComponent = () => {
                     </form>
 
                     <p className="registerText">
-                        Вы еще не наш клиент?&nbsp;
+                        Вы еще не наш клиент?&nbsp;&nbsp;
                         <span className="registerText__span">
                             <Link to={"/register"}>
                                 Зарегистрируйтесь

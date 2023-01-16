@@ -10,5 +10,30 @@
         line-height: 16px;
 
         color: #969CAF;
+
+        &:nth-child(2) {
+            margin-top: 6px;
+        }
+    }
+}
+
+.register__steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.step {
+    margin-top: 64px;
+    width: 72.5px;
+    height: 3px;
+    background: #B7BCCC;
+    opacity: 0.2;
+    border-radius: 3px;
+
+    &__active {
+        opacity: 1;
+        background: #F25E7F;
     }
 }
