@@ -6,6 +6,7 @@ import LoginPageComponent from "./login-page";
 import RegisterPageComponent from "./register-page";
 import RegisterNumberConfirmationPage from "./registerNumberConfirmation-page";
 import RegisterStoreDataPage from "./registerStoreData-page";
+import RegisterPickPassWordPage from "./register-pickPassword";
 
 export {
     MainPageComponent,
@@ -15,5 +16,6 @@ export {
     LoginPageComponent,
     RegisterPageComponent,
     RegisterNumberConfirmationPage,
-    RegisterStoreDataPage
+    RegisterStoreDataPage,
+    RegisterPickPassWordPage
 }

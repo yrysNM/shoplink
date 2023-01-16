@@ -14,7 +14,8 @@ import {
     LoginPageComponent,
     RegisterPageComponent,
     RegisterNumberConfirmationPage,
-    RegisterStoreDataPage
+    RegisterStoreDataPage,
+    RegisterPickPassWordPage
 } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
@@ -72,6 +73,7 @@ const App = () => {
                         <Route path="step1" element={<RegisterPageComponent />} />
                         <Route path="step2" element={<RegisterNumberConfirmationPage />} />
                         <Route path="step3" element={<RegisterStoreDataPage />} />
+                        <Route path="step4" element={<RegisterPickPassWordPage />} />
                     </Route>
                 </Routes>
             </Router>
