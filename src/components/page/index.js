@@ -5,6 +5,7 @@ import ShopPageComponent from "./shop-page";
 import LoginPageComponent from "./login-page";
 import RegisterPageComponent from "./register-page";
 import RegisterNumberConfirmationPage from "./registerNumberConfirmation-page";
+import RegisterStoreDataPage from "./registerStoreData-page";
 
 export {
     MainPageComponent,
@@ -13,5 +14,6 @@ export {
     ShopPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    RegisterNumberConfirmationPage
+    RegisterNumberConfirmationPage,
+    RegisterStoreDataPage
 }

@@ -13,7 +13,8 @@ import {
     ShopPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    RegisterNumberConfirmationPage
+    RegisterNumberConfirmationPage,
+    RegisterStoreDataPage
 } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
@@ -63,7 +64,6 @@ const App = () => {
                                     <div className="loginRegister__logo">
                                         ShopLink
                                     </div>
-
                                     <Outlet />
                                 </div>
                             </div>
@@ -71,6 +71,7 @@ const App = () => {
                     }>
                         <Route path="step1" element={<RegisterPageComponent />} />
                         <Route path="step2" element={<RegisterNumberConfirmationPage />} />
+                        <Route path="step3" element={<RegisterStoreDataPage />} />
                     </Route>
                 </Routes>
             </Router>
