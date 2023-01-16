@@ -1,5 +1,7 @@
 
-import { useRef } from "react";
+import { useRef, useState, useContext } from "react";
+
+import { DataContext } from "../../context/DataContext";
 
 import { ReactComponent as OrderIcon } from "../../resources/icon/orderIcon.svg";
 import { ReactComponent as FlagKz } from "../../resources/icon/shopDataIcons/ic_flag_kazakhstan.svg";
@@ -15,14 +17,47 @@ import { ReactComponent as InstagramIcon } from "../../resources/icon/socialIcon
 import { ReactComponent as GlobalIcon } from "../../resources/icon/socialIcons/global.svg";
 import { ReactComponent as TikTokIcon } from "../../resources/icon/socialIcons/ic_tiktok.svg";
 import { ReactComponent as WhatsAppIcon } from "../../resources/icon/socialIcons/icon_whatsapp.svg";
-
-
+import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIcons/trash.svg";
+import { ReactComponent as FullScreen } from "../../resources/icon/addProductsIcons/fullScreen.svg";
+import { ReactComponent as RightIcon } from "../../resources/icon/rightArrow.svg";
 
 
 import "./index.scss";
 
 
 const ShopComponent = () => {
+    const [banerImg, setBanerImg] = useState([]);
+    const fileInputHidden = useRef(null);
+    const { OpenModal } = useContext(DataContext);
+
+    const handleChange = (e) => {
+        try {
+            const fileUploaded = e.target.files[0];
+
+            if (fileUploaded) {
+                setBanerImg(banerImg => [
+                    ...banerImg,
+                    {
+                        preview: URL.createObjectURL(fileUploaded),
+                        raw: fileUploaded
+                    }
+                ]);
+            }
+        } catch (e) {
+            console.debug(e);
+        }
+    }
+
+    const handleClick = () => {
+        fileInputHidden.current.click();
+    }
+
+    const filterPhotoes = (index) => {
+        const obj = banerImg.filter((_, i) => i !== index);
+        setBanerImg(obj);
+    }
+
+
     return (
         <div className="pagehead">
             <div className="container">
@@ -146,15 +181,78 @@ const ShopComponent = () => {
 
                         <p className="shoppage-blocks__subtitle">Фотографии для баннеров на главной странице сайта</p>
 
-                        <div className="banner-setup">
-                            <PlusIcon style={{ width: 24, height: 24 }} />
-                            <p className="text-add" style={{ marginTop: 16 }}>Добавить</p>
+                        <div className="banner-block">
+                            {
+                                banerImg.map((item, i) => (
+                                    <div key={item.preview} className="banerImg">
+
+                                        <img className="banerImg__img" src={item.preview} alt="barner" />
+                                        <div className="banerImg__icon">
+
+                                            <div className="trashFullIcon" style={{ right: 12 }} onClick={() => filterPhotoes(i)}>
+                                                <TrashIcon />
+                                            </div>
+                                            <div className="trashFullIcon" style={{ right: 12 }}    >
+                                                <FullScreen />
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+
+                            {banerImg.length !== 2 &&
+                                <div className="banner-setup" onClick={handleClick}>
+
+                                    <input
+                                        type="file"
+                                        accept="images/*"
+                                        name="file uplaod"
+                                        ref={fileInputHidden}
+                                        onChange={handleChange}
+                                        style={{ display: "none" }} />
+
+                                    <PlusIcon style={{ width: 24, height: 24 }} />
+                                    <p className="text-add" style={{ marginTop: 16, marginLeft: 0 }}>Добавить</p>
+                                </div>
+                            }
+
                         </div>
 
                         <div className="bannerSizeInfo">
                             <InfoIcon />
-                            <span className="banner-warning">Размеры баннеров - 1280 px х 900 px  </span>
+                            <span className="banner-warning">Размеры баннеров - 1280px х 900px  </span>
                         </div>
+                        {
+                            banerImg.length === 2 &&
+                            <>
+                                <div className="addBanerModal">
+                                    <PlusIcon className="icon" onClick={() => {
+                                        OpenModal({
+                                            id: "bannerImgModal",
+                                            classNameIsActive: "activeModalFilter",
+                                            topPosition: "50%",
+                                            rightPosition: "25%",
+                                            widthModal: "996px",
+                                            banerImg: banerImg
+                                        })
+                                    }} />
+                                    <span className="text_add">Добавить</span>
+                                </div>
+                                <div className="moreBanerModal">
+                                    <span className="moreText">Посмотреть все</span>
+                                    <RightIcon className="icon" width="10px" height="12px" onClick={() => {
+                                        OpenModal({
+                                            id: "bannerImgModal",
+                                            classNameIsActive: "activeModalFilter",
+                                            topPosition: "50%",
+                                            rightPosition: "25%",
+                                            widthModal: "996px",
+                                            banerImg: banerImg
+                                        })
+                                    }} />
+                                </div>
+                            </>
+                        }
                     </div>
 
                     <div className="shoppage-blocks">

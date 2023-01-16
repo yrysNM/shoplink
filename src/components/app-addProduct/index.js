@@ -107,10 +107,10 @@ const AddProductComponent = () => {
                                     <img width="100%" height="100%" className="otherImg" src={item.preview} alt="main product" />
                                     <div className="mainPhoto__icon">
 
-                                        <div className="trashFullIcon" onClick={() => filterPhotoes(i + 1)}>
+                                        <div className="trashFullIcon" onClick={() => filterPhotoes(i + 1)} style={{ right: 12 }}>
                                             <TrashIcon />
                                         </div>
-                                        <div className="trashFullIcon">
+                                        <div className="trashFullIcon" style={{ right: 12 }} >
                                             <FullScreen />
                                         </div>
                                     </div>

@@ -13,8 +13,9 @@ const Modal = ({ children }) => {
             <div
                 className="modal"
                 style={{
+                    maxWidth: isActiveModal.widthModal,
                     top: isActiveModal.topPosition,
-                    right: isActiveModal.rightPosition
+                    right: isActiveModal.rightPosition,
                 }}>
                 <div
                     onClick={(e) => e.stopPropagation()}

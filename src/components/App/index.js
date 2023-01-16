@@ -15,6 +15,8 @@ import ChooseColordModalConponent from "../app-chooseColorsModal";
 import EditCatalogComponent from "../app-editCatalog";
 import FullScreenImgComponent from "../app-fullScreenImg";
 import LogOutModalComponent from "../app-logOutModal";
+import BannerImgModalComponent from "../app-bannerImgModal";
+import NotificationModalComponent from "../app-notificatioModal";
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -53,6 +55,8 @@ const App = () => {
                 {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
                 {isActiveModal.id === "fullScreenModal" && <FullScreenImgComponent imgUrl={isActiveModal.imgUrl} />}
                 {isActiveModal.id === "logOutModal" && <LogOutModalComponent />}
+                {isActiveModal.id === "bannerImgModal" && <BannerImgModalComponent banerImg={isActiveModal.banerImg} />}
+                {isActiveModal.id === "notificationModal" && <NotificationModalComponent />}
             </Modal>
         </>
     );

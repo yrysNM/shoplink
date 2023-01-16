@@ -24,7 +24,14 @@ const AppHeaderComponent = () => {
 
                 <div className="link-site">
                     <div className="notification_exit">
-                        <img src={bellNotificationIcon} alt="notification icon" />
+                        <img src={bellNotificationIcon} alt="notification icon" onClick={() => {
+                            OpenModal({
+                                id: "notificationModal",
+                                classNameIsActive: "activeModalFilter",
+                                topPosition: "31%",
+                                rightPosition: "2%",
+                            })
+                        }} />
                         <span className="circlered"></span>
                         <img src={exitIcon} alt="exit icon" onClick={() => {
                             OpenModal({
