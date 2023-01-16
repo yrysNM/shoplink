@@ -283,7 +283,7 @@ const ShopComponent = () => {
                                 inputName: "repeat password"
                             }} />
 
-                            <button type="sbumit" style={{ left: "auto", right: "24px" }} className="btn submit">Cохранить</button>
+                            <button type="sbumit" style={{ left: "auto", right: "24px", padding: "14px 15px" }} className="btn submit">Cохранить</button>
                         </div>
                     </form>
                 </div>

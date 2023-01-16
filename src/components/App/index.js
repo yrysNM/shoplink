@@ -14,6 +14,7 @@ import WarningsRemoveModalComponent from "../app-warningRemove";
 import ChooseColordModalConponent from "../app-chooseColorsModal";
 import EditCatalogComponent from "../app-editCatalog";
 import FullScreenImgComponent from "../app-fullScreenImg";
+import LogOutModalComponent from "../app-logOutModal";
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -51,6 +52,7 @@ const App = () => {
                 {isActiveModal.id === "warningRemoveModal" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
                 {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
                 {isActiveModal.id === "fullScreenModal" && <FullScreenImgComponent imgUrl={isActiveModal.imgUrl} />}
+                {isActiveModal.id === "logOutModal" && <LogOutModalComponent />}
             </Modal>
         </>
     );
