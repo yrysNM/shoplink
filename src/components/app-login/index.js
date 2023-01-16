@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { HelpFormInputComponent } from "../app-shop";
 
 import { ReactComponent as PhoneIcon } from "../../resources/icon/shopDataIcons/phonIcon.svg";
@@ -7,17 +9,17 @@ import "./index.scss";
 
 const LoginComponent = () => {
     return (
-        <div className="login">
-            <div className="login__wrapper">
-                <div className="login__wrapper-block">
-                    <div className="login__logo">
+        <div className="loginRegister">
+            <div className="loginRegister__wrapper">
+                <div className="loginRegister__wrapper-block">
+                    <div className="loginRegister__logo">
                         ShopLink
                     </div>
 
-                    <div className="login__descr">Вход в личный кабинет </div>
-                    <div className="subtext login__subText">Заполните все поля для входа в личный кабинет</div>
+                    <div className="loginRegister__descr">Вход в личный кабинет </div>
+                    <div className="subtext loginRegister__subText">Заполните все поля для входа в личный кабинет</div>
 
-                    <form className="login__form" onSubmit={(e) => e.preventDefault()}>
+                    <form className="loginRegister__form" onSubmit={(e) => e.preventDefault()}>
                         <HelpFormInputComponent data={{
                             inputType: "number",
                             iconComponent: <PhoneIcon />,
@@ -35,7 +37,14 @@ const LoginComponent = () => {
                         <button className="btn next">Продолжить</button>
                     </form>
 
-                    <p className="registerText">Вы еще не наш клиент?  <span className="registerText__span">Зарегистрируйтесь</span></p>
+                    <p className="registerText">
+                        Вы еще не наш клиент?&nbsp;
+                        <span className="registerText__span">
+                            <Link to={"/register"}>
+                                Зарегистрируйтесь
+                            </Link>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
