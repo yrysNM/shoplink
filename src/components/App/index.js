@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
 
 import PrivateRoutes from "../../utils/PrivateRoutes";
 import AppHeaderComponent from "../app-header";
@@ -31,6 +31,7 @@ const App = () => {
                                     <AppHeaderComponent />
                                     <SideBarComponent />
                                     <main className="main">
+                                        <Outlet />
                                     </main>
                                 </div>
                             }>
