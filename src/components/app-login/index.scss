@@ -10,7 +10,8 @@
         align-items: center;
 
         &-block {
-            min-width: 365px;
+            max-width: 365px;
+            min-width: 300px;
         }
     }
 
@@ -69,8 +70,12 @@
     background: #F4F5F7;
     border-radius: 6px;
     color: #B7BCCC;
+    display: block;
+    margin: 0 auto;
     margin-top: 24px;
     transition: background 0.5s ease-in-out, color .5s ease-in-out;
+    width: 100%;
+    text-align: center;
 
     &-active {
         background: #40BFFF;
