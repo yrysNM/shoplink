@@ -7,6 +7,9 @@ import RegisterPageComponent from "./register-page";
 import RegisterNumberConfirmationPage from "./registerNumberConfirmation-page";
 import RegisterStoreDataPage from "./registerStoreData-page";
 import RegisterPickPassWordPage from "./register-pickPassword";
+import AdminPage from "./admin-page";
+import UserPage from "./user-page";
+
 
 export {
     MainPageComponent,
@@ -17,5 +20,7 @@ export {
     RegisterPageComponent,
     RegisterNumberConfirmationPage,
     RegisterStoreDataPage,
-    RegisterPickPassWordPage
+    RegisterPickPassWordPage,
+    AdminPage,
+    UserPage,
 }
