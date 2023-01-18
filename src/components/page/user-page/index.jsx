@@ -1,7 +1,7 @@
+import UserPreviewComponent from "../../app-userPreview";
+
 const UserPage = () => (
-    <div>
-        User Page
-    </div>
+    <UserPreviewComponent />
 );
 
 

@@ -45,17 +45,20 @@
 
         &__btns {
             .preview {
-                padding: 10px 45px 10px 43px;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 16px;
                 border: 1px solid #40BFFF;
                 border-radius: 6px;
                 background: inherit;
                 margin-right: 24px;
                 color: #40BFFF;
                 cursor: pointer;
+
+                .btnText {
+                    padding: 10px 45px 10px 43px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                }
             }
 
             .save {

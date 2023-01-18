@@ -1,4 +1,5 @@
-import { useContext } from "react"
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { DataContext } from "../../context/DataContext"
 
@@ -16,7 +17,12 @@ const LogOutModalComponent = () => {
 
                 <div className="btns">
                     <button className="btns-block cancelBtn" onClick={HideModal}>Отмена</button>
-                    <button className="btns-block removeBtn" onClick={HideModal}>Да, выйти</button>
+
+                    <Link to="/login">
+                        <button className="btns-block removeBtn" onClick={HideModal}>
+                            Да, выйти
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className="closeModal closeModal__small">

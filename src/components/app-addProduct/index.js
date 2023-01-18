@@ -88,7 +88,11 @@ const AddProductComponent = () => {
                         </div>
 
                         <div className="add-product_head-firstBlock add-product_head__btns">
-                            <button className="preview notAllowedBtn">Предосмотр</button>
+                            <button className="preview notAllowedBtn">
+                                <p className="btnText">
+                                    Предосмотр
+                                </p>
+                            </button>
                             <button className="btn save notAllowedBtn2">Сохранить</button>
                         </div>
                     </div>

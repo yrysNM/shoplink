@@ -106,7 +106,13 @@ const EditCatalogComponent = () => {
                         </div>
 
                         <div className="add-product_head-firstBlock add-product_head__btns">
-                            <button className="preview">Предосмотр</button>
+                            <button className="preview">
+                                <Link to={"/user/preview"}>
+                                    <p className="btnText">
+                                        Предосмотр
+                                    </p>
+                                </Link>
+                            </button>
                             <button className="btn save" onClick={() => {
                                 OpenModal({
                                     id: "warningRemoveModal",

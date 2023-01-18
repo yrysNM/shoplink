@@ -15,7 +15,8 @@ import {
     RegisterPageComponent,
     RegisterNumberConfirmationPage,
     RegisterStoreDataPage,
-    RegisterPickPassWordPage
+    RegisterPickPassWordPage,
+    UserPage
 } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
@@ -54,6 +55,10 @@ const App = () => {
                                 <Route path="catalog/add" element={<AddProductComponent />} />
                                 <Route path="catalog/:catalogNumber" element={<EditCatalogComponent />} />
                             </Route>
+
+                            <Route path="user/preview" element={
+                                <UserPage />
+                            } />
                         </Route>
                     </React.Fragment>
 
@@ -76,17 +81,17 @@ const App = () => {
                         <Route path="step4" element={<RegisterPickPassWordPage />} />
                     </Route>
                 </Routes>
+                <Modal>
+                    {isActiveModal.id === "filterModal" && <FilterModalComponent />}
+                    {isActiveModal.id === "warningRemoveModal" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
+                    {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
+                    {isActiveModal.id === "fullScreenModal" && <FullScreenImgComponent imgUrl={isActiveModal.imgUrl} />}
+                    {isActiveModal.id === "logOutModal" && <LogOutModalComponent />}
+                    {isActiveModal.id === "bannerImgModal" && <BannerImgModalComponent banerImg={isActiveModal.banerImg} />}
+                    {isActiveModal.id === "notificationModal" && <NotificationModalComponent />}
+                </Modal>
             </Router>
 
-            <Modal>
-                {isActiveModal.id === "filterModal" && <FilterModalComponent />}
-                {isActiveModal.id === "warningRemoveModal" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
-                {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
-                {isActiveModal.id === "fullScreenModal" && <FullScreenImgComponent imgUrl={isActiveModal.imgUrl} />}
-                {isActiveModal.id === "logOutModal" && <LogOutModalComponent />}
-                {isActiveModal.id === "bannerImgModal" && <BannerImgModalComponent banerImg={isActiveModal.banerImg} />}
-                {isActiveModal.id === "notificationModal" && <NotificationModalComponent />}
-            </Modal>
         </>
     );
 }
