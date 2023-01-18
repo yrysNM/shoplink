@@ -4,6 +4,8 @@ import ru from "date-fns/locale/ru";
 
 import { ReactComponent as DateIcon } from "../../../resources/icon/orderIcons/dateIcon.svg";
 
+import "./dateThenTo.scss";
+
 export const listMonthNames = ["янв", "фев", "мар", "апр", "май", "июн",
     "июл", "авг", "сен", "окт", "ноя", "дек"];
 
