@@ -1,7 +1,7 @@
-import UserPreviewComponent from "../../app-userPreview";
+import UserPreviewHeaderComponent from "../../app-userPreviewHeader";
 
 const UserPage = () => (
-    <UserPreviewComponent />
+    <UserPreviewHeaderComponent />
 );
 
 

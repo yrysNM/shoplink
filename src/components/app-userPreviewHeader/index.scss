@@ -1,0 +1,141 @@
+// head style
+
+.headerUser {
+    display: block;
+    padding: 12px 0;
+    min-height: auto;
+
+    .text>.logo {
+        color: #40BFFF;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-tail {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.adminPanelText {
+    margin-right: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+
+    color: #969CAF;
+}
+
+.hamburger {
+    display: block;
+    position: absolute;
+    right: 68px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 10px;
+    cursor: pointer;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #969CAF;
+        margin-bottom: 2px;
+        transition: all 0.5s;
+    }
+
+    &_active {
+        span {
+            margin-bottom: 0px;
+
+            &:nth-child(1) {
+                transform: translateY(5px) rotate(-45deg);
+            }
+
+            &:nth-child(2) {
+                display: none;
+            }
+
+            &:nth-child(3) {
+                transform: translateY(3px) rotate(45deg);
+            }
+        }
+    }
+}
+
+// sub head style
+
+.subHead {
+    margin-top: 53px;
+    padding: 24px 0;
+    position: relative;
+
+    &__description {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        gap: 88px;
+
+        &>.cart {
+            flex-basis: 248px;
+
+        }
+    }
+
+}
+
+.slideLines {
+    position: absolute;
+    bottom: 16px;
+    left: 64px;
+    display: flex;
+    flex-direction: row;
+    gap: 8.7px;
+
+    &>.line {
+        width: 208px;
+        height: 4px;
+        background: #B7BCCC;
+        opacity: 0.2;
+        border-radius: 5px;
+
+        &__active {
+            background: #F25E7F;
+            opacity: 1;
+            border-radius: 5px;
+        }
+    }
+}
+
+.infoShopText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 304px;
+
+    &>.subText {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+
+
+        color: #969CAF;
+    }
+}
+
+.shopNameText {
+    width: fit-content;
+    padding: 10px;
+    background: #F25E7F;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+}
