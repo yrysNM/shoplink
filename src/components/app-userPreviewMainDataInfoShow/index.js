@@ -160,7 +160,7 @@ const UserPreviewMainDataInfoShowComponent = () => {
                     <CategoryComponent imgUrl={womenCategory} categoryTitle={"Женщинам"} />
                     <CategoryComponent imgUrl={menCategory} categoryTitle={"Мужчинам"} />
                     <CategoryComponent imgUrl={girlsCategory} categoryTitle={"Девочкам"} />
-                    <CategoryComponent imgUrl={womenCategory} categoryTitle={"Женщинам"} />
+                    <CategoryComponent imgUrl={womenCategory} categoryTitle={"Мальчикам"} />
                 </LayoutListCategoryComponent>
 
                 <div className="blockCategory">
@@ -223,6 +223,14 @@ const UserPreviewMainDataInfoShowComponent = () => {
                         productName={"Zara"}
                         productPrice={"5 490 ₸"} />
                 </LayoutListCategoryComponent>
+            </div>
+
+            <div className="blockCategory">
+                <button className="allProductBtn">
+                    <p className="btnText">
+                        Все товары
+                    </p>
+                </button>
             </div>
         </main>
     );

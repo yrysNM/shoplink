@@ -28,6 +28,7 @@ import FullScreenImgComponent from "../app-fullScreenImg";
 import LogOutModalComponent from "../app-logOutModal";
 import BannerImgModalComponent from "../app-bannerImgModal";
 import NotificationModalComponent from "../app-notificatioModal";
+import UserFooterComponent from "../app-userFooter";
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -56,9 +57,16 @@ const App = () => {
                                 <Route path="catalog/:catalogNumber" element={<EditCatalogComponent />} />
                             </Route>
 
-                            <Route path="user/preview" element={
-                                <UserPage />
-                            } />
+                            <Route element={
+                                <React.Fragment>
+                                    <div>
+                                        <Outlet />
+                                    </div>
+                                    <UserFooterComponent />
+                                </React.Fragment>
+                            }>
+                                <Route path="user/preview" element={<UserPage />} />
+                            </Route>
                         </Route>
                     </React.Fragment>
 

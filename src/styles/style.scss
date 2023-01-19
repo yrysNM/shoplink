@@ -9,6 +9,7 @@ html {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    overflow-x: hidden;
 }
 
 body {
@@ -21,7 +22,6 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 

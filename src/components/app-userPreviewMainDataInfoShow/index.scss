@@ -179,3 +179,19 @@
         }
     }
 }
+
+.allProductBtn {
+    background: #FFFFFF;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #40BFFF;
+    border-radius: 6px;
+
+    &>.btnText {
+        padding: 17px 111.43px 17px 108.57px;
+        color: #40BFFF;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
