@@ -18,11 +18,13 @@ const LogOutModalComponent = () => {
                 <div className="btns">
                     <button className="btns-block cancelBtn" onClick={HideModal}>Отмена</button>
 
-                    <Link to="/login">
-                        <button className="btns-block removeBtn" onClick={HideModal}>
-                            Да, выйти
-                        </button>
-                    </Link>
+                    <button className="removeBtn" onClick={HideModal}>
+                        <Link to="/login">
+                            <p className="btnText">
+                                Да, выйти
+                            </p>
+                        </Link>
+                    </button>
                 </div>
             </div>
             <div className="closeModal closeModal__small">

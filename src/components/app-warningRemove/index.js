@@ -16,7 +16,11 @@ const WarningsRemoveModalComponent = ({ catalogNumber }) => {
 
                 <div className="btns">
                     <button className="btns-block cancelBtn" onClick={HideModal}>Отмена</button>
-                    <button className="btns-block removeBtn" onClick={HideModal}>Удалить</button>
+                    <button className="removeBtn" onClick={HideModal}>
+                        <p className="btnText">
+                            Удалить
+                        </p>
+                    </button>
                 </div>
             </div>
             <div className="closeModal closeModal__small">

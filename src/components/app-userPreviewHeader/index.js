@@ -28,7 +28,7 @@ const UserPreviewHeaderComponent = () => {
                         <div className="headerUser__wrapper-tail">
                             <p className="adminPanelText">Админ панель</p>
 
-                            <HeartIcon style={{ marginRight: 32 }} />
+                            <HeartIcon style={{ marginRight: 42 }} />
 
                             <div
                                 className={classnames("hamburger", {

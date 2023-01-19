@@ -1,10 +1,16 @@
 .mainUser {
     padding: 56px 0 48px 0;
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
+    width: 100vw;
+}
+
+.blockCategory {
+    margin-top: 48px;
 }
 
 .productCategory {
     margin-left: 64px;
+
 
     &__head {
         display: flex;
@@ -53,6 +59,12 @@
         line-height: 22px;
         color: #252728;
 
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
     }
 
     &__price {
@@ -115,16 +127,55 @@
         color: #FFFFFF;
     }
 
+    &.discount {
+        bottom: 38px;
+        left: auto;
+        right: 8px;
+    }
+
+    &.installment {
+        left: auto;
+        right: -7px;
+        background: #DD5440;
+    }
 }
 
-.discount {
-    bottom: 38px;
-    left: auto;
-    right: 8px;
+// sale product 
+.salePriceText {
+    color: #969CAF;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-left: 13px;
+    text-decoration: line-through;
 }
 
-.installment {
-    left: auto;
-    right: -7px;
-    background: #DD5440;
+.categoryListBtns {
+    margin-top: 48px;
+
+    &__btn {
+        padding: 12px 0;
+        background: transparent;
+        transition: background .5s ease-in-out, border-radius .5s ease-in-out;
+        border: none;
+
+        &>.btnText {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            padding: 0 20px;
+            color: #969CAF;
+        }
+    }
+
+    &__btn-active {
+        background: #40BFFF;
+        border-radius: 5px;
+        transition: background .5s ease-in-out, border-radius .5s ease-in-out;
+
+        &>.btnText {
+            color: #FFFFFF;
+        }
+    }
 }
