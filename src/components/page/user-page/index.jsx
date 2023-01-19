@@ -1,7 +1,11 @@
 import UserPreviewHeaderComponent from "../../app-userPreviewHeader";
+import UserPreviewMainDataInfoShowComponent from "../../app-userPreviewMainDataInfoShow";
 
 const UserPage = () => (
-    <UserPreviewHeaderComponent />
+    <div>
+        <UserPreviewHeaderComponent />
+        <UserPreviewMainDataInfoShowComponent />
+    </div>
 );
 
 

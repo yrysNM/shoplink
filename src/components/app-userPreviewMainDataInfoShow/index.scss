@@ -1,0 +1,130 @@
+.mainUser {
+    padding: 56px 0 48px 0;
+    background-color: #FFFFFF
+}
+
+.productCategory {
+    margin-left: 64px;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 64px;
+    }
+
+    &__titleText {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+
+        color: #252728;
+    }
+
+    &__list {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        width: 9999px;
+
+        &-block {
+            width: 192px;
+
+        }
+
+        &-blockImg {
+            height: 217px;
+            position: relative;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 217px;
+                object-position: 50% 50%;
+            }
+        }
+    }
+
+    &__name {
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: #252728;
+
+    }
+
+    &__price {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #F25E7F;
+    }
+}
+
+.linkMoreInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+        color: #969CAF;
+    }
+}
+
+.favoriteIcon {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    display: flex;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    &>.icon {
+        path {
+            stroke: #fff;
+        }
+    }
+}
+
+.newProduct {
+    position: absolute;
+    bottom: 5px;
+    left: 4px;
+    padding: 5px 7px;
+    text-transform: uppercase;
+    background: #F25E7F;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+
+    &>.newText {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #FFFFFF;
+    }
+
+}
+
+.discount {
+    bottom: 38px;
+    left: auto;
+    right: 8px;
+}
+
+.installment {
+    left: auto;
+    right: -7px;
+    background: #DD5440;
+}
