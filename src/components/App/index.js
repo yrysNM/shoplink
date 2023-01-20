@@ -59,9 +59,7 @@ const App = () => {
 
                             <Route element={
                                 <React.Fragment>
-                                    <div>
-                                        <Outlet />
-                                    </div>
+                                    <Outlet />
                                     <UserFooterComponent />
                                 </React.Fragment>
                             }>
