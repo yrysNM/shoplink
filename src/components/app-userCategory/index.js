@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
 import { HelpFormInputComponent } from "../app-shop";
@@ -22,6 +24,13 @@ import userPreview6 from "../../resources/img/t-shirt6.jpg";
 import "./index.scss";
 
 const UserCategoryComponent = () => {
+    const [sortFilterBlock, setSortFilterBlock] = useState(false);
+
+    const handleClick = () => {
+        setSortFilterBlock(sortFilterBlock => !sortFilterBlock);
+    }
+
+
     return (
         <div className="userCategory">
             <div className="containerUser">
@@ -52,10 +61,24 @@ const UserCategoryComponent = () => {
                     }} />
 
                     <div className="userCategory__subFilter">
-                        <div className="userCategory__subFilter-block">
+                        <div className="userCategory__subFilter-block" onClick={handleClick}>
                             <SortFilterPriceIcon className="icon" />
                             <span className="sortText">По возрастанию цены</span>
-                            <ArrowDown style={{ marginLeft: 20 }} width="15px" height="15px" />
+
+                            {
+                                sortFilterBlock
+                                    ? <ArrowUp style={{ marginLeft: 20 }} width="15px" height="15px" />
+                                    : <ArrowDown style={{ marginLeft: 20 }} width="15px" height="15px" />
+                            }
+
+                            <div className={classnames("sortFilterBlock", {
+                                "sortFilterBlock__active": sortFilterBlock
+                            })}>
+                                <span className="sortText sortText__active">По возрастанию цены</span>
+                                <span className="sortText">По новизне</span>
+                                <span className="sortText">По популярности</span>
+                                <span className="sortText">По скидкам</span>
+                            </div>
                         </div>
                         <div className="userCategory__subFilter-block">
                             <FilterIcon className="icon__filter" width="20px" height="20px" />
