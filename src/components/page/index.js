@@ -9,6 +9,7 @@ import RegisterStoreDataPage from "./registerStoreData-page";
 import RegisterPickPassWordPage from "./register-pickPassword";
 import AdminPage from "./admin-page";
 import UserPage from "./user-page";
+import UserAllCategoryPage from "./userAllCategory-page";
 
 
 export {
@@ -23,4 +24,5 @@ export {
     RegisterPickPassWordPage,
     AdminPage,
     UserPage,
+    UserAllCategoryPage
 }

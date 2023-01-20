@@ -1,3 +1,6 @@
+import { useState, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
+
 import { ReactComponent as RightArrow } from "../../resources/icon/rightArrow.svg";
 import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 import sweaterImg from "../../resources/img/userPreview1.png";
@@ -236,7 +239,7 @@ const UserPreviewMainDataInfoShowComponent = () => {
     );
 }
 
-const CategoryComponent = ({ imgUrl, categoryTitle }) => {
+export const CategoryComponent = ({ imgUrl, categoryTitle }) => {
     return (
         <div className="productCategory__list-block">
             <div className="productCategory__list-blockImg">
@@ -301,6 +304,18 @@ const ProdictCategotyItemSaleBlockComponent = (props) => {
 }
 
 const LayoutListCategoryComponent = ({ children, textTitle }) => {
+
+    const [url, setUrl] = useState("");
+
+    useLayoutEffect(() => {
+        switch (textTitle) {
+            case "Категории":
+                setUrl("allCategory")
+                break;
+            default: setUrl("");
+        }
+    }, []);
+
     return (
         <div className="blockCategory">
             <div className="productCategory__head">
@@ -309,7 +324,9 @@ const LayoutListCategoryComponent = ({ children, textTitle }) => {
                 </p>
 
                 <div className="linkMoreInfo">
-                    <span className="linkMoreInfo__text">Перейти</span>
+                    <Link to={`/user/preview/${url}`}>
+                        <span className="linkMoreInfo__text">Перейти</span>
+                    </Link>
                     <RightArrow width="15" height="12" />
                 </div>
             </div>

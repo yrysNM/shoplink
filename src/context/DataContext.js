@@ -10,6 +10,16 @@ const DataContextProvider = ({ children }) => {
     });
     const [productMainPhoto, setProductMainPhoto] = useState([]);
     const [selectedValue, setSelectedValue] = useState(null);
+    const [hamburgerActive, setHamburgerActive] = useState(false);
+
+    function ActiveHamburger(e) {
+        e.stopPropagation();
+        setHamburgerActive(hamburgerActive => !hamburgerActive);
+    }
+
+    function SetHamburgerValue(val) {
+        setHamburgerActive(val);
+    }
 
     function OpenModal(objActive) {
         setIsActiveModal(objActive);
@@ -41,12 +51,14 @@ const DataContextProvider = ({ children }) => {
             isActiveModal,
             productMainPhoto,
             selectedValue,
+            hamburgerActive,
+            ActiveHamburger,
             OpenModal,
             HideModal,
             SetValueSelected,
             SetMainPhoto,
-            FilterMainPhoto
-
+            FilterMainPhoto,
+            SetHamburgerValue
         }}>
             {children}
         </DataContext.Provider>
