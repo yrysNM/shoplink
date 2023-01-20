@@ -1,0 +1,89 @@
+.userCategory {
+    padding: 16px 0 48px 0;
+    background-color: #FFFFFF;
+
+    &__filter {
+        margin-top: 24px;
+
+        .form-input {
+            &::placeholder {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+                color: #969CAF;
+            }
+        }
+
+        .categoryListBtns__btn>.btnText {
+            padding: 9px 15px;
+        }
+    }
+
+    &__subFilter {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        &-block {
+            display: flex;
+            align-items: center;
+
+            &>.sortText {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: #252728;
+
+            }
+
+            .icon {
+                margin-right: 11px;
+
+                &__filter {
+                    margin-right: 14px;
+
+                    path {
+                        stroke: #40BFFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// head basic style
+.userCategoryProduct__urlText {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #969CAF;
+}
+
+.userCategoryProduct__head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &>.hamburger {
+        left: 0;
+        right: auto;
+    }
+
+    &-title {
+        margin-left: 36px;
+
+    }
+
+}
+
+.favoriteBasketIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

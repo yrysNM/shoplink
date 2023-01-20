@@ -5,7 +5,6 @@ import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/hear
 
 import shopingCart from "../../resources/img/shopingCar.png";
 
-
 import "./index.scss";
 
 const UserPreviewHeaderComponent = () => {

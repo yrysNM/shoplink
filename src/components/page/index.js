@@ -10,6 +10,7 @@ import RegisterPickPassWordPage from "./register-pickPassword";
 import AdminPage from "./admin-page";
 import UserPage from "./user-page";
 import UserAllCategoryPage from "./userAllCategory-page";
+import UserCategoryPage from "./userCategory-page";
 
 
 export {
@@ -24,5 +25,6 @@ export {
     RegisterPickPassWordPage,
     AdminPage,
     UserPage,
-    UserAllCategoryPage
+    UserAllCategoryPage,
+    UserCategoryPage
 }

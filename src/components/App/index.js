@@ -17,7 +17,8 @@ import {
     RegisterStoreDataPage,
     RegisterPickPassWordPage,
     UserPage,
-    UserAllCategoryPage
+    UserAllCategoryPage,
+    UserCategoryPage
 } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
@@ -66,6 +67,7 @@ const App = () => {
                             }>
                                 <Route path="user/preview" element={<UserPage />} />
                                 <Route path="user/preview/allCategory" element={<UserAllCategoryPage />} />
+                                <Route path="user/preview/:categoryName" element={<UserCategoryPage />} />
                             </Route>
                         </Route>
                     </React.Fragment>

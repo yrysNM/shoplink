@@ -253,7 +253,7 @@ export const CategoryComponent = ({ imgUrl, categoryTitle }) => {
     );
 }
 
-const SpeceficProductComponent = ({ imgUrl, productName, productPrice }) => {
+export const SpeceficProductComponent = ({ imgUrl, productName, productPrice, exclusive = false, installment = false }) => {
     return (
         <div className="productCategory__list-block">
             <div className="productCategory__list-blockImg">
@@ -263,6 +263,15 @@ const SpeceficProductComponent = ({ imgUrl, productName, productPrice }) => {
                     <HeartIcon width="20" height="18" className="icon" />
                 </div>
 
+                {exclusive && <div className="newProduct" style={{ background: "#5C61F4" }}>
+                    <p className="newText">EXCLUSIVE</p>
+                </div>}
+
+                {installment && <div className="newProduct installment">
+                    <p className="newText installment__text">
+                        0 · 0 · 12
+                    </p>
+                </div>}
             </div>
 
             <p className="productCategory__name">
@@ -311,6 +320,9 @@ const LayoutListCategoryComponent = ({ children, textTitle }) => {
         switch (textTitle) {
             case "Категории":
                 setUrl("allCategory")
+                break;
+            case "Футболки":
+                setUrl("t-Shirts");
                 break;
             default: setUrl("");
         }

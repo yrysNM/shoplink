@@ -408,13 +408,13 @@ export const HelpFormInputComponent = ({ data }) => {
             }
 
             <div className="form-input__block">
-                <div className={`iconform ${data.price ? "priceIcon" : null}`} style={{ bottom: 6 }}>
+                <div className={`iconform ${data.price ? "priceIcon" : ""}`} style={{ bottom: 6 }}>
                     {data.iconComponent}
                 </div>
                 <input
                     type={data.inputType}
                     ref={inputRef}
-                    className={`form-input ${data.price ? "form-priceInput" : null}`}
+                    className={`form-input ${data.price ? "form-priceInput" : ""}`}
                     name={data.inputName}
                     placeholder={data.placeholder ?? null} />
 

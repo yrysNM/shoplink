@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
 import { CategoryComponent } from "../app-userPreviewMainDataInfoShow";
@@ -25,7 +27,12 @@ const UserAllCategoryComponent = () => {
 
 
                 {/* dynamic url bolady */}
-                <p className="subtext allCategory__url">Главная&nbsp;/&nbsp;Все категории</p>
+                <p className="subtext allCategory__url">
+                    <Link to={".."} relative="path">
+                        Главная
+                    </Link>
+                    &nbsp;/&nbsp;Все категории
+                </p>
 
 
                 <div className="allCategory__grid">

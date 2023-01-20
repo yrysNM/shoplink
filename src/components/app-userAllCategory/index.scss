@@ -6,6 +6,10 @@
         position: relative;
         display: flex;
         align-items: center;
+
+        .hamburger {
+            right: 0;
+        }
     }
 
     &__url {
