@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
 import DefaultScreenComponent from "../app-defaultScreen";
 import { HelpFormInputComponent } from "../app-shop";
+import { DataContext } from "../../context/DataContext";
 import { SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
 
 import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
@@ -26,6 +27,8 @@ import "./index.scss";
 
 const UserCategoryComponent = () => {
     const [sortFilterBlock, setSortFilterBlock] = useState(false);
+
+    const { OpenModal } = useContext(DataContext);
 
     const handleClick = () => {
         setSortFilterBlock(sortFilterBlock => !sortFilterBlock);
@@ -81,7 +84,16 @@ const UserCategoryComponent = () => {
                                 <span className="sortText">По скидкам</span>
                             </div>
                         </div>
-                        <div className="userCategory__subFilter-block">
+                        <div
+                            className="userCategory__subFilter-block"
+                            onClick={() => OpenModal({
+                                id: "userFilterModal",
+                                classNameIsActive: "activeModalFilter",
+                                topPosition: "auto",
+                                bottom: "0",
+                                transform: "translateY(0)",
+                                rightPosition: "0"
+                            })}>
                             <FilterIcon className="icon__filter" width="20px" height="20px" />
                             <span className="sortText">По возрастанию цены</span>
                         </div>

@@ -16,6 +16,8 @@ const Modal = ({ children }) => {
                     maxWidth: isActiveModal.widthModal,
                     top: isActiveModal.topPosition,
                     right: isActiveModal.rightPosition,
+                    bottom: isActiveModal.bottom,
+                    transform: isActiveModal.transform
                 }}>
                 <div
                     onClick={(e) => e.stopPropagation()}

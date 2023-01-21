@@ -31,6 +31,8 @@ import LogOutModalComponent from "../app-logOutModal";
 import BannerImgModalComponent from "../app-bannerImgModal";
 import NotificationModalComponent from "../app-notificatioModal";
 import UserFooterComponent from "../app-userFooter";
+import UserMenuFilterComponent from "../app-userMenuFilter";
+
 
 const App = () => {
     const { isActiveModal } = useContext(DataContext);
@@ -99,6 +101,7 @@ const App = () => {
                     {isActiveModal.id === "logOutModal" && <LogOutModalComponent />}
                     {isActiveModal.id === "bannerImgModal" && <BannerImgModalComponent banerImg={isActiveModal.banerImg} />}
                     {isActiveModal.id === "notificationModal" && <NotificationModalComponent />}
+                    {isActiveModal.id === "userFilterModal" && <UserMenuFilterComponent />}
                 </Modal>
             </Router>
 
