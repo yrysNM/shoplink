@@ -19,7 +19,8 @@ import {
     UserPage,
     UserAllCategoryPage,
     UserCategoryPage,
-    UserFavoritePage
+    UserFavoritePage,
+    UserBasketPage
 } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
@@ -33,6 +34,7 @@ import BannerImgModalComponent from "../app-bannerImgModal";
 import NotificationModalComponent from "../app-notificatioModal";
 import UserFooterComponent from "../app-userFooter";
 import UserMenuFilterComponent from "../app-userMenuFilter";
+import UserWarningsRemoveModalComponent from "../app-userWarningRemove";
 
 
 const App = () => {
@@ -72,6 +74,7 @@ const App = () => {
                                 <Route path="user/preview/allCategory" element={<UserAllCategoryPage />} />
                                 <Route path="user/preview/:categoryName" element={<UserCategoryPage />} />
                                 <Route path="user/preview/favorite" element={<UserFavoritePage />} />
+                                <Route path="user/preview/basket" element={<UserBasketPage />} />
                             </Route>
                         </Route>
                     </React.Fragment>
@@ -104,6 +107,7 @@ const App = () => {
                     {isActiveModal.id === "bannerImgModal" && <BannerImgModalComponent banerImg={isActiveModal.banerImg} />}
                     {isActiveModal.id === "notificationModal" && <NotificationModalComponent />}
                     {isActiveModal.id === "userFilterModal" && <UserMenuFilterComponent />}
+                    {isActiveModal.id === "userRemoveModal" && <UserWarningsRemoveModalComponent />}
                 </Modal>
             </Router>
 

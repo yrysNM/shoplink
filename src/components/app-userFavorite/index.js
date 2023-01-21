@@ -29,7 +29,12 @@ const UserFavoriteComponent = () => {
                                 <HeartIcon />
                             </NavLink>
                         </div>
-                        <BasketIcon />
+                        <div className="iconBlock">
+                            <NavLink to="/user/preview/basket"
+                                className={({ isActive }) => isActive ? classNamesHeartIcon : undefined}>
+                                <BasketIcon />
+                            </NavLink>
+                        </div>
                     </div>
 
                 </div>
