@@ -2,4 +2,95 @@
     padding: 32px;
     height: 100vh;
     background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+
+    &__titleText {
+        margin-bottom: 32px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+
+        color: #252728;
+    }
+}
+
+.userFilterBlock {
+    position: relative;
+
+    .thumb {
+        width: 292px;
+    }
+
+    &__headText {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+
+        color: #252728;
+    }
+
+    .slider__range {
+        background-color: #40BFFF;
+    }
+
+    .sizeBlocks {
+        grid-template: repeat(auto-fill, 36px)/repeat(5, 52px);
+    }
+
+}
+
+.colorBlocks {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(64px, 104px));
+    // gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 10px;
+
+    margin-top: 15px;
+
+    &>.boxColor {
+        padding: 5px 10px;
+        background: #FFFFFF;
+        text-align: center;
+        border: 1px solid #B7BCCC;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #B7BCCC;
+
+        &-active {
+            color: #40BFFF;
+            border-color: #40BFFF;
+        }
+    }
+}
+
+.applyBtn {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    padding: 17px 121px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    background: #40BFFF;
+    border-radius: 6px;
+    border: none;
+}
+
+.userFilterModal {
+    .userClose {
+        width: 15px;
+        height: 18px;
+
+        span {
+            background-color: #40BFFF;
+        }
+    }
 }

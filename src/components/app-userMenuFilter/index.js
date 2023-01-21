@@ -10,12 +10,12 @@ const UserMenuFilterComponent = () => {
     const { HideModal } = useContext(DataContext);
 
     return (
-        <>
+        <div className="userFilterModal">
             <div className="userFilter">
                 <div className="userFilter__titleText">Фильтры</div>
 
                 <div className="userFilterBlock">
-                    <span className="userFilterBlock__headText">
+                    <span className="userFilterBlock__headText" style={{ marginBottom: 20, display: "block" }}>
                         Цена
                     </span>
                     <MultiRangeSlideComponent
@@ -49,15 +49,58 @@ const UserMenuFilterComponent = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="userFilterBlock" style={{ marginTop: 20 }}>
+                    <span className="userFilterBlock__headText">
+                        Цвет
+                    </span>
+
+                    <div className="colorBlocks">
+                        <div className="boxColor boxColor-active">
+                            Белый
+                        </div>
+                        <div className="boxColor boxColor-active">
+                            Черный
+                        </div>
+                        <div className="boxColor">
+                            Серый
+                        </div>
+                        <div className="boxColor">
+                            Синий
+                        </div>
+                        <div className="boxColor">
+                            Желтый
+                        </div>
+                        <div className="boxColor">
+                            Зеленый
+                        </div>
+                        <div className="boxColor">
+                            Красный
+                        </div>
+                        <div className="boxColor">
+                            Розовый
+                        </div>
+                        <div className="boxColor">
+                            Фиолетовый
+                        </div>
+                        <div className="boxColor">
+                            Бежевый
+                        </div>
+                    </div>
+                </div>
+
+                <button className="applyBtn">
+                    Применить
+                </button>
             </div>
             <div className="closeModal">
-                <div className={`сlose close_true`} onClick={HideModal}>
+                <div className={`сlose close_true userClose`} onClick={HideModal}>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
