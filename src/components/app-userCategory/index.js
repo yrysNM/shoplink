@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
+import DefaultScreenComponent from "../app-defaultScreen";
 import { HelpFormInputComponent } from "../app-shop";
 import { SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
 
@@ -110,6 +111,8 @@ const UserCategoryComponent = () => {
                     </div>
                 </div>
 
+
+                {/* если data лар бар болса */}
                 <div className="allCategory__grid">
                     <SpeceficProductComponent
                         imgUrl={userPreview1}
@@ -137,8 +140,11 @@ const UserCategoryComponent = () => {
                         imgUrl={userPreview6}
                         productName={"CherryLab"}
                         productPrice={"26 990 ₸"} />
-
                 </div>
+
+                {/* <div className="defaultScreen">
+                    <DefaultScreenComponent descr={"По вашему запросу ничего не найдено"} />
+                </div> */}
             </div>
         </div>
     );

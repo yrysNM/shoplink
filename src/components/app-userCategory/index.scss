@@ -89,6 +89,19 @@
     }
 }
 
+.defaultScreen {
+    min-height: 500px;
+    position: relative;
+
+    img[alt="default icon"] {
+        left: 55%;
+    }
+
+    .warningtext {
+        top: 390.99px;
+    }
+}
+
 // head basic style
 .userCategoryProduct__urlText {
     margin-top: 16px;
