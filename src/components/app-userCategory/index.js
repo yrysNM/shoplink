@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
@@ -7,6 +7,7 @@ import DefaultScreenComponent from "../app-defaultScreen";
 import { HelpFormInputComponent } from "../app-shop";
 import { DataContext } from "../../context/DataContext";
 import { SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
+import UserMenuComponent from "../app-userMenu";
 
 import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 import { ReactComponent as SortFilterPriceIcon } from "../../resources/icon/userIcons/filterPrice.svg";
@@ -25,6 +26,8 @@ import userPreview6 from "../../resources/img/t-shirt6.jpg";
 
 import "./index.scss";
 
+export let classNamesHeartIcon = "colorIcon";
+
 const UserCategoryComponent = () => {
     const [sortFilterBlock, setSortFilterBlock] = useState(false);
 
@@ -35,16 +38,25 @@ const UserCategoryComponent = () => {
     }
 
 
+
     return (
         <div className="userCategory">
             <div className="containerUser">
                 <div className="userCategoryProduct__head">
                     <HamburgerComponent />
-
+                    <UserMenuComponent />
                     <h2 className="userCategoryProduct__head-title">Футболки</h2>
 
                     <div className="favoriteBasketIcons">
-                        <HeartIcon />
+                        <div className="iconBlock">
+
+                            <NavLink to="/user/preview/favorite"
+                                className={({ isActive }) =>
+                                    isActive ? classNamesHeartIcon : undefined
+                                }>
+                                <HeartIcon />
+                            </NavLink>
+                        </div>
                         <BasketIcon />
                     </div>
 

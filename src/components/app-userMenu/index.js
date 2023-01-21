@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 
 import { DataContext } from "../../context/DataContext";
@@ -52,7 +53,9 @@ const UserMenuComponent = () => {
 
             <ul className="nav">
                 <li className="menu__item">
-                    <span className="menu__text">Главная</span>
+                    <Link to="/user/preview">
+                        <span className="menu__text">Главная</span>
+                    </Link>
                 </li>
 
                 <li className="menu__item">
