@@ -1,0 +1,131 @@
+.userProductDetailer {
+
+    .subHead {
+        width: 769px;
+        height: 440px;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    .slideLines {
+        bottom: 12px;
+        left: 12px;
+
+        .line {
+            width: 240px;
+            background: #FFFFFF;
+            opacity: 0.6;
+
+            &__active {
+                background: #F25E7F;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.deliveryInfo__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &-item {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+.infoProductInfo {
+    margin-top: 32px;
+
+    .subtext {
+        margin-top: 24px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #969CAF;
+
+    }
+
+    .descrText {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 12px;
+    }
+}
+
+.productNameText {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 12px;
+
+    color: #252728;
+}
+
+.productFilterBlock {
+    margin-top: 24px;
+
+    &__headText {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+
+
+        color: #252728;
+
+        opacity: 0.9;
+    }
+
+    .catalogColors {
+        gap: 15px;
+        margin-top: 12px;
+
+    }
+}
+
+.whatsappBtn {
+    margin-top: 16px;
+    border: 1px solid #40BFFF;
+    border-radius: 8px;
+    background: transparent;
+    padding: 11px 100px 10px 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>.btnText {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+
+
+        color: #40BFFF;
+    }
+}
+
+.iconWhatsapp path {
+    fill: #40BFFF;
+}
+
+.deliveryDescr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.deliveryText {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #252728;
+
+    opacity: 0.9;
+}

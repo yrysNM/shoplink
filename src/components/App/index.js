@@ -21,7 +21,8 @@ import {
     UserCategoryPage,
     UserFavoritePage,
     UserBasketPage,
-    UserCheckoutPage
+    UserCheckoutPage,
+    UserProductDetailedPage
 } from "../page";
 import OrderLayoutComponent from "../app-orderLayout";
 import AddProductComponent from "../app-addProduct";
@@ -77,6 +78,7 @@ const App = () => {
                                 <Route path="user/preview/favorite" element={<UserFavoritePage />} />
                                 <Route path="user/preview/basket" element={<UserBasketPage />} />
                                 <Route path="user/preview/basket/checkout" element={<UserCheckoutPage />} />
+                                <Route path="user/preview/product/:productId" element={<UserProductDetailedPage />} />
                             </Route>
                         </Route>
                     </React.Fragment>

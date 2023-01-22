@@ -205,4 +205,12 @@
         font-size: 14px;
         line-height: 16px;
     }
+
+    &-active {
+        background: #40BFFF;
+
+        &>.btnText {
+            color: #FFFFFF;
+        }
+    }
 }

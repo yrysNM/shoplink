@@ -312,7 +312,7 @@ const ProdictCategotyItemSaleBlockComponent = (props) => {
     );
 }
 
-const LayoutListCategoryComponent = ({ children, textTitle }) => {
+export const LayoutListCategoryComponent = ({ children, textTitle }) => {
 
     const [url, setUrl] = useState("");
 

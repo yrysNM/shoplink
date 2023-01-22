@@ -14,6 +14,7 @@ import UserCategoryPage from "./userCategory-page";
 import UserFavoritePage from "./userFavorite-page";
 import UserBasketPage from "./userBasket-page";
 import UserCheckoutPage from "./user-checkout";
+import UserProductDetailedPage from "./userProductDetailed-page";
 
 export {
     MainPageComponent,
@@ -31,5 +32,6 @@ export {
     UserCategoryPage,
     UserFavoritePage,
     UserBasketPage,
-    UserCheckoutPage
+    UserCheckoutPage,
+    UserProductDetailedPage
 }
