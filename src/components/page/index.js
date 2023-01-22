@@ -13,6 +13,7 @@ import UserAllCategoryPage from "./userAllCategory-page";
 import UserCategoryPage from "./userCategory-page";
 import UserFavoritePage from "./userFavorite-page";
 import UserBasketPage from "./userBasket-page";
+import UserCheckoutPage from "./user-checkout";
 
 export {
     MainPageComponent,
@@ -29,5 +30,6 @@ export {
     UserAllCategoryPage,
     UserCategoryPage,
     UserFavoritePage,
-    UserBasketPage
+    UserBasketPage,
+    UserCheckoutPage
 }

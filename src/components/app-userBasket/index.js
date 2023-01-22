@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
@@ -143,10 +143,11 @@ const UserBasketComponent = () => {
                 </div>
 
                 <button className="checkoutBtn">
-                    <p className="btnText">
-
-                        Оформить заказ
-                    </p>
+                    <Link to={"/user/preview/basket/checkout"}>
+                        <p className="btnText">
+                            Оформить заказ
+                        </p>
+                    </Link>
                 </button>
             </div>
         </div>

@@ -336,7 +336,7 @@ const LayoutListCategoryComponent = ({ children, textTitle }) => {
                 </p>
 
                 <div className="linkMoreInfo">
-                    <Link to={`/user/preview/${url}`}>
+                    <Link to={`/user/preview/category/${url}`}>
                         <span className="linkMoreInfo__text">Перейти</span>
                     </Link>
                     <RightArrow width="15" height="12" />
