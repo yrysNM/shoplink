@@ -68,12 +68,19 @@ const UserProductDetailedCatalogComponent = () => {
                     <span className="line" />
                     <span className="line" />
                 </div>
+
+                <div className="favoriteIcon" style={{ right: 64, top: 48 }}>
+                    <HeartIcon width="20" height="18" className="icon" />
+                </div>
             </div>
             <div className="infoProductInfo">
                 <div className="containerUser">
                     <p className="productNameText">Платье из бархата с драпировкой</p>
-                    <div className="productCategory__price">
+                    <div className="productCategory__price" style={{ position: "relative" }}>
                         12 490 ₸ <span className="salePriceText">25 990 ₸</span>
+                        <div className="newProduct discount" style={{ bottom: "-3px" }}>
+                            <p className="newText discountText">-50%</p>
+                        </div>
                     </div>
 
                     <p className="subtext">Платье миди с круглым вырезом и длинными рукавами со складками. Разрез снизу, потайная застежка-молния сзади.</p>
