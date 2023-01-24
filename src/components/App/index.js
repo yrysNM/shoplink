@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
 
+import GoToTop from "../../utils/GoToTop";
 import PrivateRoutes from "../../utils/PrivateRoutes";
 import AppHeaderComponent from "../app-header";
 import SideBarComponent from "../app-sideBar";
@@ -66,19 +67,20 @@ const App = () => {
                                 <Route path="catalog/:catalogNumber" element={<EditCatalogComponent />} />
                             </Route>
 
-                            <Route element={
+                            <Route path="user/preview" element={
                                 <React.Fragment>
                                     <Outlet />
                                     <UserFooterComponent />
+                                    <GoToTop />
                                 </React.Fragment>
                             }>
-                                <Route path="user/preview" element={<UserPage />} />
-                                <Route path="user/preview/allCategory" element={<UserAllCategoryPage />} />
-                                <Route path="user/preview/category/:categoryName" element={<UserCategoryPage />} />
-                                <Route path="user/preview/favorite" element={<UserFavoritePage />} />
-                                <Route path="user/preview/basket" element={<UserBasketPage />} />
-                                <Route path="user/preview/basket/checkout" element={<UserCheckoutPage />} />
-                                <Route path="user/preview/product/:productId" element={<UserProductDetailedPage />} />
+                                <Route path="main" element={<UserPage />} />
+                                <Route path="allCategory" element={<UserAllCategoryPage />} />
+                                <Route path="category/:categoryName" element={<UserCategoryPage />} />
+                                <Route path="favorite" element={<UserFavoritePage />} />
+                                <Route path="basket" element={<UserBasketPage />} />
+                                <Route path="basket/checkout" element={<UserCheckoutPage />} />
+                                <Route path="product/:productId" element={<UserProductDetailedPage />} />
                             </Route>
                         </Route>
                     </React.Fragment>

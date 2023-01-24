@@ -11,7 +11,7 @@
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 24px;
-                color: #969CAF;
+                color: var(--disactiveTextColor);
             }
         }
 
@@ -35,7 +35,7 @@
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 20px;
-                color: #252728;
+                color: var(--defaultTextColor);
 
             }
 
@@ -46,7 +46,7 @@
                     margin-right: 14px;
 
                     path {
-                        stroke: #40BFFF;
+                        stroke: var(--activeBlueColor);
                     }
                 }
             }
@@ -75,10 +75,10 @@
         font-weight: 400;
         font-size: 15px;
         line-height: 20px;
-        color: #969CAF;
+        color: var(--disactiveTextColor);
 
         &__active {
-            color: #40BFFF;
+            color: var(--activeBlueColor);
         }
     }
 
@@ -95,7 +95,7 @@
     position: relative;
 
     img[alt="default icon"] {
-        left: 55%;
+        left: 57%;
     }
 
     .warningtext {
@@ -109,7 +109,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #969CAF;
+    color: var(--disactiveTextColor);
 }
 
 .userCategoryProduct__head {

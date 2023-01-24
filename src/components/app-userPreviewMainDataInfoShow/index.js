@@ -322,7 +322,7 @@ export const LayoutListCategoryComponent = ({ children, textTitle }) => {
                 setUrl("allCategory")
                 break;
             case "Футболки":
-                setUrl("t-Shirts");
+                setUrl("category/t-Shirts");
                 break;
             default: setUrl("");
         }
@@ -336,7 +336,7 @@ export const LayoutListCategoryComponent = ({ children, textTitle }) => {
                 </p>
 
                 <div className="linkMoreInfo">
-                    <Link to={`/user/preview/category/${url}`}>
+                    <Link to={`/user/preview/${url}`}>
                         <span className="linkMoreInfo__text">Перейти</span>
                     </Link>
                     <RightArrow width="15" height="12" />

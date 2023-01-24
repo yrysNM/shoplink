@@ -67,7 +67,7 @@ const UserCategoryComponent = () => {
 
                 </div>
                 <p className="subtext userCategoryProduct__urlText">
-                    <Link to={".."} relative="path">
+                    <Link to={"../../main"} relative="path">
                         Главная
                     </Link>
                     &nbsp;/&nbsp;Футболки

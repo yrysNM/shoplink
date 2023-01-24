@@ -54,7 +54,7 @@ const UserProductDetailedCatalogComponent = () => {
 
                 </div>
                 <p className="subtext userCategoryProduct__urlText">
-                    <Link to={".."} relative="path">
+                    <Link to={"../../main"} relative="path">
                         Главная
                     </Link>
                     &nbsp;/&nbsp;Женщинам&nbsp;/&nbsp;Платья

@@ -24,7 +24,7 @@
         font-size: 20px;
         line-height: 24px;
 
-        color: #252728;
+        color: var(--defaultTextColor);
     }
 
     &__list {
@@ -57,7 +57,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
-        color: #252728;
+        color: var(--defaultTextColor);
 
     }
 
@@ -71,7 +71,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 22px;
-        color: #F25E7F;
+        color: var(--activeRedColor);
     }
 }
 
@@ -85,7 +85,7 @@
         font-size: 16px;
         line-height: 20px;
 
-        color: #969CAF;
+        color: var(--disactiveTextColor);
     }
 }
 
@@ -115,7 +115,7 @@
     left: 4px;
     padding: 5px 7px;
     text-transform: uppercase;
-    background: #F25E7F;
+    background: var(--activeRedColor);
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.04);
     border-radius: 3px;
 
@@ -142,7 +142,7 @@
 
 // sale product 
 .salePriceText {
-    color: #969CAF;
+    color: var(--disactiveTextColor);
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
@@ -164,12 +164,12 @@
             line-height: 24px;
             text-align: center;
             padding: 12px 20px;
-            color: #969CAF;
+            color: var(--disactiveTextColor);
         }
     }
 
     &__btn-active {
-        background: #40BFFF;
+        background: var(--activeBlueColor);
         border-radius: 5px;
         transition: background .5s ease-in-out, border-radius .5s ease-in-out;
 
@@ -183,12 +183,12 @@
     background: #FFFFFF;
     display: block;
     margin: 0 auto;
-    border: 1px solid #40BFFF;
+    border: 1px solid var(--activeBlueColor);
     border-radius: 6px;
 
     &>.btnText {
         padding: 17px 111.43px 17px 108.57px;
-        color: #40BFFF;
+        color: var(--activeBlueColor);
         font-weight: 500;
         font-size: 16px;
         line-height: 16px;

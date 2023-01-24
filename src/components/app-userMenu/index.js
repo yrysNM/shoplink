@@ -1,10 +1,11 @@
 import { useState, useContext } from "react";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 import { DataContext } from "../../context/DataContext";
 import HamburgerComponent from "../app-hamburger";
+import { classNamesHeartIcon } from "../app-userCategory";
 
 import { ReactComponent as ArrowDown } from "../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as InstagramIcon } from "../../resources/icon/socialIcons/ins.svg";
@@ -24,7 +25,7 @@ const UserMenuComponent = () => {
         "subNav3": false,
     });
 
-    const { hamburgerActive } = useContext(DataContext);
+    const { hamburgerActive, SetHamburgerValue } = useContext(DataContext);
 
 
     const menuBlockPropagation = (e) => {
@@ -36,6 +37,7 @@ const UserMenuComponent = () => {
 
         setSubNav(subNav => ({ ...subNav, [option]: !subNav[option] }))
     }
+
 
 
     return (
@@ -53,9 +55,14 @@ const UserMenuComponent = () => {
 
             <ul className="nav">
                 <li className="menu__item">
-                    <Link to="/user/preview">
+                    <NavLink
+                        to="/user/preview/main"
+                        className={({ isActive }) =>
+                            isActive ? classNamesHeartIcon : undefined
+                        }
+                        onClick={() => SetHamburgerValue(false)}>
                         <span className="menu__text">Главная</span>
-                    </Link>
+                    </NavLink>
                 </li>
 
                 <li className="menu__item">

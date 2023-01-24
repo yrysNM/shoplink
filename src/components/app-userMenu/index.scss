@@ -30,7 +30,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 32px;
-        color: #252728;
+        color: var(--defaultTextColor);
     }
 
 
@@ -49,7 +49,7 @@
         font-size: 24px;
         line-height: 33px;
 
-        color: #40BFFF;
+        color: var(--activeBlueColor);
     }
 
     &__footer {
@@ -64,6 +64,12 @@
 
 }
 
+
+.colorIcon {
+    .menu__text {
+        color: inherit;
+    }
+}
 
 .subNav {
     visibility: hidden;
@@ -82,7 +88,7 @@
     font-weight: 400;
     font-size: 17px;
     line-height: 28px;
-    color: #969CAF;
+    color: var(--defaultTextColor);
 }
 
 .submenu__item {

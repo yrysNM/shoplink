@@ -1,6 +1,6 @@
 .btn .addGds,
 .btn>.shopCahngePhoneNumber {
-    background: #40BFFF;
+    background: var(--activeBlueColor);
     border-radius: 6px;
     border: none;
     padding: 16px 20px;
@@ -43,19 +43,19 @@
         margin-top: 64px;
         background: #FFFFFF;
         padding: 11.5px 29.25px;
-        border: 1px solid #40BFFF;
+        border: 1px solid var(--activeBlueColor);
         border-radius: 5px;
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         margin-right: 16px;
-        color: #40BFFF;
+        color: var(--activeBlueColor);
     }
 
     &.apply {
         padding: 11.3px 16.53px 12.67px 16.53px;
         margin-top: 64px;
-        background: #40BFFF;
+        background: var(--activeBlueColor);
         border-radius: 6px;
         font-weight: 500;
         font-size: 14px;

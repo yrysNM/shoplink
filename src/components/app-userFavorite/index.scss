@@ -7,7 +7,9 @@
 }
 
 .colorIcon {
+    color: var(--activeRedColor);
+
     svg path {
-        stroke: #F25E7F;
+        stroke: var(--activeRedColor);
     }
 }

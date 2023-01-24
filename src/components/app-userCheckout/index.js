@@ -29,7 +29,7 @@ const UserCheckoutComponent = () => {
         <div className="userCategory userCheckout">
             <div className="containerUser">
                 <div className="userCheckout__head">
-                    <Link to={".."} relative="path">
+                    <Link to={"../../main"} relative="path">
                         <LocationIcon />
                     </Link>
                     <span className="headText">Оформление заказа</span>

@@ -26,12 +26,12 @@ const UserPreviewHeaderComponent = () => {
                         <div className="headerUser__wrapper-tail">
                             <p className="adminPanelText">Админ панель</p>
 
-                            <div className="iconBlock">
+                            <div className="iconBlock" style={{ marginRight: 42 }}>
                                 <NavLink to={"/user/preview/favorite"}
                                     className={({ isActive }) =>
                                         isActive ? classNamesHeartIcon : undefined
                                     }>
-                                    <HeartIcon style={{ marginRight: 42 }} />
+                                    <HeartIcon />
                                 </NavLink>
                             </div>
 

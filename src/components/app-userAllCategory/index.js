@@ -28,7 +28,7 @@ const UserAllCategoryComponent = () => {
 
                 {/* dynamic url bolady */}
                 <p className="subtext allCategory__url">
-                    <Link to={".."} relative="path">
+                    <Link to={"../main"} relative="path">
                         Главная
                     </Link>
                     &nbsp;/&nbsp;Все категории
