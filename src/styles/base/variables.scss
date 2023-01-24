@@ -1,0 +1,7 @@
+@mixin rootVariable {
+    :root {
+        --bgColor: #F4F6FC;
+        --defaultTextColor: #252728;
+        --disactiveTextColor: #969CAF;
+    }
+}
