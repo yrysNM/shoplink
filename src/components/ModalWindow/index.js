@@ -16,6 +16,7 @@ const Modal = ({ children }) => {
                     maxWidth: isActiveModal.widthModal,
                     top: isActiveModal.topPosition,
                     right: isActiveModal.rightPosition,
+                    left: isActiveModal.leftPosition,
                     bottom: isActiveModal.bottom,
                     transform: isActiveModal.transform
                 }}>

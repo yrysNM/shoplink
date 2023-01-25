@@ -19,6 +19,12 @@ const objTextSubCatalog = [
     { label: "Футболка", value: "футболка" }
 ];
 
+export const objCityText = [
+    { label: "Актау", value: "aktau" },
+    { label: "Актобе", value: "aktobe" },
+    { label: "Астана", value: "astana" },
+];
+
 const SelecterCatalogComponent = ({ placeholderText }) => {
     const { selectedValue, SetValueSelected } = useContext(DataContext);
 

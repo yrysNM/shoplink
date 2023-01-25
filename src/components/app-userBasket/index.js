@@ -8,7 +8,6 @@ import { classNamesHeartIcon } from "../app-userCategory";
 
 import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIcons/trash.svg";
 import { ReactComponent as PlusIcon } from "../../resources/icon/plusIcon.svg";
-import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 import { ReactComponent as BasketIcon } from "../../resources/icon/userIcons/basket.svg";
 import testImg1 from "../../resources/img/Rectangle 31.png";
 
@@ -27,16 +26,6 @@ const UserBasketComponent = () => {
                     <h2 className="userCategoryProduct__head-title">Футболки</h2>
 
                     <div className="favoriteBasketIcons">
-                        <div className="iconBlock">
-
-                            <NavLink to="/user/preview/favorite"
-                                className={({ isActive }) =>
-                                    isActive ? classNamesHeartIcon : undefined
-                                }>
-                                <HeartIcon />
-                            </NavLink>
-                        </div>
-
                         <div className="iconBlock">
                             <NavLink to="/user/preview/basket"
                                 className={({ isActive }) => isActive ? classNamesHeartIcon : undefined}>
@@ -63,7 +52,9 @@ const UserBasketComponent = () => {
                                 id: "userRemoveModal",
                                 classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
-                                rightPosition: "40%"
+                                rightPosition: "auto",
+                                leftPosition: "50%",
+                                transform: "translate(-50%, -50%)"
                             })}>
                                 <TrashIcon width="15" height="15" />
                             </div>

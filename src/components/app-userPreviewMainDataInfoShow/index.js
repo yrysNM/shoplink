@@ -2,7 +2,6 @@ import { useState, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as RightArrow } from "../../resources/icon/rightArrow.svg";
-import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 import sweaterImg from "../../resources/img/userPreview1.png";
 import jacketImg from "../../resources/img/userPreview2.png";
 import jacketImg2 from "../../resources/img/userPreview3.png";
@@ -30,20 +29,18 @@ const UserPreviewMainDataInfoShowComponent = () => {
                         Новинки
                     </p>
 
-                    <div className="linkMoreInfo">
-                        <span className="linkMoreInfo__text">Перейти</span>
-                        <RightArrow width="15" height="12" />
-                    </div>
+                    <Link to={"/user/preview/category/t-Shirts"}>
+                        <div className="linkMoreInfo">
+                            <span className="linkMoreInfo__text">Перейти</span>
+                            <RightArrow width="15" height="12" />
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="productCategory__list">
                     <div className="productCategory__list-block">
                         <div className="productCategory__list-blockImg">
                             <img src={sweaterImg} alt="product " />
-
-                            <div className="favoriteIcon">
-                                <HeartIcon width="20" height="18" className="icon" />
-                            </div>
 
                             {/* Выберите бирки data */}
                             <div className="newProduct">
@@ -61,7 +58,11 @@ const UserPreviewMainDataInfoShowComponent = () => {
                         </div>
 
                         <p className="productCategory__name">
-                            Свитер
+                            <Link to={"/user/preview/product/1"}>
+                                <span>
+                                    Свитер
+                                </span>
+                            </Link>
                         </p>
                         <div className="productCategory__price">
                             10 990 ₸
@@ -72,10 +73,6 @@ const UserPreviewMainDataInfoShowComponent = () => {
                     <div className="productCategory__list-block">
                         <div className="productCategory__list-blockImg">
                             <img src={jacketImg} alt="product " />
-
-                            <div className="favoriteIcon">
-                                <HeartIcon width="20" height="18" className="icon" />
-                            </div>
 
                             <div className="newProduct" style={{ background: "#5C61F4" }}>
                                 <p className="newText">EXCLUSIVE</p>
@@ -94,10 +91,6 @@ const UserPreviewMainDataInfoShowComponent = () => {
                         <div className="productCategory__list-blockImg">
                             <img src={jacketImg2} alt="product " />
 
-                            <div className="favoriteIcon">
-                                <HeartIcon width="20" height="18" className="icon" />
-                            </div>
-
                             <div className="newProduct">
                                 <p className="newText">НОВИНКА</p>
                             </div>
@@ -113,10 +106,6 @@ const UserPreviewMainDataInfoShowComponent = () => {
                     <div className="productCategory__list-block">
                         <div className="productCategory__list-blockImg">
                             <img src={jacketImg} alt="product " />
-
-                            <div className="favoriteIcon">
-                                <HeartIcon width="20" height="18" className="icon" />
-                            </div>
 
                             <div className="newProduct" style={{ background: "#5C61F4" }}>
                                 <p className="newText">EXCLUSIVE</p>
@@ -259,10 +248,6 @@ export const SpeceficProductComponent = ({ imgUrl, productName, productPrice, ex
             <div className="productCategory__list-blockImg">
                 <img src={imgUrl} alt="product " />
 
-                <div className="favoriteIcon">
-                    <HeartIcon width="20" height="18" className="icon" />
-                </div>
-
                 {exclusive && <div className="newProduct" style={{ background: "#5C61F4" }}>
                     <p className="newText">EXCLUSIVE</p>
                 </div>}
@@ -292,10 +277,6 @@ const ProdictCategotyItemSaleBlockComponent = (props) => {
             <div className="productCategory__list-blockImg">
                 <img src={imgUrl} alt="product " />
 
-                <div className="favoriteIcon">
-                    <HeartIcon width="20" height="18" className="icon" />
-                </div>
-
                 <div className="newProduct">
                     <p className="newText">-50%</p>
                 </div>
@@ -324,7 +305,7 @@ export const LayoutListCategoryComponent = ({ children, textTitle }) => {
             case "Футболки":
                 setUrl("category/t-Shirts");
                 break;
-            default: setUrl("");
+            default: setUrl("category/t-Shirts");
         }
     }, []);
 

@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
+import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
 import { classNamesHeartIcon } from "../app-userCategory";
 import { LayoutListCategoryComponent, SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
+import { DataContext } from "../../context/DataContext";
 
-import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 import { ReactComponent as BasketIcon } from "../../resources/icon/userIcons/basket.svg";
 import { ReactComponent as WhatsappIcon } from "../../resources/icon/socialIcons/icon_whatsapp.svg";
 import { ReactComponent as ArrowDown } from "../../resources/icon/shopDataIcons/arrowDown2.svg";
@@ -20,10 +21,12 @@ import "./index.scss";
 
 const UserProductDetailedCatalogComponent = () => {
     const [descrDelivery, setDescrDelivery] = useState(false);
+    const { OpenModal } = useContext(DataContext);
 
     const handleclick = () => {
         setDescrDelivery(descrDelivery => !descrDelivery);
     }
+
 
 
     return (
@@ -35,15 +38,6 @@ const UserProductDetailedCatalogComponent = () => {
                     <h2 className="userCategoryProduct__head-title">Платье Zara</h2>
 
                     <div className="favoriteBasketIcons">
-                        <div className="iconBlock">
-
-                            <NavLink to="/user/preview/favorite"
-                                className={({ isActive }) =>
-                                    isActive ? classNamesHeartIcon : undefined
-                                }>
-                                <HeartIcon />
-                            </NavLink>
-                        </div>
                         <div className="iconBlock">
                             <NavLink to="/user/preview/basket"
                                 className={({ isActive }) => isActive ? classNamesHeartIcon : undefined}>
@@ -67,10 +61,6 @@ const UserProductDetailedCatalogComponent = () => {
                     <span className="line line__active " />
                     <span className="line" />
                     <span className="line" />
-                </div>
-
-                <div className="favoriteIcon" style={{ right: 64, top: 48 }}>
-                    <HeartIcon width="20" height="18" className="icon" />
                 </div>
             </div>
             <div className="infoProductInfo">
@@ -118,7 +108,14 @@ const UserProductDetailedCatalogComponent = () => {
 
                     <div className="deliveryInfo__grid">
                         <div className="deliveryInfo__grid-item">
-                            <button className="deliverybtn deliverybtn-active" style={{ width: "100%" }}>
+                            <button className="deliverybtn deliverybtn-active" style={{ width: "100%" }} onClick={() => OpenModal({
+                                id: "userOrderModal",
+                                classNameIsActive: "activeModalFilter",
+                                topPosition: "50%",
+                                rightPosition: "auto",
+                                leftPosition: "50%",
+                                transform: "translate(-50%, -50%)"
+                            })}>
                                 <p className="btnText">
                                     Заказать
                                 </p>
@@ -139,13 +136,13 @@ const UserProductDetailedCatalogComponent = () => {
                                 {descrDelivery ? <ArrowUp /> : <ArrowDown />}
                             </div>
                         </div>
-                        <div className="deliveryInfo__grid-item" style={{ gridRow: "4" }}>
-                            {
-                                descrDelivery && <p className="descrText subtext">Стандарт Green to Wear 2.0 направлен на минимизацию воздействия текстильного производства на окружающую среду. Для этого мы разработали программу Inditex The List, которая помогает нам обеспечивать чистоту производственных процессов, а также безопасность и гигиеничность нашей одежды.
-                                    <br />
-                                    <br />
-                                    100% полиэстер</p>
-                            }
+                        <div className={classnames("deliveryInfo__grid-item subDeliveryInfo", {
+                            "deliveryInfo__grid-itemAnimate": descrDelivery
+                        })} style={{ gridRow: "4" }}>
+                            <p className={classnames("descrText subtext")}>Стандарт Green to Wear 2.0 направлен на минимизацию воздействия текстильного производства на окружающую среду. Для этого мы разработали программу Inditex The List, которая помогает нам обеспечивать чистоту производственных процессов, а также безопасность и гигиеничность нашей одежды.
+                                <br />
+                                <br />
+                                100% полиэстер</p>
                         </div>
                     </div>
 

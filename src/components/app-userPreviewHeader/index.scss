@@ -6,7 +6,7 @@
     min-height: auto;
 
     .text>.logo {
-        color: #40BFFF;
+        color: var(--activeBlueColor);
     }
 
     &__wrapper {
@@ -22,14 +22,13 @@
 }
 
 .adminPanelText {
-    margin-right: 32px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 
 
-    color: #969CAF;
+    color: var(--disactiveTextColor);
 }
 
 
@@ -70,7 +69,7 @@
         border-radius: 5px;
 
         &__active {
-            background: #F25E7F;
+            background: var(--activeRedColor);
             opacity: 1;
             border-radius: 5px;
         }
@@ -89,14 +88,14 @@
         line-height: 24px;
 
 
-        color: #969CAF;
+        color: var(--disactiveTextColor);
     }
 }
 
 .shopNameText {
     width: fit-content;
     padding: 10px;
-    background: #F25E7F;
+    background: var(--activeRedColor);
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;

@@ -56,7 +56,9 @@
             margin-top: 16px;
 
             .form-input {
-                margin-top: 20px;
+                margin-top: 16px;
+                padding: 17px 0 17px 44px;
+                height: auto;
 
                 &::placeholder {
                     color: #969CAF;

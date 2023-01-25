@@ -9,7 +9,6 @@ import { DataContext } from "../../context/DataContext";
 import { SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
 import UserMenuComponent from "../app-userMenu";
 
-import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 import { ReactComponent as SortFilterPriceIcon } from "../../resources/icon/userIcons/filterPrice.svg";
 import { ReactComponent as BasketIcon } from "../../resources/icon/userIcons/basket.svg";
 import { ReactComponent as SearchIcon } from "../../resources/icon/orderIcons/searchIcon.svg";
@@ -48,15 +47,6 @@ const UserCategoryComponent = () => {
                     <h2 className="userCategoryProduct__head-title">Футболки</h2>
 
                     <div className="favoriteBasketIcons">
-                        <div className="iconBlock">
-
-                            <NavLink to="/user/preview/favorite"
-                                className={({ isActive }) =>
-                                    isActive ? classNamesHeartIcon : undefined
-                                }>
-                                <HeartIcon />
-                            </NavLink>
-                        </div>
                         <div className="iconBlock">
                             <NavLink to="/user/preview/basket"
                                 className={({ isActive }) => isActive ? classNamesHeartIcon : undefined}>

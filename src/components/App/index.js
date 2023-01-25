@@ -38,6 +38,7 @@ import NotificationModalComponent from "../app-notificatioModal";
 import UserFooterComponent from "../app-userFooter";
 import UserMenuFilterComponent from "../app-userMenuFilter";
 import UserWarningsRemoveModalComponent from "../app-userWarningRemove";
+import UserOrderModalComponent from "../app-userOrderModal";
 
 
 const App = () => {
@@ -105,20 +106,38 @@ const App = () => {
                     </Route>
                 </Routes>
                 <Modal>
-                    {isActiveModal.id === "filterModal" && <FilterModalComponent />}
-                    {isActiveModal.id === "warningRemoveModal" && <WarningsRemoveModalComponent catalogNumber={isActiveModal.catalogNumber} />}
-                    {isActiveModal.id === "colorModal" && <ChooseColordModalConponent />}
-                    {isActiveModal.id === "fullScreenModal" && <FullScreenImgComponent imgUrl={isActiveModal.imgUrl} />}
-                    {isActiveModal.id === "logOutModal" && <LogOutModalComponent />}
-                    {isActiveModal.id === "bannerImgModal" && <BannerImgModalComponent banerImg={isActiveModal.banerImg} />}
-                    {isActiveModal.id === "notificationModal" && <NotificationModalComponent />}
-                    {isActiveModal.id === "userFilterModal" && <UserMenuFilterComponent />}
-                    {isActiveModal.id === "userRemoveModal" && <UserWarningsRemoveModalComponent />}
+                    {ModalViewerComponent(isActiveModal)}
                 </Modal>
             </Router>
 
         </>
     );
+}
+
+const ModalViewerComponent = (value) => {
+    switch (value.id) {
+        case "filterModal":
+            return <FilterModalComponent />;
+        case "warningRemoveModal":
+            return <WarningsRemoveModalComponent catalogNumber={value.catalogNumber} />
+        case "colorModal":
+            return <ChooseColordModalConponent />
+        case "fullScreenModal":
+            return <FullScreenImgComponent imgUrl={value.imgUrl} />
+        case "logOutModal":
+            return <LogOutModalComponent />
+        case "bannerImgModal":
+            return <BannerImgModalComponent banerImg={value.banerImg} />
+        case "notificationModal":
+            return <NotificationModalComponent />
+        case "userFilterModal":
+            return <UserMenuFilterComponent />
+        case "userRemoveModal":
+            return <UserWarningsRemoveModalComponent />
+        case "userOrderModal":
+            return <UserOrderModalComponent />
+        default: return null;
+    }
 }
 
 export default App;

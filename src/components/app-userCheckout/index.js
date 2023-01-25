@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 import { HelpFormInputComponent } from "../app-shop";
+import UserSelectorComponent from "../app-userSelecter";
 
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
 import { ReactComponent as LocationIcon } from "../../resources/icon/orderIcons/locationArrow.svg";
@@ -90,6 +91,9 @@ const UserCheckoutComponent = () => {
                                     <p className="subtext">от 7 дней, 1000 ₸</p>
                                 </div>
                             </div>
+
+
+                            {tickIcon.tickIcon2 ? <UserSelectorComponent placeholderText={"Выберите город"} /> : null}
 
                             <HelpFormInputComponent data={{
                                 iconComponent: <AddressIcon className="iconAddress" />,

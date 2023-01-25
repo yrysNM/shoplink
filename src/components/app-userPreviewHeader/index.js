@@ -1,10 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
-import { classNamesHeartIcon } from "../app-userCategory";
 
-import { ReactComponent as HeartIcon } from "../../resources/icon/userIcons/heart.svg";
 
 import shopingCart from "../../resources/img/shopingCar.png";
 
@@ -23,17 +21,10 @@ const UserPreviewHeaderComponent = () => {
                             </p>
                         </div>
 
-                        <div className="headerUser__wrapper-tail">
-                            <p className="adminPanelText">Админ панель</p>
-
-                            <div className="iconBlock" style={{ marginRight: 42 }}>
-                                <NavLink to={"/user/preview/favorite"}
-                                    className={({ isActive }) =>
-                                        isActive ? classNamesHeartIcon : undefined
-                                    }>
-                                    <HeartIcon />
-                                </NavLink>
-                            </div>
+                        <div className="headerUser__wrapper-tail" style={{ marginRight: 32 }}>
+                            <Link to={"/"}>
+                                <p className="adminPanelText">Админ панель</p>
+                            </Link>
 
                             <HamburgerComponent />
                         </div>

@@ -32,6 +32,22 @@
         grid-column-start: 1;
         grid-column-end: 3;
     }
+
+    &-itemAnimate {
+        display: block !important;
+        max-height: 426px + 12px !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+    }
+}
+
+
+
+.subDeliveryInfo {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.6s ease-out;
 }
 
 .infoProductInfo {
@@ -87,7 +103,7 @@
 
 .whatsappBtn {
     margin-top: 16px;
-    border: 1px solid #40BFFF;
+    border: 1px solid var(--activeBlueColor);
     border-radius: 8px;
     background: transparent;
     padding: 11px 100px 10px 100px;
@@ -105,12 +121,12 @@
         line-height: 16px;
 
 
-        color: #40BFFF;
+        color: var(--activeBlueColor);
     }
 }
 
 .iconWhatsapp path {
-    fill: #40BFFF;
+    fill: var(--activeBlueColor);
 }
 
 .deliveryDescr {
