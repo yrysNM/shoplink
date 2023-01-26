@@ -1,6 +1,8 @@
 import { useState, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 
+import CarouselComponent from "../app-carousel";
+
 import { ReactComponent as RightArrow } from "../../resources/icon/rightArrow.svg";
 import sweaterImg from "../../resources/img/userPreview1.png";
 import jacketImg from "../../resources/img/userPreview2.png";
@@ -37,7 +39,7 @@ const UserPreviewMainDataInfoShowComponent = () => {
                     </Link>
                 </div>
 
-                <div className="productCategory__list">
+                <CarouselComponent>
                     <div className="productCategory__list-block">
                         <div className="productCategory__list-blockImg">
                             <img src={sweaterImg} alt="product " />
@@ -120,7 +122,41 @@ const UserPreviewMainDataInfoShowComponent = () => {
                             20 990 ₸
                         </div>
                     </div>
-                </div>
+                    <div className="productCategory__list-block">
+                        <div className="productCategory__list-blockImg">
+                            <img src={jacketImg} alt="product " />
+
+                            <div className="newProduct" style={{ background: "#5C61F4" }}>
+                                <p className="newText">EXCLUSIVE</p>
+                            </div>
+
+                        </div>
+
+                        <p className="productCategory__name">
+                            Жакет Blowup
+                        </p>
+                        <div className="productCategory__price">
+                            20 990 ₸
+                        </div>
+                    </div>
+                    <div className="productCategory__list-block">
+                        <div className="productCategory__list-blockImg">
+                            <img src={jacketImg} alt="product " />
+
+                            <div className="newProduct" style={{ background: "#5C61F4" }}>
+                                <p className="newText">EXCLUSIVE</p>
+                            </div>
+
+                        </div>
+
+                        <p className="productCategory__name">
+                            Жакет Blowup
+                        </p>
+                        <div className="productCategory__price">
+                            20 990 ₸
+                        </div>
+                    </div>
+                </CarouselComponent>
 
                 <LayoutListCategoryComponent textTitle={"Товары со скидкой"}>
                     <ProdictCategotyItemSaleBlockComponent
@@ -307,6 +343,8 @@ export const LayoutListCategoryComponent = ({ children, textTitle }) => {
                 break;
             default: setUrl("category/t-Shirts");
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
