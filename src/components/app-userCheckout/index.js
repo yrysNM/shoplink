@@ -96,7 +96,7 @@ const UserCheckoutComponent = () => {
                             {tickIcon.tickIcon2 ? <UserSelectorComponent placeholderText={"Выберите город"} /> : null}
 
                             <HelpFormInputComponent data={{
-                                iconComponent: <AddressIcon className="iconAddress" />,
+                                iconComponent: <AddressIcon className="iconAddress" style={{ marginBottom: 3 }} />,
                                 inputType: "text",
                                 inputName: "user address",
                                 placeholder: "Введите адрес"

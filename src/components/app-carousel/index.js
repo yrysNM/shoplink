@@ -37,7 +37,22 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
         translateFullSlides(newPosition);
     }
 
+    const speedUpAnimation = () => {
+        for (let i = Math.max(sliderPosition - 2, 0); i < Math.min(children.length, sliderPosition + 3); i++) {
+            let elem = document.getElementById(`${idCarouselItem}` + i);
+            elem.classList.add("fastAnimation");
+        }
+    }
+
+    const slowDownAnimation = () => {
+        for (let i = Math.max(0, sliderPosition - 2); i < Math.min(children.length, sliderPosition + 3); i++) {
+            let elem = document.getElementById(`${idCarouselItem}${i}`);
+            elem.classList.remove("fastAnimation");
+        }
+    }
+
     const touchStartHandler = (e) => {
+        speedUpAnimation();
         setTouchStartPosition(e.targetTouches[0].clientX);
         setTouchEndPosition(e.targetTouches[0].clientX);
         setIsTouched(true);
@@ -55,6 +70,7 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
 
     const touchEndHandler = (e) => {
         console.log(`touchStart: ${touchStartPosition}, touchEnd: ${touchEndPosition}`);
+        slowDownAnimation();
         if (isSwiped) {
             if (touchStartPosition - touchEndPosition > 75) {
                 RightMove();
@@ -67,7 +83,7 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
     }
 
     const translatePartialSlides = (toTranslate) => {
-        let currentTranslation = -sliderPosition * 0.1;
+        let currentTranslation = -sliderPosition * 10.1;
         let totalTranslation = currentTranslation + toTranslate;
         for (let i = 0; i < children.length; i++) {
             let elem = document.getElementById(`${idCarouselItem}` + i);
@@ -76,7 +92,7 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
     }
 
     const translateFullSlides = (newPosition) => {
-        let toTranslate = -0.1 * newPosition;
+        let toTranslate = -10.1 * newPosition;
         for (let i = 0; i < children.length; i++) {
             let elem = document.getElementById(`${idCarouselItem}` + i);
             elem.style.transform = `translateX(${toTranslate}%)`;

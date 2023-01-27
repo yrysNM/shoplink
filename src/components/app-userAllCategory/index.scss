@@ -26,3 +26,11 @@
         margin-top: 24px;
     }
 }
+
+@media(max-width: 767px) {
+    .allCategory {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

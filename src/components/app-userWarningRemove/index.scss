@@ -3,3 +3,17 @@
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
+@media(max-width: 767px) {
+    .warningsRemove {
+        width: 325px;
+    }
+
+    .removeBtn {
+        width: 100%;
+    }
+
+    .btns-block {
+        width: 100%;
+    }
+}

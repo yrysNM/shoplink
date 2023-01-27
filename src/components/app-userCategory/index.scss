@@ -136,3 +136,14 @@
     align-items: center;
     gap: 20px;
 }
+
+
+@media(max-width: 767px) {
+    .userCategory__subFilter-block>.sortText {
+        font-size: 13px;
+    }
+
+    .sortFilterBlock {
+        bottom: -160px;
+    }
+}

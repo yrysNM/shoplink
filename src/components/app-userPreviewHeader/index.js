@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
+import { classNamesHeartIcon } from "../app-userCategory";
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
 import CarouselWithTrigerComponent from "../app-carouselWithTriger";
 
+import { ReactComponent as BasketIcon } from "../../resources/icon/userIcons/basket.svg";
 
 import "./index.scss";
 
@@ -25,6 +27,14 @@ const UserPreviewHeaderComponent = () => {
                                 <p className="adminPanelText">Админ панель</p>
                             </Link>
 
+                            <div className="favoriteBasketIcons">
+                                <div className="iconBlock">
+                                    <NavLink to="/user/preview/basket"
+                                        className={({ isActive }) => isActive ? classNamesHeartIcon : undefined}>
+                                        <BasketIcon />
+                                    </NavLink>
+                                </div>
+                            </div>
                             <HamburgerComponent />
                         </div>
                     </div>
@@ -35,7 +45,7 @@ const UserPreviewHeaderComponent = () => {
             </header>
 
             {/* sub head info */}
-            <div className="containerUser">
+            <div className="containerUser subContainerUser">
 
                 <CarouselWithTrigerComponent>
                     <div className="subHead__description">

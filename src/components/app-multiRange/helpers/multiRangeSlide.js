@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import "../index.scss";
@@ -14,7 +14,7 @@ const MultiRangeSlideComponent = ({ min, max, onChange }) => {
     const getPercent = useCallback((value) => Math.round(((value - min) / (max - min)) * 100), [min, max]);
 
     // set width of the range to descrese from the left side
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (maxValRef.current) {
             const minPercent = getPercent(minVal);
             const maxPercent = getPercent(+maxValRef.current.value);
@@ -28,7 +28,7 @@ const MultiRangeSlideComponent = ({ min, max, onChange }) => {
     }, [minVal, getPercent]);
 
     //set width oft he range descrese from the right side
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (minValRef.current) {
             const minPercent = getPercent(+minValRef.current.value);
             const maxPercent = getPercent(maxVal);

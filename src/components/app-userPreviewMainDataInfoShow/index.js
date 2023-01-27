@@ -194,7 +194,7 @@ const UserPreviewMainDataInfoShowComponent = () => {
                         <CategoryComponent imgUrl={boysCategory} categoryTitle={"Мальчикам"} />
                     </LayoutListCategoryComponent>
 
-                    <div className="blockCategory">
+                    <div className="blockCategory allCategoryFilterBtns">
                         <button className="categoryListBtns__btn categoryListBtns__btn-active">
                             <p className="btnText">
                                 Женщинам

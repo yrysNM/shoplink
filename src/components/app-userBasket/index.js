@@ -83,7 +83,14 @@ const UserBasketComponent = () => {
                     </div>
                     <div className="userBasket__wrapper-subBlock">
                         <div className="countBlock">
-                            <div className="trashPlusBlock">
+                            <div className="trashPlusBlock" onClick={() => OpenModal({
+                                id: "userRemoveModal",
+                                classNameIsActive: "activeModalFilter",
+                                topPosition: "50%",
+                                rightPosition: "auto",
+                                leftPosition: "50%",
+                                transform: "translate(-50%, -50%)"
+                            })}>
                                 <TrashIcon width="15" height="15" />
                             </div>
                             <span className="countNumber">1</span>
@@ -112,7 +119,14 @@ const UserBasketComponent = () => {
                     </div>
                     <div className="userBasket__wrapper-subBlock">
                         <div className="countBlock">
-                            <div className="trashPlusBlock">
+                            <div className="trashPlusBlock" onClick={() => OpenModal({
+                                id: "userRemoveModal",
+                                classNameIsActive: "activeModalFilter",
+                                topPosition: "50%",
+                                rightPosition: "auto",
+                                leftPosition: "50%",
+                                transform: "translate(-50%, -50%)"
+                            })}>
                                 <TrashIcon width="15" height="15" />
                             </div>
                             <span className="countNumber">1</span>

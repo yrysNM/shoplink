@@ -102,7 +102,7 @@ const UserCategoryComponent = () => {
                                 rightPosition: "0"
                             })}>
                             <FilterIcon className="icon__filter" width="20px" height="20px" />
-                            <span className="sortText">По возрастанию цены</span>
+                            <span className="sortText">Фильтры</span>
                         </div>
                     </div>
 

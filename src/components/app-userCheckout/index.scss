@@ -216,3 +216,25 @@
         }
     }
 }
+
+@media(max-width: 767px) {
+    .userData {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .deliveryBlock__grid {
+        grid-template-rows: 0;
+        grid-template-columns: 1fr;
+        gap: 21px;
+
+        &-itemSecond {
+            grid-column-start: 1;
+            grid-row-start: auto;
+        }
+    }
+
+    .deliveryBlock .deliverybtn {
+        width: 100%;
+    }
+}

@@ -1,5 +1,5 @@
-
-import { useContext } from "react"
+import { Link } from "react-router-dom";
+import { useContext, useRef } from "react"
 
 import { DataContext } from "../../context/DataContext"
 
@@ -10,6 +10,7 @@ import "./index.scss";
 
 const UserOrderModalComponent = () => {
     const { HideModal } = useContext(DataContext);
+    const linkRef = useRef(null);
 
     return (
         <>
@@ -45,7 +46,11 @@ const UserOrderModalComponent = () => {
                     </div>
                 </div>
                 <div className="btns">
-                    <button className="btns-block cancelBtn" onClick={HideModal}>Заказать сейчас</button>
+                    <button className="btns-block cancelBtn" onClick={() => { linkRef.current.click(); HideModal() }}>
+                        <Link to={"user/preview/basket/checkout"} ref={linkRef}>
+                            Заказать сейчас
+                        </Link>
+                    </button>
                     <button className="removeBtn" onClick={HideModal}>
                         <p className="btnText">
                             В корзину

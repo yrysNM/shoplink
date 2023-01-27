@@ -115,3 +115,25 @@
     line-height: 32px;
     color: #fff;
 }
+
+@media(max-width: 767px) {
+    .adminPanelText {
+        display: none;
+    }
+
+    .slideLines>.line {
+        width: 119px;
+    }
+
+    .subContainerUser {
+        padding: 0 !important;
+    }
+
+    .headerUser__wrapper-tail {
+        margin-right: 40px !important;
+    }
+
+    .headerUser__wrapper-tail .hamburger {
+        right: 26px;
+    }
+}

@@ -54,7 +54,8 @@ const UserProductDetailedCatalogComponent = () => {
                     </Link>
                     &nbsp;/&nbsp;Женщинам&nbsp;/&nbsp;Платья
                 </p>
-
+            </div>
+            <div className="containerUser subContainerUser">
                 <CarouselWithTrigerComponent>
                     <img src={test1} alt="cart" width="100%" height="100%" />
                     <img src={test1} alt="cart" width="100%" height="100%" />
@@ -146,7 +147,7 @@ const UserProductDetailedCatalogComponent = () => {
 
 
 
-                    <LayoutListCategoryComponent textTitle={"Похожие товары"}>
+                    <LayoutListCategoryComponent textTitle={"Похожие товары"} idGallery={"displayFrameDetailed"} idCarouselItem={"carouselitemDetailed"}>
                         <SpeceficProductComponent
                             imgUrl={userPreview1}
                             productName={"Corner"}

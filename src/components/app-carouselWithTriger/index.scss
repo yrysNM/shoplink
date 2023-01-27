@@ -23,7 +23,8 @@
 }
 
 .carouselItem {
-    touch-action: none;
+    // touch action scroll bar fuckting sheet
+    // touch-action: none;
     height: 100%;
     width: 100%;
     display: inline-block;

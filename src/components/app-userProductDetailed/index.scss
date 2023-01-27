@@ -5,6 +5,10 @@
         height: 440px;
         margin-top: 0;
         padding-bottom: 0;
+
+        img {
+            object-fit: cover;
+        }
     }
 
     .slideLines {
@@ -143,4 +147,32 @@
     color: #252728;
 
     opacity: 0.9;
+}
+
+@media(max-width: 767px) {
+    .userProductDetailer {
+        .subHead {
+            width: 100vw;
+        }
+    }
+
+    .userProductDetailer .slideLines .line {
+        width: 119px;
+    }
+
+    .productNameText {
+        font-size: 20px;
+    }
+
+    .infoProductInfo .subtext {
+        font-size: 14px;
+    }
+
+    .productFilterBlock__headText {
+        font-size: 16px;
+    }
+
+    .deliveryInfo__grid {
+        grid-template-columns: 1fr;
+    }
 }

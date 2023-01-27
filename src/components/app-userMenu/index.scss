@@ -105,3 +105,9 @@
         transition: opacity 0.5s ease-in-out;
     }
 }
+
+@media(max-width: 767px) {
+    .menu {
+        width: 255px;
+    }
+}

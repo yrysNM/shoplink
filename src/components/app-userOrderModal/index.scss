@@ -48,3 +48,9 @@
     color: var(--defaultTextColor);
 
 }
+
+@media(max-width: 767px) {
+    .userOrderModal {
+        width: 325px;
+    }
+}

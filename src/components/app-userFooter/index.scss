@@ -56,3 +56,10 @@
 
     color: #B7BCCC;
 }
+
+@media(max-width: 767px) {
+    .footer__data {
+        grid-template: 2fr / 1fr;
+        gap: 20px;
+    }
+}
