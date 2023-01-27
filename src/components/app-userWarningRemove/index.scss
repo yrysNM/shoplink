@@ -11,9 +11,15 @@
 
     .removeBtn {
         width: 100%;
+        flex-basis: auto;
     }
 
     .btns-block {
         width: 100%;
+        margin-right: 0;
+    }
+
+    .warningsText {
+        text-align: center;
     }
 }
