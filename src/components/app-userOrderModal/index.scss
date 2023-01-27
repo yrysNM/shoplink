@@ -37,7 +37,6 @@
         background: var(--activeRedColor);
         border: none;
         color: #FFFFFF;
-        width: 100%;
     }
 }
 
@@ -53,5 +52,10 @@
 @media(max-width: 767px) {
     .userOrderModal {
         width: 325px;
+
+        .cancelBtn {
+            width: 100%;
+            flex-basis: auto;
+        }
     }
 }

@@ -55,7 +55,7 @@ const UserProductDetailedCatalogComponent = () => {
                     &nbsp;/&nbsp;Женщинам&nbsp;/&nbsp;Платья
                 </p>
             </div>
-            <div className="containerUser subContainerUser">
+            <div className="containerUser subContainerUserDetailed">
                 <CarouselWithTrigerComponent>
                     <img src={test1} alt="cart" width="100%" height="100%" />
                     <img src={test1} alt="cart" width="100%" height="100%" />
