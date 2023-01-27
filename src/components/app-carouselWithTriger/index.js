@@ -51,14 +51,14 @@ const CarouselWithTrigerComponent = (props) => {
 
     const speedUpAnimation = () => {
         for (let i = Math.max(sliderPosition - 2, 0); i < Math.min(children.length, sliderPosition + 3); i++) {
-            let elem = document.getElementById(`carouselitem` + i);
+            let elem = document.getElementById(`carouselitemTriger` + i);
             elem.classList.add("fastAnimation");
         }
     }
 
     const slowDownAnimation = () => {
         for (let i = Math.max(0, sliderPosition - 2); i < Math.min(children.length, sliderPosition + 3); i++) {
-            let elem = document.getElementById(`carouselitem${i}`);
+            let elem = document.getElementById(`carouselitemTriger${i}`);
             elem.classList.remove("fastAnimation");
         }
     }
@@ -72,7 +72,7 @@ const CarouselWithTrigerComponent = (props) => {
 
     const touchMoveHandler = (e) => {
         setTouchEndPosition(e.targetTouches[0].clientX);
-        const frameWidth = document.getElementById("displayFrame").offsetWidth;
+        const frameWidth = document.getElementById("displayFrameTriger").offsetWidth;
         const translateDist = (touchEndPosition - touchStartPosition) / frameWidth * 100;
         translatePartialSlides(translateDist);
         if (touched === true) {
@@ -100,7 +100,7 @@ const CarouselWithTrigerComponent = (props) => {
         let currentTranslation = -sliderPosition * 102.1;
         let totalTranslation = currentTranslation + toTranslate;
         for (var i = 0; i < children.length; i++) {
-            let elem = document.getElementById(`carouselitem` + i);
+            let elem = document.getElementById(`carouselitemTriger` + i);
             elem.style.transform = `translateX(` + totalTranslation + `%)`
         }
     }
@@ -108,14 +108,14 @@ const CarouselWithTrigerComponent = (props) => {
     const translateFullSlides = (newPosition) => {
         let toTranslate = -102.1 * newPosition;
         for (let i = 0; i < children.length; i++) {
-            let elem = document.getElementById("carouselitem" + i);
+            let elem = document.getElementById("carouselitemTriger" + i);
             elem.style.transform = `translateX(${toTranslate}%)`;
 
         }
     }
 
     const displayItems = Children.map(children, (child, index) => (
-        <div className={"carouselItem"} id={`carouselitem` + index}>{child}</div>
+        <div className={"carouselItem"} id={`carouselitemTriger` + index}>{child}</div>
     ));
 
     const positionIndicators = Children.map(children, (child, index) => (
@@ -125,7 +125,7 @@ const CarouselWithTrigerComponent = (props) => {
 
     return (
         <div className="subHead">
-            <div className="displayFrame" id="displayFrame"
+            <div className="displayFrame" id="displayFrameTriger"
                 onTouchStart={(e) => touchStartHandler(e)}
                 onTouchMove={(e) => touchMoveHandler(e)}
                 onTouchEnd={(e) => touchEndHandler(e)}>

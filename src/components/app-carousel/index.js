@@ -1,6 +1,6 @@
 import { useState, useRef, Children } from "react";
 
-const CarouselComponent = ({ children }) => {
+const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
     const countSlide = useState(1);
     const [position, setPosition] = useState(0);
     const [touchStartPosition, setTouchStartPosition] = useState(0);
@@ -45,7 +45,7 @@ const CarouselComponent = ({ children }) => {
 
     const touchMoveHandler = (e) => {
         setTouchEndPosition(e.targetTouches[0].clientX);
-        const frameWidth = document.getElementById("displayFrame").offsetWidth;
+        const frameWidth = document.getElementById(idGallery).offsetWidth;
         const translateDist = (touchEndPosition - touchStartPosition) / frameWidth * 100;
         translatePartialSlides(translateDist);
         if (isTouched === true) {
@@ -70,7 +70,7 @@ const CarouselComponent = ({ children }) => {
         let currentTranslation = -sliderPosition * 0.1;
         let totalTranslation = currentTranslation + toTranslate;
         for (let i = 0; i < children.length; i++) {
-            let elem = document.getElementById(`carouselitem` + i);
+            let elem = document.getElementById(`${idCarouselItem}` + i);
             elem.style.transform = `translateX(` + totalTranslation + `%)`
         }
     }
@@ -78,19 +78,19 @@ const CarouselComponent = ({ children }) => {
     const translateFullSlides = (newPosition) => {
         let toTranslate = -0.1 * newPosition;
         for (let i = 0; i < children.length; i++) {
-            let elem = document.getElementById("carouselitem" + i);
+            let elem = document.getElementById(`${idCarouselItem}` + i);
             elem.style.transform = `translateX(${toTranslate}%)`;
         }
     }
 
     const displayItems = Children.map(children, (child, index) => (
-        <div className={"carouselItem"} id={`carouselitem` + index}>{child}</div>
+        <div className={"carouselItem"} id={`${idCarouselItem}` + index}>{child}</div>
     ));
 
     return (
         <div
             className="gallery"
-            id="displayFrame"
+            id={idGallery}
             onTouchStart={touchStartHandler}
             onTouchMove={touchMoveHandler}
             onTouchEnd={touchEndHandler}>

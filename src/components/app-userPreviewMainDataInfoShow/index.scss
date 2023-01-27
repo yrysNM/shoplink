@@ -9,7 +9,7 @@
 }
 
 .productCategory {
-    margin-left: 64px;
+    // margin-left: 64px;
 
 
     &__head {
@@ -33,6 +33,7 @@
         align-items: center;
         gap: 32px;
         width: 100%;
+        // overflow: hidden;
         transition: all .3s ease-out;
 
         &-block {

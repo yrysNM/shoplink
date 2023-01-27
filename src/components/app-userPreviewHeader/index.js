@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
+import CarouselWithTrigerComponent from "../app-carouselWithTriger";
 
-
-import shopingCart from "../../resources/img/shopingCar.png";
 
 import "./index.scss";
 
 const UserPreviewHeaderComponent = () => {
 
     return (
-        <>
+        <div className="beginBlock">
             <header className="header headerUser">
                 <div className="containerUser">
                     <div className="headerUser__wrapper">
@@ -36,31 +35,27 @@ const UserPreviewHeaderComponent = () => {
             </header>
 
             {/* sub head info */}
-            <div className="subHead">
-                <div className="containerUser">
+            <div className="containerUser">
 
+                <CarouselWithTrigerComponent>
                     <div className="subHead__description">
-                        <div className="infoShopText">
-                            <h3 className="shopNameText">Название</h3>
-                            <p className="subText">Небольшое описание длиной
-                                в две строки</p>
-                        </div>
-
-                        <div className="cart">
-                            <img src={shopingCart} alt="cart " />
+                        <div className="bannerImg">
+                            <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
                         </div>
                     </div>
-
-                    <div className="slideLines">
-                        <span className="line line__active " />
-                        <span className="line" />
-                        <span className="line" />
+                    <div className="subHead__description">
+                        <div className="bannerImg">
+                            <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                        </div>
                     </div>
-                </div>
+                    <div className="subHead__description">
+                        <div className="bannerImg">
+                            <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                        </div>
+                    </div>
+                </CarouselWithTrigerComponent>
             </div>
-        </>
-
-
+        </div>
     );
 }
 

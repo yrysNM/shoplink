@@ -55,20 +55,12 @@ const UserProductDetailedCatalogComponent = () => {
                     &nbsp;/&nbsp;Женщинам&nbsp;/&nbsp;Платья
                 </p>
 
+                <CarouselWithTrigerComponent>
+                    <img src={test1} alt="cart" width="100%" height="100%" />
+                    <img src={test1} alt="cart" width="100%" height="100%" />
+                    <img src={test1} alt="cart" width="100%" height="100%" />
+                </CarouselWithTrigerComponent>
             </div>
-            <CarouselWithTrigerComponent>
-                <img src={test1} alt="cart" width="100%" height="100%" />
-                <img src={test1} alt="cart" width="100%" height="100%" />
-                <img src={test1} alt="cart" width="100%" height="100%" />
-            </CarouselWithTrigerComponent>
-            {/* <div className="subHead">
-                <img src={test1} alt="cart" width="100%" height="100%" />
-                <div className="slideLines">
-                    <span className="line line__active " />
-                    <span className="line" />
-                    <span className="line" />
-                </div>
-            </div> */}
             <div className="infoProductInfo">
                 <div className="containerUser">
                     <p className="productNameText">Платье из бархата с драпировкой</p>

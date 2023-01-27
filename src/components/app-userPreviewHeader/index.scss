@@ -45,18 +45,31 @@
         align-items: center;
         gap: 88px;
 
-        &>.cart {
-            flex-basis: 248px;
-
+        &>.bannerImg img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
 }
 
+.beginBlock {
+    .subHead {
+        height: 300px;
+        width: 100%;
+        padding: 0;
+    }
+}
+
 .slideLines {
     position: absolute;
     bottom: 16px;
-    left: 64px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: row;
     gap: 8.7px;
@@ -67,6 +80,7 @@
         background: #B7BCCC;
         opacity: 0.2;
         border-radius: 5px;
+        cursor: pointer;
 
         &__active {
             background: var(--activeRedColor);
