@@ -4,6 +4,7 @@ import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
 import UserMenuComponent from "../app-userMenu";
+import CarouselWithTrigerComponent from "../app-carouselWithTriger";
 import { classNamesHeartIcon } from "../app-userCategory";
 import { LayoutListCategoryComponent, SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
 import { DataContext } from "../../context/DataContext";
@@ -55,14 +56,19 @@ const UserProductDetailedCatalogComponent = () => {
                 </p>
 
             </div>
-            <div className="subHead">
+            <CarouselWithTrigerComponent>
+                <img src={test1} alt="cart" width="100%" height="100%" />
+                <img src={test1} alt="cart" width="100%" height="100%" />
+                <img src={test1} alt="cart" width="100%" height="100%" />
+            </CarouselWithTrigerComponent>
+            {/* <div className="subHead">
                 <img src={test1} alt="cart" width="100%" height="100%" />
                 <div className="slideLines">
                     <span className="line line__active " />
                     <span className="line" />
                     <span className="line" />
                 </div>
-            </div>
+            </div> */}
             <div className="infoProductInfo">
                 <div className="containerUser">
                     <p className="productNameText">Платье из бархата с драпировкой</p>

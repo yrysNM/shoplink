@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, Children } from "react";
 
 const CarouselComponent = ({ children }) => {
     const countSlide = useState(1);
@@ -7,6 +7,7 @@ const CarouselComponent = ({ children }) => {
     const [touchEndPosition, setTouchEndPosition] = useState(0);
     const [isTouched, setIsTouched] = useState(false);
     const [isSwiped, setIsSwiped] = useState(false);
+    const [sliderPosition, setSliderPosition] = useState(0);
 
     const slideCatalog = useRef(null);
 
@@ -14,12 +15,26 @@ const CarouselComponent = ({ children }) => {
         const ar = Object.entries(slideCatalog.current.children);
         const width = ar[0][1].clientWidth;
         setPosition(position => Math.min(position + width * countSlide[0], 0));
+
+        let newPosition = sliderPosition;
+        if (newPosition > 0) {
+            newPosition -= 1;
+        }
+        setSliderPosition(newPosition);
+        translateFullSlides(newPosition);
     }
 
     const RightMove = () => {
         const ar = Object.entries(slideCatalog.current.children);
         const width = ar[0][1].clientWidth;
         setPosition(position => Math.max(position - width * countSlide[0], -width * (ar.length - countSlide[0])));
+
+        let newPosition = sliderPosition;
+        if (newPosition < children.length - 1) {
+            newPosition += 1;
+        }
+        setSliderPosition(newPosition);
+        translateFullSlides(newPosition);
     }
 
     const touchStartHandler = (e) => {
@@ -32,7 +47,7 @@ const CarouselComponent = ({ children }) => {
         setTouchEndPosition(e.targetTouches[0].clientX);
         const frameWidth = document.getElementById("displayFrame").offsetWidth;
         const translateDist = (touchEndPosition - touchStartPosition) / frameWidth * 100;
-
+        translatePartialSlides(translateDist);
         if (isTouched === true) {
             setIsSwiped(true);
         }
@@ -51,6 +66,27 @@ const CarouselComponent = ({ children }) => {
         setIsSwiped(false);
     }
 
+    const translatePartialSlides = (toTranslate) => {
+        let currentTranslation = -sliderPosition * 0.1;
+        let totalTranslation = currentTranslation + toTranslate;
+        for (let i = 0; i < children.length; i++) {
+            let elem = document.getElementById(`carouselitem` + i);
+            elem.style.transform = `translateX(` + totalTranslation + `%)`
+        }
+    }
+
+    const translateFullSlides = (newPosition) => {
+        let toTranslate = -0.1 * newPosition;
+        for (let i = 0; i < children.length; i++) {
+            let elem = document.getElementById("carouselitem" + i);
+            elem.style.transform = `translateX(${toTranslate}%)`;
+        }
+    }
+
+    const displayItems = Children.map(children, (child, index) => (
+        <div className={"carouselItem"} id={`carouselitem` + index}>{child}</div>
+    ));
+
     return (
         <div
             className="gallery"
@@ -59,7 +95,7 @@ const CarouselComponent = ({ children }) => {
             onTouchMove={touchMoveHandler}
             onTouchEnd={touchEndHandler}>
             <div className="productCategory__list" ref={slideCatalog} style={{ marginLeft: `${position}px` }}>
-                {children}
+                {displayItems}
             </div>
         </div>
     );
