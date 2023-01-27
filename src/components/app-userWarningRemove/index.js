@@ -11,7 +11,7 @@ const UserWarningsRemoveModalComponent = ({ catalogNumber }) => {
 
     return (
         <>
-            <div className="warningsRemove">
+            <div className="userWarningRemove warningsRemove">
                 <img src={warningImg} alt="warningremove img" className="imgWarningRemove" />
                 <p className="warningsText">
                     Товар будет удален из корзины
