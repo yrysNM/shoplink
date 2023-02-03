@@ -1,5 +1,7 @@
 import { useState, Children } from "react"
 
+import { ReactComponent as RightArrow } from "../../resources/icon/rightArrow.svg";
+import { ReactComponent as LeftArrow } from "../../resources/icon/leftArrow.svg";
 
 import "./index.scss";
 
@@ -45,7 +47,7 @@ const CarouselWithTrigerComponent = (props) => {
         prevSlideHandler();
     }
 
-    const nextlickHandler = () => {
+    const nextClickHandler = () => {
         nextSlideHandler();
     }
 
@@ -125,12 +127,14 @@ const CarouselWithTrigerComponent = (props) => {
 
     return (
         <div className="subHead">
+            <LeftArrow className="leftArrowTrigger" onClick={prevClickHandler} />
             <div className="displayFrame" id="displayFrameTriger"
                 onTouchStart={(e) => touchStartHandler(e)}
                 onTouchMove={(e) => touchMoveHandler(e)}
                 onTouchEnd={(e) => touchEndHandler(e)}>
                 {displayItems}
             </div>
+            <RightArrow className="rightArrowTrigger" onClick={nextClickHandler} />
             <div className="slideLines">
                 {positionIndicators}
             </div>

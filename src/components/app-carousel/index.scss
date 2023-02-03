@@ -1,0 +1,19 @@
+.gallery {
+    position: relative;
+    overflow: hidden;
+
+    .leftArrowTrigger,
+    .rightArrowTrigger {
+        z-index: 20;
+        left: 10px;
+
+        path {
+            stroke: var(--activeRedColor);
+        }
+    }
+
+    .rightArrowTrigger {
+        right: 10px;
+        left: auto;
+    }
+}

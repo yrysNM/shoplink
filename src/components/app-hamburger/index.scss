@@ -1,12 +1,13 @@
 .hamburger {
     display: block;
     position: absolute;
-    right: 68px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 16px;
     height: 10px;
     cursor: pointer;
+
 
     span {
         display: block;
@@ -33,5 +34,11 @@
                 transform: translateY(3px) rotate(45deg);
             }
         }
+    }
+}
+
+@media(max-width: 575px) {
+    .hamburger {
+        left: 16px;
     }
 }

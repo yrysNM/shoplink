@@ -19,7 +19,7 @@ const UserAllCategoryComponent = () => {
             <div className="containerUser">
 
                 <div className="allCategory__head">
-                    <h2 className="allCategoryText">Все категории</h2>
+                    <h2 className="allCategoryText" style={{ marginLeft: 36 }}>Все категории</h2>
 
                     <HamburgerComponent />
                     <UserMenuComponent />

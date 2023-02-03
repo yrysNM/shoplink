@@ -17,17 +17,17 @@ const UserPreviewHeaderComponent = () => {
                 <div className="containerUser">
                     <div className="headerUser__wrapper">
                         <div className="text">
-                            <p className="logo">
+                            <p className="logo" style={{ marginLeft: 32 }}>
                                 ShopLink
                             </p>
                         </div>
 
-                        <div className="headerUser__wrapper-tail" style={{ marginRight: 32 }}>
+                        <div className="headerUser__wrapper-tail">
                             <Link to={"/"}>
                                 <p className="adminPanelText">Админ панель</p>
                             </Link>
 
-                            <div className="favoriteBasketIcons">
+                            <div className="favoriteBasketIcons" style={{ marginLeft: 12 }}>
                                 <div className="iconBlock">
                                     <NavLink to="/user/preview/basket"
                                         className={({ isActive }) => isActive ? classNamesHeartIcon : undefined}>
@@ -45,25 +45,28 @@ const UserPreviewHeaderComponent = () => {
             </header>
 
             {/* sub head info */}
-            <div className="containerUser subContainerUser">
+            <div style={{ background: "#fff " }}>
 
-                <CarouselWithTrigerComponent>
-                    <div className="subHead__description">
-                        <div className="bannerImg">
-                            <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                <div className="containerUser subContainerUser">
+
+                    <CarouselWithTrigerComponent>
+                        <div className="subHead__description">
+                            <div className="bannerImg">
+                                <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                            </div>
                         </div>
-                    </div>
-                    <div className="subHead__description">
-                        <div className="bannerImg">
-                            <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                        <div className="subHead__description">
+                            <div className="bannerImg">
+                                <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                            </div>
                         </div>
-                    </div>
-                    <div className="subHead__description">
-                        <div className="bannerImg">
-                            <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                        <div className="subHead__description">
+                            <div className="bannerImg">
+                                <img src={"https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"} alt="cart " />
+                            </div>
                         </div>
-                    </div>
-                </CarouselWithTrigerComponent>
+                    </CarouselWithTrigerComponent>
+                </div>
             </div>
         </div>
     );

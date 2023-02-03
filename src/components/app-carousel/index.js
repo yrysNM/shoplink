@@ -1,5 +1,10 @@
 import { useState, useRef, Children } from "react";
 
+import { ReactComponent as RightArrow } from "../../resources/icon/rightArrow.svg";
+import { ReactComponent as LeftArrow } from "../../resources/icon/leftArrow.svg";
+
+import "./index.scss";
+
 const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
     const countSlide = useState(1);
     const [position, setPosition] = useState(0);
@@ -110,9 +115,11 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
             onTouchStart={touchStartHandler}
             onTouchMove={touchMoveHandler}
             onTouchEnd={touchEndHandler}>
+            <LeftArrow className="leftArrowTrigger" onClick={LeftMove} />
             <div className="productCategory__list" ref={slideCatalog} style={{ marginLeft: `${position}px` }}>
                 {displayItems}
             </div>
+            <RightArrow className="rightArrowTrigger" onClick={RightMove} />
         </div>
     );
 }

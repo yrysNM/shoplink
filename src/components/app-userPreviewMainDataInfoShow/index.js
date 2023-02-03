@@ -1,4 +1,5 @@
 import { useState, useLayoutEffect } from "react";
+import classnames from "classnames";
 import { Link } from "react-router-dom";
 
 import CarouselComponent from "../app-carousel";
@@ -24,6 +25,15 @@ import boysCategory from "../../resources/img/boysCategory.png";
 import "./index.scss";
 
 const UserPreviewMainDataInfoShowComponent = () => {
+
+    const [filterCatalog, setFilterCatalog] = useState({
+        "women": true
+    });
+
+    const handlerFilterCatalog = (value) => {
+        setFilterCatalog({ [value]: true });
+    }
+
     return (
         <main className="mainUser">
             <div className="containerUser">
@@ -195,23 +205,31 @@ const UserPreviewMainDataInfoShowComponent = () => {
                     </LayoutListCategoryComponent>
 
                     <div className="blockCategory allCategoryFilterBtns">
-                        <button className="categoryListBtns__btn categoryListBtns__btn-active">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.women,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("women")}>
                                 Женщинам
                             </p>
                         </button>
-                        <button className="categoryListBtns__btn">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.men,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("men")}>
                                 Мужчинам
                             </p>
                         </button>
-                        <button className="categoryListBtns__btn">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.universal,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("universal")}>
                                 Универсальная
                             </p>
                         </button>
-                        <button className="categoryListBtns__btn">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.child,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("child")}>
                                 Детям
                             </p>
                         </button>
@@ -300,7 +318,7 @@ export const SpeceficProductComponent = ({ imgUrl, productName, productPrice, ex
             </div>
 
             <p className="productCategory__name">
-                {productName}
+                {productName.length > 10 ? `${productName.slice(0, 10)}...` : productName}
             </p>
             <div className="productCategory__price">
                 {productPrice}
@@ -324,7 +342,7 @@ const ProdictCategotyItemSaleBlockComponent = (props) => {
             </div>
 
             <p className="productCategory__name">
-                {productName}
+                {productName.length > 10 ? `${productName.slice(0, 10)}...` : productName}
             </p>
             <div className="productCategory__price">
                 {productPrice} <span className="salePriceText">{productPriceSalve}</span>

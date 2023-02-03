@@ -39,7 +39,7 @@
         &-block {
             z-index: 10;
             position: relative;
-            width: 192px;
+            width: 165px;
 
         }
 
@@ -159,8 +159,9 @@
 
     &__btn {
         background: transparent;
-        transition: background .5s ease-in-out, border-radius .5s ease-in-out;
+        transition: background .5s ease-in-out, border-radius .5s ease-in-out, color .5s ease-in-out;
         border: none;
+        cursor: pointer;
 
         &>.btnText {
             font-weight: 400;
@@ -175,7 +176,7 @@
     &__btn-active {
         background: var(--activeBlueColor);
         border-radius: 5px;
-        transition: background .5s ease-in-out, border-radius .5s ease-in-out;
+        transition: background .5s ease-in-out, border-radius .5s ease-in-out, color .5s ease-in-out;
 
         &>.btnText {
             color: #FFFFFF;
@@ -228,5 +229,17 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
         text-align: center;
+    }
+}
+
+@media(max-width: 575px) {
+    .productCategory {
+        &__list {
+            gap: 18px;
+
+            &-block {
+                width: 135px;
+            }
+        }
     }
 }

@@ -3,15 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import classnames from "classnames";
 
 import HamburgerComponent from "../app-hamburger";
-import DefaultScreenComponent from "../app-defaultScreen";
-import { HelpFormInputComponent } from "../app-shop";
+// import DefaultScreenComponent from "../app-defaultScreen";
+// import { HelpFormInputComponent } from "../app-shop";
 import { DataContext } from "../../context/DataContext";
 import { SpeceficProductComponent } from "../app-userPreviewMainDataInfoShow";
 import UserMenuComponent from "../app-userMenu";
 
 import { ReactComponent as SortFilterPriceIcon } from "../../resources/icon/userIcons/filterPrice.svg";
 import { ReactComponent as BasketIcon } from "../../resources/icon/userIcons/basket.svg";
-import { ReactComponent as SearchIcon } from "../../resources/icon/orderIcons/searchIcon.svg";
+// import { ReactComponent as SearchIcon } from "../../resources/icon/orderIcons/searchIcon.svg";
 import { ReactComponent as ArrowDown } from "../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../resources/icon/shopDataIcons/arrowUp.svg";
 import { ReactComponent as FilterIcon } from "../../resources/icon/orderIcons/filterIcon.svg";
@@ -36,7 +36,13 @@ const UserCategoryComponent = () => {
         setSortFilterBlock(sortFilterBlock => !sortFilterBlock);
     }
 
+    const [filterCatalog, setFilterCatalog] = useState({
+        "women": true
+    });
 
+    const handlerFilterCatalog = (value) => {
+        setFilterCatalog({ [value]: true });
+    }
 
     return (
         <div className="userCategory">
@@ -64,12 +70,12 @@ const UserCategoryComponent = () => {
                 </p>
 
                 <div className="userCategory__filter">
-                    <HelpFormInputComponent data={{
+                    {/* <HelpFormInputComponent data={{
                         iconComponent: <SearchIcon />,
                         inputType: "search",
                         inputName: "search user",
                         placeholder: "Поиск по названию товара"
-                    }} />
+                    }} /> */}
 
                     <div className="userCategory__subFilter">
                         <div className="userCategory__subFilter-block" onClick={handleClick}>
@@ -106,24 +112,32 @@ const UserCategoryComponent = () => {
                         </div>
                     </div>
 
-                    <div className="blockCategory" style={{ marginTop: 32 }}>
-                        <button className="categoryListBtns__btn">
-                            <p className="btnText">
+                    <div className="blockCategory allCategoryFilterBtns">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.universal,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("universal")}>
                                 Все
                             </p>
                         </button>
-                        <button className="categoryListBtns__btn categoryListBtns__btn-active">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.women,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("women")}>
                                 Женщинам
                             </p>
                         </button>
-                        <button className="categoryListBtns__btn">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.men,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("men")}>
                                 Мужчинам
                             </p>
                         </button>
-                        <button className="categoryListBtns__btn">
-                            <p className="btnText">
+                        <button className={classnames("categoryListBtns__btn", {
+                            "categoryListBtns__btn-active": filterCatalog?.child,
+                        })}>
+                            <p className="btnText" onClick={() => handlerFilterCatalog("child")}>
                                 Детям
                             </p>
                         </button>

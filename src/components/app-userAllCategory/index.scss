@@ -9,6 +9,7 @@
 
         .hamburger {
             right: 0;
+            left: 0;
         }
     }
 
@@ -31,6 +32,11 @@
     .allCategory {
         &__grid {
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        .productCategory__list-block {
+            display: block;
+            margin: 0 auto;
         }
     }
 }
