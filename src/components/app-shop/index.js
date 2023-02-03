@@ -231,7 +231,9 @@ const ShopComponent = () => {
                                             id: "bannerImgModal",
                                             classNameIsActive: "activeModalFilter",
                                             topPosition: "50%",
-                                            rightPosition: "25%",
+                                            rightPosition: "auto",
+                                            leftPosition: "50%",
+                                            transform: "translate(-50%, -50%)",
                                             widthModal: "996px",
                                             banerImg: banerImg
                                         })
@@ -245,7 +247,9 @@ const ShopComponent = () => {
                                             id: "bannerImgModal",
                                             classNameIsActive: "activeModalFilter",
                                             topPosition: "50%",
-                                            rightPosition: "25%",
+                                            rightPosition: "auto",
+                                            leftPosition: "50%",
+                                            transform: "translate(-50%, -50%)",
                                             widthModal: "996px",
                                             banerImg: banerImg
                                         })

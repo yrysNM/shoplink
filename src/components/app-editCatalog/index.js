@@ -72,7 +72,9 @@ const EditCatalogComponent = () => {
                                 id: "fullScreenModal",
                                 classNameIsActive: "activeModalFilter",
                                 topPosition: "50%",
-                                rightPosition: "40%",
+                                rightPosition: "auto",
+                                leftPosition: "50%",
+                                transform: "translate(-50%, -50%)",
                                 imgUrl: testImg1
                             })
                         }}>
@@ -118,7 +120,9 @@ const EditCatalogComponent = () => {
                                     id: "warningRemoveModal",
                                     classNameIsActive: "activeModalFilter",
                                     topPosition: "50%",
-                                    rightPosition: "40%",
+                                    rightPosition: "auto",
+                                    leftPosition: "50%",
+                                    transform: "translate(-50%, -50%)",
                                     catalogNumber: "#0560"
                                 })
                             }}>Удалить товар</button>
@@ -147,7 +151,9 @@ const EditCatalogComponent = () => {
                                                 id: "fullScreenModal",
                                                 classNameIsActive: "activeModalFilter",
                                                 topPosition: "50%",
-                                                rightPosition: "40%",
+                                                rightPosition: "auto",
+                                                leftPosition: "50%",
+                                                transform: "translate(-50%, -50%)",
                                                 imgUrl: testImg2
                                             })
                                         }} />
@@ -167,7 +173,9 @@ const EditCatalogComponent = () => {
                                                 id: "fullScreenModal",
                                                 classNameIsActive: "activeModalFilter",
                                                 topPosition: "50%",
-                                                rightPosition: "40%",
+                                                rightPosition: "auto",
+                                                leftPosition: "50%",
+                                                transform: "translate(-50%, -50%)",
                                                 imgUrl: testImg3
                                             })
                                         }} />
@@ -396,7 +404,9 @@ const EditCatalogComponent = () => {
                                             id: "colorModal",
                                             classNameIsActive: "activeModalFilter",
                                             topPosition: "50%",
-                                            rightPosition: "40%"
+                                            rightPosition: "auto",
+                                            leftPosition: "50%",
+                                            transform: "translate(-50%, -50%)"
                                         })} />
                                 </div>
                             </div>

@@ -287,7 +287,9 @@ const AddProductComponent = () => {
                                                 id: "colorModal",
                                                 classNameIsActive: "activeModalFilter",
                                                 topPosition: "50%",
-                                                rightPosition: "40%"
+                                                rightPosition: "auto",
+                                                leftPosition: "50%",
+                                                transform: "translate(-50%, -50%)"
                                             })} />
                                     </div>
 

@@ -12,6 +12,8 @@
     }
 
     &__list {
+        z-index: 103;
+        position: relative;
         padding: 16px 24px;
         display: flex;
         align-items: center;
@@ -58,6 +60,7 @@
     top: -20px;
     width: 0;
     height: 0;
+    z-index: 102;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 20px solid #FFFFFF;
