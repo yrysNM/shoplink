@@ -2,6 +2,8 @@
 import { useRef, useState, useContext } from "react";
 
 import { DataContext } from "../../context/DataContext";
+import InputMobileMaskComponent from "../app-inputMobileMask/input";
+import InputUrlMaskComponent from "../app-inputUrlMask/input";
 
 import { ReactComponent as OrderIcon } from "../../resources/icon/orderIcon.svg";
 import { ReactComponent as FlagKz } from "../../resources/icon/shopDataIcons/ic_flag_kazakhstan.svg";
@@ -126,7 +128,7 @@ const ShopComponent = () => {
                                     </div>
                                 </div>
 
-                                <HelpFormInputComponent data={{
+                                <InputUrlMaskComponent data={{
                                     title: "URL",
                                     iconComponent: <LinkIcon />,
                                     inputType: "url",
@@ -142,7 +144,7 @@ const ShopComponent = () => {
                                     selectName: "Алматы",
                                 }} />
 
-                                <HelpFormInputComponent data={{
+                                <InputMobileMaskComponent data={{
                                     title: "Контактный номер",
                                     iconComponent: <PhoneIcon />,
                                     inputType: "number",
