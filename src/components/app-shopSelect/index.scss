@@ -13,12 +13,12 @@
     .selectChoose {
         margin-top: 6px;
     }
-}
 
-.form-inputCities {
-    flex-basis: none;
+    &.form-inputCities {
+        flex-basis: none;
 
-    .selectChoose {
-        margin-top: 0;
+        .selectChoose {
+            margin-top: 0;
+        }
     }
 }

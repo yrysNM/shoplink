@@ -53,7 +53,18 @@ const CatalogListComponent = () => {
     return (
         <>
             <div className="btn btn-catalogList" style={{ right: 215 }}>
-                <button className="addGds">Создать раздел</button>
+                <button className="addGds"
+                    onClick={() => OpenModal({
+                        id: "addSectionModal",
+                        classNameIsActive: "activeModalFilter",
+                        topPosition: "50%",
+                        rightPosition: "auto",
+                        leftPosition: "50%",
+                        widthModal: "400",
+                        transform: "translate(-50%, -50%)",
+                    })}>
+                    Создать раздел
+                </button>
             </div>
             <div className="btn btn-catalogList">
                 <Link to={"/catalog/add"}>

@@ -1,0 +1,35 @@
+.addSectionModal {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    .btns {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        .cancelBtn {
+            margin-right: 0;
+        }
+
+        .removeBtn,
+        .btns-block {
+            flex-basis: 100%;
+        }
+    }
+}
+
+.form-infoSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+
+    .form-input {
+        width: 100%;
+    }
+
+}

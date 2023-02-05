@@ -15,7 +15,7 @@ const GetQrCodeComponent = () => {
 
             <button className="btn getQrBtn"
                 onClick={() => OpenModal({
-                    id: "generateQrModa",
+                    id: "generateQrModal",
                     classNameIsActive: "activeModalFilter",
                     topPosition: "50%",
                     rightPosition: "auto",

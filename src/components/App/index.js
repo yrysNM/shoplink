@@ -40,6 +40,7 @@ import UserMenuFilterComponent from "../app-userMenuFilter";
 import UserWarningsRemoveModalComponent from "../app-userWarningRemove";
 import UserOrderModalComponent from "../app-userOrderModal";
 import GenerateQrModalComponent from "../app-qrGenerateModal";
+import AddSectionModalComponent from "../app-addSectionModal";
 
 
 const App = () => {
@@ -137,8 +138,10 @@ const ModalViewerComponent = (value) => {
             return <UserWarningsRemoveModalComponent />
         case "userOrderModal":
             return <UserOrderModalComponent />
-        case "generateQrModa":
-            return < GenerateQrModalComponent />
+        case "generateQrModal":
+            return <GenerateQrModalComponent />
+        case "addSectionModal":
+            return <AddSectionModalComponent />
         default: return null;
     }
 }

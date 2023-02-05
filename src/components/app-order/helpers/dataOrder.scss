@@ -12,9 +12,16 @@
             align-items: flex-end;
         }
     }
+
+
+    .iconform {
+        bottom: 7px;
+    }
 }
 
 input[name='search input'] {
+    height: 44px;
+
     &::placeholder {
         font-weight: 400;
         font-size: 16px;
