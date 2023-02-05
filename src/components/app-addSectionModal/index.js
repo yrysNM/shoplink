@@ -18,7 +18,7 @@ const AddSectionModalComponent = () => {
     return (
         <>
             <div className="addSectionModal">
-                <p className="addSection__headText">Создать раздел</p>
+                <p className="addSectionModal__headText">Создать раздел</p>
 
                 <form className="form-infoSection">
                     <HelpFormInputComponent data={{

@@ -4,6 +4,15 @@
     flex-direction: column;
     width: 400px;
 
+    &__headText {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+        color: #252728;
+    }
+
     .btns {
         width: 100%;
         justify-content: center;

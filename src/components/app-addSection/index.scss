@@ -10,4 +10,10 @@
         justify-content: center;
         align-items: center;
     }
+
+    .trashSection {
+        path {
+            stroke: var(--activeRedColor);
+        }
+    }
 }
