@@ -4,6 +4,8 @@ import { useRef, useState, useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import InputMobileMaskComponent from "../app-inputMobileMask/input";
 import InputUrlMaskComponent from "../app-inputUrlMask/input";
+import ShopSelectComponent from "../app-shopSelect";
+import { objCityText } from "../app-selectCatalog";
 
 import { ReactComponent as OrderIcon } from "../../resources/icon/orderIcon.svg";
 import { ReactComponent as FlagKz } from "../../resources/icon/shopDataIcons/ic_flag_kazakhstan.svg";
@@ -26,6 +28,18 @@ import { ReactComponent as RightIcon } from "../../resources/icon/rightArrow.svg
 
 import "./index.scss";
 
+
+const objCountryVolume = [
+    { label: "KZT", value: "kz" },
+    { label: "RUT", value: "ru" },
+    { label: "UST", value: "usa" }
+]
+
+const objCountry = [
+    { label: "Казахстан", value: "kazahstan" },
+    { label: "Россия", value: "russian" },
+    { label: "Америка", value: "america" }
+]
 
 const ShopComponent = () => {
     const [banerImg, setBanerImg] = useState([]);
@@ -100,30 +114,18 @@ const ShopComponent = () => {
                                     </p>
 
                                     <div className="form-input__block">
-                                        <div className="form-input form-inputCities">
+                                        <ShopSelectComponent
+                                            iconComponent={<FlagKz />}
+                                            placeholderText={"Казахстан"}
+                                            objItems={objCountry}
+                                            shopCountryVoluteClass={{ city: true }}
+                                            bottom={"-140px"} />
 
-                                            <div className="iconform flagicon">
-                                                <FlagKz />
-                                            </div>
-
-                                            <p className="cityName">
-                                                Казахстан
-                                            </p>
-
-                                            <div className="arrowDown">
-                                                <ArrowDown />
-                                            </div>
-                                        </div>
-
-                                        <div className="form-input form-inputCities form-inputVolute">
-                                            <p className="voluteText">
-                                                KZT
-                                            </p>
-
-                                            <div className="arrowDown arrowDown-volute">
-                                                <ArrowDown />
-                                            </div>
-                                        </div>
+                                        <ShopSelectComponent
+                                            placeholderText={"KZT"}
+                                            objItems={objCountryVolume}
+                                            bottom={"-140px"}
+                                            shopCountryVoluteClass={{ volute: true }} />
 
                                     </div>
                                 </div>
@@ -138,11 +140,12 @@ const ShopComponent = () => {
                                 }} />
 
 
-                                <HelperSelectComponent data={{
-                                    title: "Город",
-                                    iconComponent: <WorkIcon />,
-                                    selectName: "Алматы",
-                                }} />
+                                <ShopSelectComponent
+                                    title={"Город"}
+                                    iconComponent={<WorkIcon />}
+                                    placeholderText={"Алматы"}
+                                    objItems={objCityText}
+                                />
 
                                 <InputMobileMaskComponent data={{
                                     title: "Контактный номер",
