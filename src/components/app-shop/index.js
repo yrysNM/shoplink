@@ -357,6 +357,20 @@ const ShopComponent = () => {
                             <button type="sbumit" className="btn submit">Cохранить</button>
                         </form>
                     </div>
+
+                    {/* Adding Sections to the Shop Page */}
+                    <div className="shoppage-blocks">
+                        <p className="shoppage-blocks__title">Добавление разделов на страницу магазина</p>
+
+
+                    </div>
+
+                    {/* qr code */}
+                    <div className="shoppage-blocks">
+                        <p className="shoppage-blocks__title">QR-код</p>
+
+
+                    </div>
                 </div>
 
                 {/* Change password */}

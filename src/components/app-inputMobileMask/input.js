@@ -27,7 +27,7 @@ const InputMobileMaskComponent = ({ data }) => {
             def = matrix.replace(/\D/g, ""),
             val = value.replace(/\D/g, "");
 
-        console.log(inputRef.current.selectionStart);
+        // console.log(inputRef.current.selectionStart);
         if (def.length >= val.length) {
             val = def;
         }

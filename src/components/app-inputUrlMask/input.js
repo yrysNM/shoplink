@@ -34,7 +34,7 @@ const InputUrlMaskComponent = ({ data }) => {
         if (def.length >= val.length) {
             val = def;
         }
-        // console.log(val);
+        // mask ыстегым келген но ошибка осы жерде 
         // value = matrix.replace(/./g, (a) => {
         //     return /[_\wd]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
         // });

@@ -52,6 +52,9 @@ const CatalogListComponent = () => {
 
     return (
         <>
+            <div className="btn btn-catalogList" style={{ right: 215 }}>
+                <button className="addGds">Создать раздел</button>
+            </div>
             <div className="btn btn-catalogList">
                 <Link to={"/catalog/add"}>
                     <button className="addGds">Добавить товар</button>
