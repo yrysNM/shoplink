@@ -7,8 +7,8 @@ import "./styles/style.scss";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <DataContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    {/* <React.StrictMode> */}
+    <App />
+    {/* </React.StrictMode> */}
   </DataContextProvider>
 );

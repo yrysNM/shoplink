@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import ShopSelectComponent from "../app-shopSelect";
 
@@ -7,9 +8,28 @@ import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIco
 
 import "./index.scss";
 
+
+
+const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+};
+
+
 const AddSectionComponent = () => {
     const [sections, setSections] = useState([]);
 
+    const onDragEnd = (result) => {
+        if (!result.destination) {
+            return;
+        }
+
+        const items = reorder(sections, result.source.index, result.destination.index);
+        setSections(items);
+    };
 
     const handleClickAddSection = () => {
         // console.log(sections[sections.length - 1].id);
@@ -32,15 +52,43 @@ const AddSectionComponent = () => {
                 </div>
             </div>
 
-            {sections.map(val => (
-                <div className="addSection" key={val.id}>
-                    <ShopSelectComponent placeholderText={"Выберите раздел"} />
+            {sections.length > 0 ?
 
-                    <div className="addSection-icon" onClick={() => handleClickRemoveSection(val.id)}>
-                        <TrashIcon className="icon trashSection" />
-                    </div>
-                </div>
-            ))}
+                <DragDropContext onDragEnd={onDragEnd}>
+                    <Droppable droppableId="droppable">
+                        {(provided, snapshot) => (
+                            <div  {...provided.droppableProps}
+                                ref={provided.innerRef}>
+
+                                {sections.map((val, i) => (
+                                    <Draggable
+                                        key={val.id}
+                                        draggableId={String(val.id)}
+                                        index={i}
+                                    >
+                                        {(provided, snapshot) => (
+                                            <div
+                                                className="addSection"
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                            >
+                                                <ShopSelectComponent placeholderText={"Выберите раздел"} />
+
+                                                <div className="addSection-icon" onClick={() => handleClickRemoveSection(val.id)}>
+                                                    <TrashIcon className="icon trashSection" />
+                                                </div>
+                                            </div>
+                                        )}
+                                    </Draggable>
+                                ))}
+                            </div>
+                        )}
+                    </Droppable>
+                </DragDropContext>
+                :
+                null
+            }
         </>
     );
 }
