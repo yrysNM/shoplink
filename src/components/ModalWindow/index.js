@@ -11,9 +11,9 @@ const Modal = ({ children }) => {
             onClick={HideModal}
             className={`overlay overlay__${isActiveModal.classNameIsActive}`}>
             <div
-                className="modal"
+                className={`modal-${isActiveModal.widthModal} modal`}
                 style={{
-                    maxWidth: isActiveModal.widthModal,
+                    maxWidth: isActiveModal?.widthModal,
                     top: isActiveModal.topPosition,
                     right: isActiveModal.rightPosition,
                     left: isActiveModal.leftPosition,

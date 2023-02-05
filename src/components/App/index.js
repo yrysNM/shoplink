@@ -39,6 +39,7 @@ import UserFooterComponent from "../app-userFooter";
 import UserMenuFilterComponent from "../app-userMenuFilter";
 import UserWarningsRemoveModalComponent from "../app-userWarningRemove";
 import UserOrderModalComponent from "../app-userOrderModal";
+import GenerateQrModalComponent from "../app-qrGenerateModal";
 
 
 const App = () => {
@@ -136,6 +137,8 @@ const ModalViewerComponent = (value) => {
             return <UserWarningsRemoveModalComponent />
         case "userOrderModal":
             return <UserOrderModalComponent />
+        case "generateQrModa":
+            return < GenerateQrModalComponent />
         default: return null;
     }
 }

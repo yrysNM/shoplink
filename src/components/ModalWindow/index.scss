@@ -29,6 +29,10 @@
     border-radius: 13px;
     background-color: #fff;
 
+    &-803 {
+        max-width: 803px !important;
+    }
+
 }
 
 @media(max-width: 767px) {
