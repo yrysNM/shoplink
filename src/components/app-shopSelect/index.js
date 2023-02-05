@@ -63,8 +63,9 @@ const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, 
 
                     })}
                     style={{
-                        color: "#252728",
-                        paddingLeft: shopCountryVoluteClass?.volute ? "14px" : "44px"
+                        color: placeholderText === "Выберите раздел" ? "#969CAF" : "#252728",
+                        paddingLeft: shopCountryVoluteClass?.volute || placeholderText === "Выберите раздел" ? "14px" : "44px",
+                        width: placeholderText === "Выберите раздел" ? "340px" : "auto"
                     }}
                     onClick={handleClick}>
 
@@ -82,7 +83,7 @@ const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, 
                     })} style={{
                         bottom: bottom
                     }}>
-                    {objItems.map(item => (
+                    {objItems?.map(item => (
                         <div key={item.value} onClick={() => onItemClick(item)} className="selectValues">
                             {item.label}
                         </div>

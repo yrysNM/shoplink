@@ -1,0 +1,13 @@
+.addSection {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 21px;
+
+    &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

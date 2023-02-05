@@ -2,10 +2,12 @@
 import { useRef, useState, useContext } from "react";
 
 import { DataContext } from "../../context/DataContext";
+import { objCityText } from "../app-selectCatalog";
+import AddSectionComponent from "../app-addSection";
 import InputMobileMaskComponent from "../app-inputMobileMask/input";
 import InputUrlMaskComponent from "../app-inputUrlMask/input";
 import ShopSelectComponent from "../app-shopSelect";
-import { objCityText } from "../app-selectCatalog";
+import GetQrCodeComponent from "../app-qrCode";
 
 import { ReactComponent as OrderIcon } from "../../resources/icon/orderIcon.svg";
 import { ReactComponent as FlagKz } from "../../resources/icon/shopDataIcons/ic_flag_kazakhstan.svg";
@@ -365,14 +367,14 @@ const ShopComponent = () => {
                     <div className="shoppage-blocks">
                         <p className="shoppage-blocks__title">Добавление разделов на страницу магазина</p>
 
-
+                        <AddSectionComponent />
                     </div>
 
                     {/* qr code */}
                     <div className="shoppage-blocks">
                         <p className="shoppage-blocks__title">QR-код</p>
 
-
+                        <GetQrCodeComponent />
                     </div>
                 </div>
 
