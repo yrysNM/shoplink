@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 
 export const setCursorPosition = (pos, element) => {
     element?.current.focus();
-    console.log(element);
+
     if (element.setSelectionRage) {
         element.setSelectionRage(pos, pos);
     } else if (element.createTextRange) {
@@ -13,6 +13,8 @@ export const setCursorPosition = (pos, element) => {
         range.select();
     }
 }
+
+
 
 const InputMobileMaskComponent = ({ data }) => {
     const [mobilePhone, setMobilePhone] = useState("");
@@ -25,11 +27,13 @@ const InputMobileMaskComponent = ({ data }) => {
             def = matrix.replace(/\D/g, ""),
             val = value.replace(/\D/g, "");
 
+        console.log(inputRef.current.selectionStart);
         if (def.length >= val.length) {
             val = def;
         }
+
         value = matrix.replace(/./g, function (a) {
-            return /[x\d]/.test(a) && i < val.length
+            return /[x\d]/.test(a) && i < val.length && inputRef.current.selectionStart !== 1 && inputRef.current.selectionStart !== 2
                 ? val.charAt(i++) : i >= val.length
                     ? ""
                     : a;
