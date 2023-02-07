@@ -184,6 +184,15 @@
     }
 }
 
+.allProductsBlock {
+    margin-top: 40px;
+
+
+    .allCategory__grid {
+        margin-top: 16px;
+    }
+}
+
 .allProductBtn {
     background: #FFFFFF;
     display: block;
@@ -232,13 +241,15 @@
     }
 }
 
-@media(max-width: 575px) {
+@media(max-width: 374px) {
     .productCategory {
         &__list {
             gap: 18px;
 
             &-block {
                 width: 135px;
+                display: block;
+                margin: 0 auto;
             }
         }
     }

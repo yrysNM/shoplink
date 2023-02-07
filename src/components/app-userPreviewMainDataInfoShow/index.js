@@ -274,10 +274,36 @@ const UserPreviewMainDataInfoShowComponent = () => {
                     </LayoutListCategoryComponent>
                 </div>
 
+                <div className="allProductsBlock">
+                    <div className="allProductsBlock__head">
+                        <p className="productCategory__titleText">Все товары</p>
+
+                        <div className="allCategory__grid">
+                            <SpeceficProductComponent
+                                imgUrl={userPreview1}
+                                productName={"Corner"}
+                                productPrice={"5 990 ₸"} />
+                            <SpeceficProductComponent
+                                imgUrl={userPreview2}
+                                productName={"EnvyLab"}
+                                productPrice={"6 990 ₸"} />
+                            <SpeceficProductComponent
+                                imgUrl={userPreview3}
+                                productName={"Футболка"}
+                                productPrice={"6 490 ₸"} />
+                            <SpeceficProductComponent
+                                imgUrl={userPreview1}
+                                productName={"Corner"}
+                                productPrice={"5 990 ₸"} />
+                        </div>
+                    </div>
+                </div>
+
                 <div className="blockCategory">
                     <button className="allProductBtn">
                         <p className="btnText">
-                            Все товары
+                            {/* Все товары */}
+                            Показать все
                         </p>
                     </button>
                 </div>
