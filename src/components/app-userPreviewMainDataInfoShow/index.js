@@ -17,10 +17,10 @@ import userPreview3 from "../../resources/img/userPreview9.png";
 import userPreview4 from "../../resources/img/userPreview10.png";
 import userPreview5 from "../../resources/img/userPreview11.png";
 import userPreview6 from "../../resources/img/userPreview12.png";
-import womenCategory from "../../resources/img/womenCategory.png";
-import menCategory from "../../resources/img/menCategory.png";
-import girlsCategory from "../../resources/img/girlsCategory.png";
-import boysCategory from "../../resources/img/boysCategory.png";
+// import womenCategory from "../../resources/img/womenCategory.png";
+// import menCategory from "../../resources/img/menCategory.png";
+// import girlsCategory from "../../resources/img/girlsCategory.png";
+// import boysCategory from "../../resources/img/boysCategory.png";
 
 import "./index.scss";
 
@@ -197,12 +197,12 @@ const UserPreviewMainDataInfoShowComponent = () => {
                             imgUrl={saleImg2} />
                     </LayoutListCategoryComponent>
 
-                    <LayoutListCategoryComponent textTitle={"Категории"} idGallery={"displayFrame3"} idCarouselItem={"carouselitem3"}>
+                    {/* <LayoutListCategoryComponent textTitle={"Категории"} idGallery={"displayFrame3"} idCarouselItem={"carouselitem3"}>
                         <CategoryComponent imgUrl={womenCategory} categoryTitle={"Женщинам"} />
                         <CategoryComponent imgUrl={menCategory} categoryTitle={"Мужчинам"} />
                         <CategoryComponent imgUrl={girlsCategory} categoryTitle={"Девочкам"} />
                         <CategoryComponent imgUrl={boysCategory} categoryTitle={"Мальчикам"} />
-                    </LayoutListCategoryComponent>
+                    </LayoutListCategoryComponent> */}
 
                     <div className="blockCategory allCategoryFilterBtns">
                         <button className={classnames("categoryListBtns__btn", {

@@ -28,7 +28,8 @@ const AppHeaderComponent = () => {
                             OpenModal({
                                 id: "notificationModal",
                                 classNameIsActive: "activeModalFilter",
-                                topPosition: "31%",
+                                topPosition: "287px",
+                                widthModal: "400",
                                 rightPosition: "2%",
                             })
                         }} />

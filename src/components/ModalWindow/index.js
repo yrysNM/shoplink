@@ -9,7 +9,10 @@ const Modal = ({ children }) => {
     return (
         <div
             onClick={HideModal}
-            className={`overlay overlay__${isActiveModal.classNameIsActive}`}>
+            className={`overlay overlay__${isActiveModal.classNameIsActive}`}
+            style={{
+                position: isActiveModal?.absolute
+            }}>
             <div
                 className={`modal-${isActiveModal.widthModal} modal`}
                 style={{

@@ -28,6 +28,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
 }
 
 
@@ -73,6 +74,7 @@ ol {
     padding: 0;
     list-style: none;
 }
+
 
 @import "./blocks/text";
 @import "./blocks/btn";

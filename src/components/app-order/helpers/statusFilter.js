@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FilterStatusComponent from "../../app-filterStatus";
 import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../../resources/icon/shopDataIcons/arrowUp.svg";
@@ -11,6 +11,17 @@ const StatusFilterComponent = ({ filterDate = "", textStatus, objText }) => {
 
         setStatusFilter(statusFilter => !statusFilter);
     }
+
+    useEffect(() => {
+        const handler = () => setStatusFilter(false);
+
+        window.addEventListener("click", handler);
+
+
+        return () => {
+            window.removeEventListener("click", handler);
+        };
+    });
 
     return (
         <div className={`statusFilter${filterDate.length > 0 ? " " + filterDate : ""}`}>

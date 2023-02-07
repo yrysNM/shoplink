@@ -93,8 +93,9 @@ const CatalogListComponent = () => {
                                     onClick={() => OpenModal({
                                         id: "filterModal",
                                         classNameIsActive: "activeModalFilter",
-                                        topPosition: "56%",
-                                        rightPosition: "27.5%"
+                                        topPosition: "460px",
+                                        rightPosition: "43px",
+                                        absolute: "absolute",
                                     })}>
 
                                     Фильтры

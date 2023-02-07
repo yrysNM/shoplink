@@ -40,8 +40,9 @@ const DataOrderComponent = () => {
                                 onClick={() => OpenModal({
                                     id: "filterModal",
                                     classNameIsActive: "activeModalFilter",
-                                    topPosition: "56%",
-                                    rightPosition: "43px"
+                                    topPosition: "460px",
+                                    rightPosition: "43px",
+                                    absolute: "absolute",
                                 })}>
 
                                 Фильтры
