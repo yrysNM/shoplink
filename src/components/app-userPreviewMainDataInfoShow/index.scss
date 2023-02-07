@@ -225,7 +225,7 @@
 
         &__list {
             &-block {
-                width: 155px;
+                width: 145px;
             }
         }
     }
@@ -241,10 +241,18 @@
     }
 }
 
-@media(max-width: 374px) {
+@media(max-width: 575px) {
     .productCategory {
         &__list {
             gap: 18px;
+        }
+    }
+}
+
+@media(max-width: 374px) {
+    .productCategory {
+        &__list {
+            // gap: 18px;
 
             &-block {
                 width: 135px;
