@@ -118,15 +118,15 @@ const ShopComponent = () => {
                                     <div className="form-input__block">
                                         <ShopSelectComponent
                                             iconComponent={<FlagKz />}
-                                            placeholderText={"Казахстан"}
+                                            placeholderText="Казахстан"
                                             objItems={objCountry}
                                             shopCountryVoluteClass={{ city: true }}
-                                            bottom={"-140px"} />
+                                            bottom="-140px" />
 
                                         <ShopSelectComponent
-                                            placeholderText={"KZT"}
+                                            placeholderText="KZT"
                                             objItems={objCountryVolume}
-                                            bottom={"-140px"}
+                                            bottom="-140px"
                                             shopCountryVoluteClass={{ volute: true }} />
 
                                     </div>
@@ -143,9 +143,9 @@ const ShopComponent = () => {
 
 
                                 <ShopSelectComponent
-                                    title={"Город"}
+                                    title="Город"
                                     iconComponent={<WorkIcon />}
-                                    placeholderText={"Алматы"}
+                                    placeholderText="Алматы"
                                     objItems={objCityText}
                                 />
 

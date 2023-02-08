@@ -33,7 +33,7 @@ const DataOrderComponent = () => {
 
                         <DateThenToComponent />
 
-                        <StatusFilterComponent textStatus={"Статус"} objText={objTextStatus} />
+                        <StatusFilterComponent textStatus="Статус" objText={objTextStatus} id="statusFilter1" />
                         <div className="statusFilter">
                             <div
                                 className={`statusBlockFilter modalFilter ${isActiveModal.id === "filterModal" && "activeModal"}`}

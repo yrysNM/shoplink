@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import classnames from "classnames";
 
+import { DataContext } from "../../context/DataContext";
+
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
+
 import "./index.scss";
 
 const FilterStatusComponent = ({ objText }) => {

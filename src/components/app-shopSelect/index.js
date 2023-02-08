@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import classnames from "classnames";
 
+import { DataContext } from "../../context/DataContext";
 
 import { ReactComponent as ArrowDown } from "../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../resources/icon/shopDataIcons/arrowUp.svg";
@@ -8,6 +9,7 @@ import { ReactComponent as ArrowUp } from "../../resources/icon/shopDataIcons/ar
 import "./index.scss";
 
 const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, shopCountryVoluteClass, bottom }) => {
+    const { statusFilter, SetStatusFilter, ToggleStatusFilter } = useContext(DataContext);
     const [toggleArrow, setToggleArrow] = useState(false);
     const [selectedValue, setSelectedValue] = useState(null);
 
@@ -30,7 +32,7 @@ const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, 
     }
 
     useEffect(() => {
-        const handler = () => setToggleArrow(false);
+        const handler = () => SetStatusFilter({ [statusFilter[objItems[0].value]]: false });
 
         window.addEventListener("click", handler);
 
@@ -59,7 +61,7 @@ const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, 
                 </div>
                 <div className={
                     classnames("selectChoose-block", {
-                        "selectChoose-block_active": toggleArrow,
+                        "selectChoose-block_active": statusFilter[objItems[0].value],
 
                     })}
                     style={{
@@ -67,11 +69,11 @@ const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, 
                         paddingLeft: shopCountryVoluteClass?.volute || placeholderText === "Выберите раздел" ? "14px" : "44px",
                         width: placeholderText === "Выберите раздел" ? "340px" : "auto"
                     }}
-                    onClick={handleClick}>
+                    onClick={(e) => ToggleStatusFilter(e, objItems[0].value)}>
 
                     {getDisplay()}
 
-                    {toggleArrow
+                    {statusFilter[objItems[0].value]
                         ? <ArrowUp className={`icon`} width="14" height="28" />
                         : <ArrowDown className="icon" width="14" height="28" />}
                 </div>
@@ -79,7 +81,7 @@ const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, 
                 {/* component ke boly kerek  */}
                 <div className={
                     classnames("dropdown-tags", {
-                        "dropdown-tags_active": toggleArrow
+                        "dropdown-tags_active": statusFilter[objItems[0].value]
                     })} style={{
                         bottom: bottom
                     }}>

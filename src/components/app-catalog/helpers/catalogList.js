@@ -83,9 +83,9 @@ const CatalogListComponent = () => {
 
                             }} />
 
-                            <StatusFilterComponent textStatus={"Все категории"} objText={objTextCategory} />
+                            <StatusFilterComponent textStatus={"Все категории"} objText={objTextCategory} id="catalogFilter1" />
 
-                            <StatusFilterComponent textStatus={"Подкатегория"} objText={objTextSubCategory} />
+                            <StatusFilterComponent textStatus={"Подкатегория"} objText={objTextSubCategory} id="catalogFilter2" />
 
                             <div className="statusFilter">
                                 <div

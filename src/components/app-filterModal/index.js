@@ -21,9 +21,9 @@ const FilterModalComponent = () => {
                 <form className="form">
                     <div className="form-filterBlock">
                         <DateThenToComponent filterDate={"filterBlock-datesStatus"} />
-                        <StatusFilterComponent filterDate={"filterBlock-datesStatus"} textStatus={"Статус"} objText={objTextStatus} />
+                        <StatusFilterComponent filterDate={"filterBlock-datesStatus"} textStatus={"Статус"} objText={objTextStatus} id="statusFilterModal1" />
                         {/* сории но екы component косылып кетты city and status */}
-                        <StatusFilterComponent textStatus={"Выберите город"} filterDate={"filterBlock-city"} objText={objTextCity} />
+                        <StatusFilterComponent textStatus={"Выберите город"} filterDate={"filterBlock-city"} objText={objTextCity} id="statusFilterModal2" />
                     </div>
 
 

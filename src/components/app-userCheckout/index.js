@@ -93,7 +93,7 @@ const UserCheckoutComponent = () => {
                             </div>
 
 
-                            {tickIcon.tickIcon2 ? <UserSelectorComponent placeholderText={"Выберите город"} /> : null}
+                            {tickIcon.tickIcon2 && !tickIcon.tickIcon1 ? <UserSelectorComponent placeholderText={"Выберите город"} /> : null}
 
                             <HelpFormInputComponent data={{
                                 iconComponent: <AddressIcon className="iconAddress" style={{ marginBottom: 3 }} />,

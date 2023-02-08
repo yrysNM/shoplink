@@ -11,6 +11,18 @@ const DataContextProvider = ({ children }) => {
     const [productMainPhoto, setProductMainPhoto] = useState([]);
     const [selectedValue, setSelectedValue] = useState(null);
     const [hamburgerActive, setHamburgerActive] = useState(false);
+    const [statusFilter, setStatusFilter] = useState(false);
+
+
+    function ToggleStatusFilter(e, id) {
+        e.stopPropagation();
+
+        setStatusFilter(statusFilter => ({ [id]: !statusFilter[id] }));
+    }
+
+    function SetStatusFilter(value) {
+        setStatusFilter(value);
+    }
 
     function ActiveHamburger(e) {
         e.stopPropagation();
@@ -52,6 +64,9 @@ const DataContextProvider = ({ children }) => {
             productMainPhoto,
             selectedValue,
             hamburgerActive,
+            statusFilter,
+            ToggleStatusFilter,
+            SetStatusFilter,
             ActiveHamburger,
             OpenModal,
             HideModal,

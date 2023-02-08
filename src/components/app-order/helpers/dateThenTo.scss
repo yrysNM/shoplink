@@ -18,6 +18,10 @@
     padding: 0 24px;
 }
 
+.react-datepicker-popper {
+    z-index: 100 !important;
+}
+
 .react-datepicker__navigation--previous,
 .react-datepicker__navigation--next {
     left: 24px !important;

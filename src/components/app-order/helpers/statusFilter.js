@@ -1,22 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
+
+import { DataContext } from "../../../context/DataContext";
 import FilterStatusComponent from "../../app-filterStatus";
+
 import { ReactComponent as ArrowDown } from "../../../resources/icon/shopDataIcons/arrowDown2.svg";
 import { ReactComponent as ArrowUp } from "../../../resources/icon/shopDataIcons/arrowUp.svg";
 
-const StatusFilterComponent = ({ filterDate = "", textStatus, objText }) => {
-    const [statusFilter, setStatusFilter] = useState(false);
 
-    const toggleFilterStatus = (e) => {
-        e.stopPropagation();
-
-        setStatusFilter(statusFilter => !statusFilter);
-    }
+const StatusFilterComponent = ({ filterDate = "", textStatus, objText, id }) => {
+    const { statusFilter, SetStatusFilter, ToggleStatusFilter } = useContext(DataContext);
 
     useEffect(() => {
-        const handler = () => setStatusFilter(false);
+        const handler = () => SetStatusFilter(({ [statusFilter[id]]: false }));
 
         window.addEventListener("click", handler);
-
 
         return () => {
             window.removeEventListener("click", handler);
@@ -26,20 +23,21 @@ const StatusFilterComponent = ({ filterDate = "", textStatus, objText }) => {
     return (
         <div className={`statusFilter${filterDate.length > 0 ? " " + filterDate : ""}`}>
             <div className="statusBlockFilter"
-                onClick={toggleFilterStatus}
+                onClick={(e) => ToggleStatusFilter(e, id)}
                 style={{
-                    boxShadow: statusFilter ? "0px 0px 20px rgba(0, 0, 0, 0.06)" : "none"
+                    boxShadow: statusFilter[id] ? "0px 0px 20px rgba(0, 0, 0, 0.06)" : "none"
                 }}>
                 {textStatus}
-                {statusFilter
+                {statusFilter[id]
                     ? <ArrowUp className={`icon`} />
                     : <ArrowDown className="icon" />
                 }
             </div>
 
-            {statusFilter && <FilterStatusComponent objText={objText} />}
+            {statusFilter[id] && <FilterStatusComponent objText={objText} />}
         </div>
     );
 }
+
 
 export default StatusFilterComponent;

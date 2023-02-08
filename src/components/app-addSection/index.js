@@ -9,6 +9,9 @@ import { ReactComponent as TrashIcon } from "../../resources/icon/addProductsIco
 import "./index.scss";
 
 
+const testObj = [
+    { value: "type" },
+]
 
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -45,7 +48,7 @@ const AddSectionComponent = () => {
     return (
         <>
             <div className="addSection">
-                <ShopSelectComponent placeholderText={"Выберите раздел"} />
+                <ShopSelectComponent placeholderText={"Выберите раздел"} objItems={testObj} />
 
                 <div className="addSection-icon" onClick={handleClickAddSection}>
                     <PlusIcon className="icon" />
@@ -73,7 +76,7 @@ const AddSectionComponent = () => {
                                                 {...provided.draggableProps}
                                                 {...provided.dragHandleProps}
                                             >
-                                                <ShopSelectComponent placeholderText={"Выберите раздел"} />
+                                                <ShopSelectComponent placeholderText={"Выберите раздел"} objItems={testObj} />
 
                                                 <div className="addSection-icon" onClick={() => handleClickRemoveSection(val.id)}>
                                                     <TrashIcon className="icon trashSection" />

@@ -26,14 +26,8 @@ export const objCityText = [
 ];
 
 const SelecterCatalogComponent = ({ placeholderText }) => {
-    const { selectedValue, SetValueSelected } = useContext(DataContext);
+    const { selectedValue, SetValueSelected, statusFilter, ToggleStatusFilter, SetStatusFilter } = useContext(DataContext);
 
-    const [toggleArrow, setToggleArrow] = useState(false);
-
-    function handleClick(e) {
-        e.stopPropagation();
-        setToggleArrow(toggleArrow => !toggleArrow);
-    }
 
     const getDispaly = () => {
         if (!selectedValue || selectedValue.length === 0) {
@@ -48,7 +42,7 @@ const SelecterCatalogComponent = ({ placeholderText }) => {
     }
 
     useEffect(() => {
-        const handler = () => setToggleArrow(false);
+        const handler = () => SetStatusFilter({ [statusFilter["selectGender"]]: false });
 
         window.addEventListener("click", handler);
 
@@ -61,14 +55,14 @@ const SelecterCatalogComponent = ({ placeholderText }) => {
         <div className="selectChoose">
             <div className={
                 classnames("selectChoose-block", {
-                    "selectChoose-block_active": toggleArrow
+                    "selectChoose-block_active": statusFilter["selectGender"]
                 })}
                 style={{ color: getDispaly() === placeholderText && placeholderText !== "Женщинам" ? "#969CAF" : "#252728" }}
-                onClick={handleClick}>
+                onClick={(e) => ToggleStatusFilter(e, "selectGender")}>
 
                 {getDispaly()}
 
-                {toggleArrow
+                {statusFilter["selectGender"]
                     ? <ArrowUp className={`icon`} width="14" height="28" />
                     : <ArrowDown className="icon" width="14" height="28" />}
             </div>
@@ -76,7 +70,7 @@ const SelecterCatalogComponent = ({ placeholderText }) => {
             {/* component ke boly kerek  */}
             <div className={
                 classnames("dropdown-tags", {
-                    "dropdown-tags_active": toggleArrow
+                    "dropdown-tags_active": statusFilter["selectGender"]
                 })}>
                 {objTextCatalogGender.map(item => (
                     <div key={item.value} onClick={() => onItemClick(item)} className="selectValues">
@@ -89,13 +83,9 @@ const SelecterCatalogComponent = ({ placeholderText }) => {
 }
 
 export const SubSelectorCatalogComponent = ({ placeholderText }) => {
-    const [toggleArrow, setToggleArrow] = useState(false);
+    const { statusFilter, ToggleStatusFilter, SetStatusFilter } = useContext(DataContext);
     const [selectedValue, setSelectedValue] = useState(null);
 
-    function handleClick(e) {
-        e.stopPropagation();
-        setToggleArrow(toggleArrow => !toggleArrow);
-    }
 
     const getDispaly = () => {
         if (!selectedValue || selectedValue.length === 0) {
@@ -110,7 +100,7 @@ export const SubSelectorCatalogComponent = ({ placeholderText }) => {
     }
 
     useEffect(() => {
-        const handler = () => setToggleArrow(false);
+        const handler = () => SetStatusFilter({ [statusFilter["selectClother"]]: false });
 
         window.addEventListener("click", handler);
 
@@ -123,14 +113,14 @@ export const SubSelectorCatalogComponent = ({ placeholderText }) => {
         <div className="selectChoose">
             <div className={
                 classnames("selectChoose-block", {
-                    "selectChoose-block_active": toggleArrow
+                    "selectChoose-block_active": statusFilter["selectClother"]
                 })}
                 style={{ color: getDispaly() === placeholderText && placeholderText !== "Верхняя одежда" ? "#969CAF" : "#252728" }}
-                onClick={handleClick}>
+                onClick={(e) => ToggleStatusFilter(e, "selectClother")}>
 
                 {getDispaly()}
 
-                {toggleArrow
+                {statusFilter["selectClother"]
                     ? <ArrowUp className={`icon`} width="14" height="28" />
                     : <ArrowDown className="icon" width="14" height="28" />}
             </div>
@@ -138,7 +128,7 @@ export const SubSelectorCatalogComponent = ({ placeholderText }) => {
             {/* component ke boly kerek  */}
             <div className={
                 classnames("dropdown-tags", {
-                    "dropdown-tags_active": toggleArrow
+                    "dropdown-tags_active": statusFilter["selectClother"]
                 })}>
                 {objTextSubCatalog.map(item => (
                     <div key={item.value} onClick={() => onItemClick(item)} className="selectValues">
