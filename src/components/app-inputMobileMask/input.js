@@ -22,10 +22,15 @@ const InputMobileMaskComponent = ({ data }) => {
 
     const handleChange = (e) => {
         let value = e.target.value;
+        let pos = e.target.selectionStart;
+        if (pos < 2) { e.preventDefault(); }
         let matrix = "+7 (xxx) xxx xx xx",
             i = 0,
             def = matrix.replace(/\D/g, ""),
             val = value.replace(/\D/g, "");
+        // new_value = matrix.replace(/[x\d]/g, function (b) {
+        //     return i < val.length ? val.charAt(i++) || def.charAt(i) : b;
+        // });
 
         // console.log(inputRef.current.selectionStart);
         if (def.length >= val.length) {
@@ -33,7 +38,7 @@ const InputMobileMaskComponent = ({ data }) => {
         }
 
         value = matrix.replace(/./g, function (a) {
-            return /[x\d]/.test(a) && i < val.length && inputRef.current.selectionStart !== 1 && inputRef.current.selectionStart !== 2
+            return /[x\d]/.test(a) && i < val.length
                 ? val.charAt(i++) : i >= val.length
                     ? ""
                     : a;
@@ -47,8 +52,11 @@ const InputMobileMaskComponent = ({ data }) => {
             setCursorPosition(value.length, inputRef);
         }
 
+
         setMobilePhone(value);
     }
+
+
 
     return (
         <div className="form-info">
@@ -65,12 +73,13 @@ const InputMobileMaskComponent = ({ data }) => {
                     {data.iconComponent}
                 </div>
                 <input
-                    type="text"
+                    type="tel"
                     ref={inputRef}
                     value={mobilePhone}
                     onChange={handleChange}
                     onFocus={handleChange}
                     onBlur={handleChange}
+                    onKeyDown={handleChange}
                     className={`form-input ${data.price ? "form-priceInput" : ""}`}
                     name={"mobile phone number"}
                     placeholder={data?.placeholder} />
