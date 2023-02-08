@@ -1,5 +1,6 @@
 import { useState, useRef, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import classnames from "classnames";
 
 import { DataContext } from "../../context/DataContext";
 import SelecterCatalogComponent from "../app-selectCatalog";
@@ -20,9 +21,13 @@ import testImg3 from "../../resources/img/test3.png";
 
 const EditCatalogComponent = () => {
     const [wordLength, setWordLength] = useState("Минималистичное пальто длины миди из приятного на ощупь плотного материала на основе шерсти с дополнительным утеплением. Оно имеет расслабленный свободный крой, спущенную линию плеча и подчеркнуто широкие лацканы на воротнике, а также боковые карманы с прямоугольными клапанами и застежку на две потайные кнопки.".length);
+    const [tag, setTag] = useState(false);
     const { SetMainPhoto, productMainPhoto, OpenModal } = useContext(DataContext);
     const { catalogNumber } = useParams();
 
+    const [installmentC, setInstallmentC] = useState({
+        "threeM": true
+    });
 
     const fileInputHidden = useRef(null);
 
@@ -46,6 +51,14 @@ const EditCatalogComponent = () => {
 
     const handleClick = () => {
         fileInputHidden.current.click();
+    }
+
+    const handleClickTag = (val) => {
+        setTag(tag => ({ ...tag, [val]: !tag[val] }));
+    }
+
+    const handleInstallment = (value) => {
+        setInstallmentC({ [value]: true });
     }
 
     // const filterPhotoes = (index) => {
@@ -300,58 +313,88 @@ const EditCatalogComponent = () => {
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <TickIconComponent tickValue={true} styleBox={" selectBox"} />
+                                    <>
+                                        <div
+                                            className={
+                                                classnames(`filterStatus-block__box selectBox`, {
+                                                    "activeFilter": tag?.discountTag
+                                                })}
+                                            onClick={() => handleClickTag("discountTag")}>
+                                            <TickIcon />
+                                        </div>
+                                    </>
                                     <div className="textInfo">
                                         Скидка
                                     </div>
                                 </div>
 
                                 <div className="beginInfoProduct">
-                                    <TickIconComponent tickValue={true} styleBox={" selectBox"} />
+                                    <>
+                                        <div
+                                            className={
+                                                classnames(`filterStatus-block__box selectBox`, {
+                                                    "activeFilter": tag?.installmentTag
+                                                })}
+                                            onClick={() => handleClickTag("installmentTag")}>
+                                            <TickIcon />
+                                        </div>
+                                    </>
                                     <div className="textInfo">
                                         Рассрочка
                                     </div>
                                 </div>
-                                <div className="beginInfoProduct subbeginInfoProduct">
-                                    <div className="form-block_price" style={{ marginTop: 0 }}>
 
-                                        <input
-                                            type="number"
-                                            name="price"
-                                            placeholder="Цена со скидкой"
-                                            className="input-price"
-                                            // value={0}
-                                            onChange={handleInputChange}
-                                            style={{ paddingLeft: 12 }} />
-                                        <div className="form-block_price__info">
-                                            ₸
+                                {tag?.discountTag &&
+                                    <div className="beginInfoProduct subbeginInfoProduct">
+                                        <div className="form-block_price" style={{ marginTop: 0 }}>
+
+                                            <input
+                                                type="number"
+                                                name="price"
+                                                placeholder="Цена со скидкой"
+                                                className="input-price"
+                                                // value={0}
+                                                onChange={handleInputChange}
+                                                style={{ paddingLeft: 12 }} />
+                                            <div className="form-block_price__info">
+                                                ₸
+                                            </div>
+                                        </div>
+                                        <div className="form-block_price">
+
+                                            <input
+                                                type="number"
+                                                name="price"
+                                                placeholder="0"
+                                                className="input-price"
+                                                // value={0}
+                                                onChange={handleInputChange}
+                                                style={{ paddingLeft: 12 }} />
+                                            <div className="form-block_price__info">
+                                                %
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="form-block_price">
-
-                                        <input
-                                            type="number"
-                                            name="price"
-                                            placeholder="0"
-                                            className="input-price"
-                                            // value={0}
-                                            onChange={handleInputChange}
-                                            style={{ paddingLeft: 12 }} />
-                                        <div className="form-block_price__info">
-                                            %
+                                }
+                                {tag?.installmentTag &&
+                                    <div className="beginInfoProduct subInstallment" style={{ gridColumnStart: 2 }}>
+                                        <div className="installment">
+                                            <span onClick={() => handleInstallment("threeM")} className={classnames("boxIns", {
+                                                "boxIns__active": installmentC?.threeM
+                                            })}>3</span>
+                                            <span onClick={() => handleInstallment("sixM")} className={classnames("boxIns", {
+                                                "boxIns__active": installmentC?.sixM
+                                            })}>6</span>
+                                            <span onClick={() => handleInstallment("twelveM")} className={classnames("boxIns", {
+                                                "boxIns__active": installmentC?.twelveM
+                                            })}>12</span>
+                                            <span onClick={() => handleInstallment("twentyFourM")} className={classnames("boxIns", {
+                                                "boxIns__active": installmentC?.twentyFourM
+                                            })}>24</span>
                                         </div>
+                                        <span className="monthText">мес</span>
                                     </div>
-                                </div>
-
-                                <div className="beginInfoProduct subInstallment">
-                                    <div className="installment">
-                                        <span className="boxIns boxIns__active">3</span>
-                                        <span className="boxIns">6</span>
-                                        <span className="boxIns">12</span>
-                                        <span className="boxIns">24</span>
-                                    </div>
-                                    <span className="monthText">мес</span>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>
