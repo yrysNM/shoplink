@@ -23,7 +23,7 @@ const UserCheckoutComponent = () => {
     });
 
     const handleClick = (value) => {
-        setTickIcon(tickIcon => ({ ...tickIcon, [value]: !tickIcon[value] }));
+        setTickIcon(tickIcon => ({ [value]: !tickIcon[value] }));
     }
 
     return (

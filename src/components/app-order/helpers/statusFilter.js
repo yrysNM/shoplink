@@ -11,7 +11,7 @@ const StatusFilterComponent = ({ filterDate = "", textStatus, objText, id }) => 
     const { statusFilter, SetStatusFilter, ToggleStatusFilter } = useContext(DataContext);
 
     useEffect(() => {
-        const handler = () => SetStatusFilter(({ [statusFilter[id]]: false }));
+        const handler = () => SetStatusFilter({ [statusFilter[id]]: false });
 
         window.addEventListener("click", handler);
 

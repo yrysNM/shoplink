@@ -10,14 +10,7 @@ import "./index.scss";
 
 const ShopSelectComponent = ({ objItems, placeholderText, iconComponent, title, shopCountryVoluteClass, bottom }) => {
     const { statusFilter, SetStatusFilter, ToggleStatusFilter } = useContext(DataContext);
-    const [toggleArrow, setToggleArrow] = useState(false);
     const [selectedValue, setSelectedValue] = useState(null);
-
-    const handleClick = (e) => {
-        e.stopPropagation();
-
-        setToggleArrow(toggleArrow => !toggleArrow);
-    }
 
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {

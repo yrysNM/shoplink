@@ -1,16 +1,13 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import classnames from "classnames";
-
-import { DataContext } from "../../context/DataContext";
 
 import { ReactComponent as TickIcon } from "../../resources/icon/tickIcon.svg";
 
 import "./index.scss";
 
 const FilterStatusComponent = ({ objText }) => {
-
     return (
-        <div className="filterStatus" style={{ bottom: `-${(objText.length * 53) - 4}px` }}>
+        <div className="filterStatus" onClick={(e) => e.stopPropagation()} style={{ bottom: `-${(objText.length * 53) - 4}px` }}>
             {objText.map((text, i) => (
                 <div key={i} className="filterStatus-block">
                     <div className="filterStatus-block__text">
@@ -25,7 +22,6 @@ const FilterStatusComponent = ({ objText }) => {
 }
 
 export const TickIconComponent = ({ iconIndex, tickValue = true, styleBox = "" }) => {
-
     const [tickToggle, setTickToggle] = useState(tickValue);
 
     const handleClick = (index) => {

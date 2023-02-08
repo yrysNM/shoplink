@@ -28,7 +28,7 @@ const AddSectionModalComponent = () => {
                         price: true,
                     }} />
 
-                    <StatusFilterComponent textStatus={"Выберите товары"} objText={objTextStatus} />
+                    <StatusFilterComponent textStatus={"Выберите товары"} objText={objTextStatus} id="productNumber" />
                 </form>
 
                 <div className="btns">
