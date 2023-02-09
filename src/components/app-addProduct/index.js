@@ -63,6 +63,10 @@ const AddProductComponent = () => {
         console.log(`------------------input value ${e.target.value}--------------------- `);
     }
 
+    const removeMainPhoto = () => {
+        FilterMainPhoto(0);
+    }
+
     const MainPhotoComponent = ({ productImage }) => {
         return (
             <div className="addBlock mainPhoto">
@@ -72,7 +76,7 @@ const AddProductComponent = () => {
 
                 <div className="mainPhoto__icon">
 
-                    <div className="trashFullIcon" style={{ right: 12 }}>
+                    <div className="trashFullIcon" style={{ right: 12 }} onClick={removeMainPhoto}>
                         <TrashIcon />
                     </div>
                     <div className="trashFullIcon" style={{ right: 12 }}    >
