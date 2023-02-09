@@ -136,7 +136,7 @@
             grid-column: 3/ 4;
             border-radius: 5px;
             background: #fff;
-            padding: 24px 32px 24px 24px;
+            padding: 24px;
 
             .price_headText {
                 font-weight: 400;
@@ -278,9 +278,9 @@
     &__grid {
         margin-top: 16px;
         display: grid;
-        grid-template: repeat(2, minmax(32px, auto)) / repeat(2, 1fr);
+        grid-template: repeat(2, minmax(32px, auto)) / repeat(2, minmax(132px, 1fr));
         row-gap: 20px;
-        column-gap: 76px;
+        column-gap: 72px;
     }
 
 }
@@ -379,6 +379,7 @@
         padding: 8px 6px;
 
         &-active {
+            border: none;
             border-color: #40BFFF;
             color: #40BFFF;
         }
