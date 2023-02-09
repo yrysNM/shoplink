@@ -345,21 +345,7 @@ const EditCatalogComponent = () => {
                                 </div>
 
                                 {tag?.discountTag &&
-                                    <div className="beginInfoProduct subbeginInfoProduct">
-                                        <div className="form-block_price" style={{ marginTop: 0 }}>
-
-                                            <input
-                                                type="number"
-                                                name="price"
-                                                placeholder="Цена со скидкой"
-                                                className="input-price"
-                                                // value={0}
-                                                onChange={handleInputChange}
-                                                style={{ paddingLeft: 12 }} />
-                                            <div className="form-block_price__info">
-                                                ₸
-                                            </div>
-                                        </div>
+                                    <div className="beginInfoProduct subbeginInfoProduct" style={{ marginTop: -16 }}>
                                         <div className="form-block_price">
 
                                             <input
@@ -374,10 +360,24 @@ const EditCatalogComponent = () => {
                                                 %
                                             </div>
                                         </div>
+                                        <div className="form-block_price">
+
+                                            <input
+                                                type="number"
+                                                name="price"
+                                                placeholder="Цена со скидкой"
+                                                className="input-price"
+                                                // value={0}
+                                                onChange={handleInputChange}
+                                                style={{ paddingLeft: 12 }} />
+                                            <div className="form-block_price__info">
+                                                ₸
+                                            </div>
+                                        </div>
                                     </div>
                                 }
                                 {tag?.installmentTag &&
-                                    <div className="beginInfoProduct subInstallment" style={{ gridColumnStart: 2 }}>
+                                    <div className="beginInfoProduct subInstallment" style={{ gridColumnStart: 2, marginTop: -5 }}>
                                         <div className="installment">
                                             <span onClick={() => handleInstallment("threeM")} className={classnames("boxIns", {
                                                 "boxIns__active": installmentC?.threeM
@@ -458,7 +458,7 @@ const EditCatalogComponent = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
