@@ -22,14 +22,14 @@
     align-self: flex-start;
 
     .boxIns {
+
         border: 1px solid #DBDDE5;
-        padding: 8px 7px;
+        padding: 10px 15px 10px 15px;
         cursor: pointer;
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
         text-align: center;
-
         color: #969CAF;
 
         &:first-child {
@@ -42,9 +42,9 @@
 
         &__active {
             border-right: none;
-            padding-right: 8px;
-            padding-left: 8px;
+            border-left: none;
             background: #40BFFF;
+            border-radius: 3px !important;
             color: #fff;
         }
     }
