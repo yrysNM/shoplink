@@ -26,7 +26,7 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
             newPosition -= 1;
         }
         setSliderPosition(newPosition);
-        translateFullSlides(newPosition);
+        // translateFullSlides(newPosition);
     }
 
     const RightMove = () => {
@@ -39,7 +39,7 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
             newPosition += 1;
         }
         setSliderPosition(newPosition);
-        translateFullSlides(newPosition);
+        // translateFullSlides(newPosition);
     }
 
     const speedUpAnimation = () => {
@@ -66,8 +66,8 @@ const CarouselComponent = ({ children, idGallery, idCarouselItem }) => {
     const touchMoveHandler = (e) => {
         setTouchEndPosition(e.targetTouches[0].clientX);
         const frameWidth = document.getElementById(idGallery).offsetWidth;
-        const translateDist = (touchEndPosition - touchStartPosition) / frameWidth * 100;
-        translatePartialSlides(translateDist);
+        // const translateDist = (touchEndPosition - touchStartPosition) / frameWidth * 100;
+        // translatePartialSlides(translateDist);
         if (isTouched === true) {
             setIsSwiped(true);
         }

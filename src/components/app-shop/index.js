@@ -84,11 +84,12 @@ const ShopComponent = () => {
                         Магазин
                     </p>
 
-                    <div className="btn">
+                    {/* <div className="btn">
                         <button className="shopCahngePhoneNumber">Изменить номер</button>
-                    </div>
+                    </div> */}
                 </div>
 
+                {/* todo:  notification border radius */}
                 {/* Store data */}
                 <div className="shoppage-wrapper">
                     <div className="shoppage-blocks">
