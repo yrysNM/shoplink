@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 
 import { HelpFormInputComponent } from "../app-shop";
+import InputMobileMaskComponent from "../app-inputMobileMask/input";
 
 import { ReactComponent as PhoneIcon } from "../../resources/icon/shopDataIcons/phonIcon.svg";
 import { ReactComponent as LockIcon } from "../../resources/icon/shopDataIcons/Lock.svg";
@@ -23,7 +24,7 @@ const LoginComponent = () => {
                     <div className="subtext loginRegister__subText">Заполните все поля для входа в личный кабинет</div>
 
                     <form className="loginRegister__form" onSubmit={(e) => e.preventDefault()}>
-                        <HelpFormInputComponent data={{
+                        <InputMobileMaskComponent data={{
                             inputType: "number",
                             iconComponent: <PhoneIcon />,
                             inputName: "phone login",
