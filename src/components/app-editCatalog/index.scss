@@ -24,7 +24,7 @@
     .boxIns {
 
         border: 1px solid #DBDDE5;
-        padding: 8px 10px 8px 10px;
+        padding: 10px 15px 10px 15px;
         cursor: pointer;
         font-weight: 400;
         font-size: 12px;
@@ -41,7 +41,8 @@
         }
 
         &__active {
-            border: none;
+            border-left: none;
+            border-right: none;
             background: #40BFFF;
             border-radius: 3px !important;
             color: #fff;
