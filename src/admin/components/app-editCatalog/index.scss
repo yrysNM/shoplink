@@ -1,0 +1,65 @@
+.form-block__textarea {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #252728;
+}
+
+.form-block__input {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #252728;
+}
+
+.subbeginInfoProduct {
+    display: flex;
+    flex-direction: column;
+}
+
+.subInstallment {
+    align-self: flex-start;
+
+    .boxIns {
+
+        border: 1px solid #DBDDE5;
+        border-left: none;
+        padding: 10px 15px 10px 15px;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        color: #969CAF;
+
+        &:first-child {
+            border-radius: 3px 0 0 3px;
+            border-left: 1px solid #DBDDE5;
+        }
+
+        &:last-child {
+            border-radius: 0 3px 3px 0;
+        }
+
+        &__active {
+            // border-left: none;
+            // border-right: none;
+            border: none !important;
+            padding: 11px 15px;
+            background: #40BFFF;
+            border-radius: 3px !important;
+            color: #fff;
+
+        }
+    }
+}
+
+.monthText {
+    margin-left: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #969CAF;
+}

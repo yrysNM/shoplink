@@ -8,8 +8,6 @@
     margin: 0;
 }
 
-
-
 html {
     user-select: none;
     -moz-user-select: none;
@@ -35,13 +33,15 @@ body {
 .container {
     margin-left: 182px;
     margin-right: 42px;
+
 }
 
-.containerUser {
-    max-width: 665px;
-    margin: 0 auto;
-    position: relative;
+.rootAdmin .container {
+    max-width: 100%;
+    min-height: auto;
 }
+
+
 
 .main {
     margin-top: 124px;

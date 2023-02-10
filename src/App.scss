@@ -1,0 +1,43 @@
+.containerUser {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex: 1;
+  background-color: #fff;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.overlayUser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 0 20px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.input {
+  max-width: 500px;
+  width: 100%;
+  padding: 14px 10px 14px 44px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input:focus {
+  border: 1px solid #40bfff;
+}

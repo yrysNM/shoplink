@@ -1,0 +1,41 @@
+.intro {
+  position: relative;
+  background: #f4f6fc;
+  padding: 150px 20px;
+}
+
+.intro-title {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  background: #f25e7f;
+  margin-bottom: 20px;
+}
+
+.intro-descr {
+  font-size: 16px;
+  line-height: 20px;
+  color: #969caf;
+}
+
+.intro-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.intro-page-btn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media (min-width: 560px) {
+  .intro {
+    padding: 150px 20px;
+  }
+}

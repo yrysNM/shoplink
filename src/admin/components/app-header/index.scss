@@ -1,0 +1,124 @@
+.header {
+
+    &-name {
+        padding: 16px 20px;
+        background-color: #40BFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 46px 20px 45px;
+    }
+}
+
+.header.headerAdmin {
+    min-height: 80px;
+    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 144px calc(100% - 144px);
+    border-radius: 0 10px 0 0;
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 0;
+    align-items: normal;
+}
+
+.link-site {
+    text-align: right;
+    width: calc(100% - 15%);
+}
+
+.searchMessage>.input-container {
+    display: flex;
+}
+
+.searchMessage {
+    width: 414px;
+    position: relative;
+}
+
+.input-search {
+    position: relative;
+    padding: 11px 18px 13px 16px;
+    border-radius: 8px;
+    background: #F4F6FC;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+    // background: #F4F6FC;
+}
+
+// .tag {
+//     position: absolute;
+//     top: 54%;
+//     transform: translateY(-50%);
+//     right: 16px;
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 24px;
+//     color: #252728;
+//     transition: all .5s ease-in-out;
+
+//     span {
+//         cursor: pointer;
+//         color: #59bffe;
+//     }
+
+//     &-true {
+//         opacity: 0;
+//         visibility: hidden;
+//         transition: all .5s ease-in-out;
+//     }
+// }
+
+.iconWarning {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: all .5s ease-in-out;
+
+    &-true {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+    }
+}
+
+.notification_exit {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    img[alt="notification icon"] {
+        margin-right: 39px;
+    }
+
+    .circlered {
+
+        position: absolute;
+        top: 0;
+        right: 58px;
+        width: 7px;
+        height: 7px;
+        background: #FF3333;
+        border-radius: 100%;
+    }
+}
+
+.notification_exit>img {
+    cursor: pointer;
+}

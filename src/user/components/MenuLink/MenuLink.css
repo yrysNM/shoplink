@@ -1,0 +1,8 @@
+.menu-link-button {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: #969caf;
+  cursor: pointer;
+}

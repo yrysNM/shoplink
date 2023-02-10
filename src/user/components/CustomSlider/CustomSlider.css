@@ -1,0 +1,8 @@
+.slick-list {
+  padding: 0 !important;
+}
+
+.slick-track {
+  display: flex;
+  gap: 10px;
+}

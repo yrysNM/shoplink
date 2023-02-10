@@ -1,0 +1,6 @@
+.category-group {
+  padding: 10px 20px;
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+}

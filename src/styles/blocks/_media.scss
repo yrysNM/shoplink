@@ -1,20 +1,14 @@
 @media(max-width: 575px) {
-    .containerUser {
-        max-width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-    }
+
 
     .btnText {
         font-size: 14px !important;
     }
 }
 
-@media(max-width: 767px) {
-    .containerUser {
-        max-width: 430px;
-    }
+// @media(max-width: 767px) {
+//     .containerUser {
+//         max-width: 430px;
+//     }
 
-}
+// }

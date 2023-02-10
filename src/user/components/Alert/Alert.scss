@@ -1,0 +1,43 @@
+.alert {
+  position: fixed;
+  top: -2px;
+  padding: 10px 20px;
+  width: 100%;
+  animation-name: alert;
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+}
+
+.alert-inner {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  padding: 15px;
+  background: #53d160;
+  border-radius: 3px;
+}
+
+.alert-inner h3 {
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.alert-inner p {
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+@keyframes alert {
+  from {
+    top: -100px;
+  }
+  to {
+    top: -2px;
+  }
+}
