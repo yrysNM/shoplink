@@ -1,0 +1,50 @@
+.custom-btn {
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  padding: 15px 0px;
+  border: none;
+  outline: none;
+  max-width: 500px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.primary {
+  background: #40bfff;
+  color: #fff;
+}
+
+.secondary {
+  background: #fff;
+  color: #40bfff;
+  border: 1px solid #40bfff;
+}
+
+.secondary-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.prevent {
+  background: rgba(183, 188, 204, 0.3);
+  color: #969caf;
+}
+
+.order-now {
+  padding: 11px 0px;
+  background: #f25e7f;
+  color: #fff;
+}
+
+.category-btn-padding {
+  padding: 10px 15px;
+}
+
+.secondary-borderless {
+  font-size: 14px;
+  color: #969caf;
+  background: transparent;
+}

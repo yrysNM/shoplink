@@ -1,0 +1,36 @@
+.title {
+  &-400 {
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &-500 {
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.cardLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &_text {
+    font-size: 16px;
+
+    color: var(--disactiveTextColor);
+  }
+}
+
+.subText {
+  color: var(--disactiveTextColor);
+}
+
+.logoText {
+  color: var(--activeBlueColor);
+  font-size: 24px;
+}
+
+.logoTextDefault {
+  color: var(--defaultTextColor);
+}

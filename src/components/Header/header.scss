@@ -1,0 +1,126 @@
+.header {
+  min-height: 80px;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 144px calc(100% - 144px);
+  border-radius: 0 10px 0 0;
+  z-index: 100;
+  width: 100%;
+  position: sticky;
+  top: 0;
+
+  &-logoBlock {
+    padding: 16px 20px;
+    background-color: var(--activeBlueColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_wrapper {
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 46px 20px 45px;
+  }
+
+  &-nav {
+    &-notificationExit {
+      gap: 25px;
+      position: relative;
+
+    }
+  }
+}
+
+.circlered {
+  position: absolute;
+  top: 0;
+  right: 45px;
+  width: 7px;
+  height: 7px;
+  background: #FF3333;
+  border-radius: 100%;
+}
+
+.linkSite {
+  margin-left: 15px;
+  font-size: 16px;
+  color: var(--activeRedColor);
+  cursor: pointer;
+}
+
+.notificationBlock {
+  padding: 24px 0;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 400px;
+  background: #fff;
+  border-radius: 3px;
+
+  &-list {
+    z-index: 103;
+    position: relative;
+    padding: 16px 0;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    border-top: 1px solid #DBDAEA;
+
+    &_block {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #DBDAEA;
+
+      &::before {
+        content: "";
+        background: #F25E7F;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        margin: 0 16px;
+      }
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+}
+
+.notificationText {
+  font-size: 18px;
+  padding: 0 24px;
+  color: #252728;
+}
+
+.dateNotification {
+  font-size: 14px;
+  color: #8E8E8E;
+}
+
+.descrNotification {
+  font-size: 16px;
+  color: #0F0E1E;
+}
+
+.customArrowUp {
+  position: absolute;
+  right: 58px;
+  top: -17px;
+  width: 0;
+  height: 0;
+  z-index: 102;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-bottom: 18px solid #FFFFFF;
+}
+
+.logOut {
+
+  &_text {
+    font-size: 18px;
+
+    color: #0F0E1E;
+  }
+}

@@ -1,0 +1,18 @@
+.colorIcon {
+    color: var(--activeRedColor);
+
+    svg path {
+        stroke: var(--activeRedColor);
+    }
+}
+
+.iconCursor {
+    cursor: pointer;
+
+    &__filter {
+
+        path {
+            stroke: var(--activeBlueColor);
+        }
+    }
+}
